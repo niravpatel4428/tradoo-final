@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F4F4F6;
+  --foreground: #171717;
+  --primary: #272E3F;
+  --secondary: #E6E8EB;
+  --darblue: #101729;
+  --gray: #8B909C;
+  --lightgreen: #DAEBE9;
+  --darkgreen: #192E3C;
+  --green: #286C66;
+  --greenlight: #5FB98D;
+  --grayprimary: #E6E8EB;
+  --darkjunglegreen: #121828;
+  --darkgray: #545B6A;
+  --gray400: #B2B6BC;
+  --gray300: #DADCE0;
+  --gray500: #8B909C;
+  --aurometalsaurus: #6B7280;
+  --romansilver: #8B909C;
+  --darkGunmetal: #1C2233;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-darblue: var(--darblue);
+  --color-gray: var(--gray);
+  --color-lightgreen: var(--lightgreen);
+  --color-green: var(--green);
+  --color-darkgreen: var(--darkgreen);
+  --color-greenlight: var(--greenlight);
+  --color-grayprimary: var(--grayprimary);
+  --color-darkgray: var(--darkgray);
+  --color-gray400: var(--gray400);
+  --color-gray300: var(--gray300);
+  --color-gray500: var(--gray500);
+  --color-aurometalsaurus: var(--aurometalsaurus);
+  --color-darkjunglegreen: var(--darkjunglegreen);
+  --color-romansilver: var(--romansilver);
+  --color-darkGunmetal: var(--darkGunmetal);
+  /* Updated fonts */
+  /* --font-sans: var(--font-inter); */
+  --font-body: var(--font-inter-display);
+
+  /* Custom breakpoints */
+  --breakpoint-xs: 390px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1440px;
+
+  /*  Custom Border Radius */
+  --radius-6: 6px;
+
+  /*  Custom font size */
+  --text-40: 40px;
+  --text-56: 56px;
+  --text-80: 80px;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 15px;
+  max-width: 100%;
+
+  @media (width >=390px) {
+    max-width: 100%;
+  }
+
+  @media (width >=640px) {
+    max-width: 100%;
+  }
+
+  @media (width >=768px) {
+    max-width: 768px;
+
+  }
+
+  @media (width >=1024px) {
+    max-width: 1024px;
+
+  }
+
+  @media (width >=1280px) {
+    max-width: 1200px;
+  }
+
+  @media (width >=1440px) {
+    max-width: 1420px;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--darkgray);
+  font-family: var(--font-inter-display), sans-serif;
+}
+
+.nav-link:hover svg {
+  color: var(--gray);
+}
+
+.dashboard-image {
+  position: relative;
+}
+
+.dashboard-image::after {
+  position: absolute;
+  background-image: url('data:image/svg+xml,<svg width="1920" height="160" viewBox="0 0 1920 160" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="1920" height="160" fill="url(%23paint0_linear_133_5142)"/> <defs> <linearGradient id="paint0_linear_133_5142" x1="960" y1="0" x2="960" y2="160" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"/> <stop offset="1" stop-color="white"/> </linearGradient> </defs> </svg> ');
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 160px;
+} 
+
+.banner-dashboard-image {
+  position: relative;
+}
+
+.banner-dashboard-image::after {
+  position: absolute;
+  background-image: url('data:image/svg+xml,<svg width="1920" height="160" viewBox="0 0 1920 160" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="1920" height="160" fill="url(%23paint0_linear_133_4127)"/> <defs> <linearGradient id="paint0_linear_133_4127" x1="960" y1="0" x2="960" y2="160" gradientUnits="userSpaceOnUse"> <stop stop-color="%23F4F5F7" stop-opacity="0"/> <stop offset="1" stop-color="%23F4F4F6"/> </linearGradient> </defs> </svg> ');
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 160px;
+}
+
+@media(max-width: 767px){
+  .banner-dashboard-image::after,
+  .dashboard-image::after{height: 48px;}
+/* Hide scrollbar for Chrome, Safari and Edge */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.nav-link:hover svg{
+  color: var(--gray);
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.35s ease forwards;
+}
+}
+
+.leva-container {
+  display: none !important;
+}
+
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  gap: 16px;
+  user-select: none;
+}
+
+.ticker-item {
+  flex-shrink: 0;
+}
