@@ -212,7 +212,7 @@ const OurTeam = () => {
                         {/* End Dynamic Sections */}
                     </div>
                 </div>
-            </div>
+            </div> 
         </>
     );
 };
