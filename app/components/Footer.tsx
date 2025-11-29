@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -84,7 +82,7 @@ const fbRightList = [
 
 const Footer = () => {
   return (
-    <footer className="block max-xs:pt-8 pt-[60px] bg-darkjunglegreen relative">
+    <footer className="block max-xs:pt-8 pt-[60px] bg-darkjunglegreen relative z-0">
       <div className="absolute w-full max-w-480 mx-auto bottom-full left-1/2 -translate-x-1/2 h-[452px] overflow-hidden">
         <Image
           src={FooterGradient}

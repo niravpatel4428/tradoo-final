@@ -1,9 +1,11 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import dashboard from "@/public/image/dashboard.png";
 import key from "@/public/image/svg/key.svg";
 import eye from "@/public/image/svg/eye.svg";
-import turningicon from "@/public/image/svg/turningicon.svg"; 
+import turningicon from "@/public/image/svg/turning-icon.svg"; 
 import mobiledashboard from "@/public/image/mobile-dashboard.png"; 
 
 const Investment: React.FC = () => {

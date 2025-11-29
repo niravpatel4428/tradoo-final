@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Badge from "../components/Badge";
 import Image from "next/image";
@@ -38,7 +40,7 @@ const Banner: React.FC = () => {
               label="Adaptive Investment Framework"
               icon={
                 <Image
-                  src="/image/svg/badgedarkgreen.svg"
+                  src="/image/svg/badge-dark-green.svg"
                   alt="icon"
                   width={15}
                   height={15}

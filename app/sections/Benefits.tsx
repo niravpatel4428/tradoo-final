@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Badge from "../components/Badge";
 import Image, { StaticImageData } from "next/image";
@@ -6,7 +8,7 @@ import benefitsimg from "@/public/image/benefits.jpg";
 import clipboardcheck from "@/public/image/svg/clipboardcheck.svg";
 import turning from "@/public/image/svg/turning.svg";
 import city from "@/public/image/svg/city.svg";
-import shieldcheck from "@/public/image/svg/shieldcheck.svg";
+import shieldcheck from "@/public/image/svg/shield-check.svg";
 
 interface BenefitItem {
   icon: StaticImageData;

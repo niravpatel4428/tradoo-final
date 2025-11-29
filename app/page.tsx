@@ -1,11 +1,24 @@
-import Home from "./pages/Home";
-import About from "./pages/About";
+// import Home from "./pages/Home/page";
+import CleanRisk from "./components/CleanRisk";
+import Banner from "./sections/Banner";
+import Benefits from "./sections/Benefits";
+import Framework from "./sections/Framework";
+import Investment from "./sections/investment";
+import Testimonials from "./sections/Testimonials";
+import WantPart from "./sections/WantPart";
+import WealthManagement from "./sections/WealthManagement";
 
-export default function page() {
+export default function Home() {
   return (
     <main>
-      <Home/>
-      <About/>
+      <Banner/>
+      <CleanRisk/>
+      <WealthManagement/>
+      <Framework/>
+      <Investment/>
+      <Benefits/>
+      <Testimonials/>
+      <WantPart/>
     </main>
   );
 }
