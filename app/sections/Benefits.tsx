@@ -2,7 +2,7 @@ import React from "react";
 import Badge from "../components/Badge";
 import Image, { StaticImageData } from "next/image";
 
-import benifits from "@/public/image/benifits.jpg";
+import benefitsimg from "@/public/image/benefits.jpg";
 import clipboardcheck from "@/public/image/svg/clipboardcheck.svg";
 import turning from "@/public/image/svg/turning.svg";
 import city from "@/public/image/svg/city.svg";
@@ -22,11 +22,11 @@ interface BenefitBlock {
   items?: BenefitItem[];
 }
 
-const Benifits: React.FC = () => {
+const Benefits: React.FC = () => {
   const benefitsData: BenefitBlock[] = [
     {
       type: "image",
-      img: benifits,
+      img: benefitsimg,
       title: "Non-Custodial Structure",
       desc: "Your assets stay in your dedicated smart-contract vault under your control at all times. No pooled funds, no custodial risk, no middlemen.",
     },
@@ -132,4 +132,4 @@ const Benifits: React.FC = () => {
   );
 };
 
-export default Benifits;
+export default Benefits;

@@ -20,9 +20,9 @@ export const NavListItem = ({
   return (
     <Link
       href={href} onClick={onClick}
-      className="rounded-xl cursor-pointer bg-white p-4 flex items-start gap-4 hover:bg-gray100 transition-all duration-300 group"
+      className="rounded-xl cursor-pointer bg-white p-4 flex items-start gap-4 hover:bg-gray100 transition-all duration-300 group/card"
     >
-      <div className="bg-gray100 rounded-xl size-14 flex-none flex items-center justify-center group-hover:bg-white transition-all duration-300">
+      <div className="bg-gray100 rounded-xl size-14 flex-none flex items-center justify-center group-hover/card:bg-white transition-all duration-300">
         <Image
           src={iconSrc}
           alt={title}
@@ -32,12 +32,12 @@ export const NavListItem = ({
         />
       </div>
 
-      <div className="space-y-2">
+      <div className="flex flex-wrap space-y-2">
         <span className="text-gray800 font-medium text-base leading-tight">
           {title}
         </span>
 
-        <p className="text-gray700 font-normal text-base leading-snug">
+        <p className="text-gray700 font-normal text-base leading-snug m-0">
           {description}
         </p>
       </div>
