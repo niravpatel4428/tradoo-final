@@ -26,8 +26,8 @@ const NavItem: React.FC<NavItemProps> = ({
       className="nav-link inline-flex gap-1 items-center justify-between cursor-pointer select-none"
     >
       <span
-        className={`text-base font-medium leading-none text-primary hover:text-gray ${
-          expandable ? "text-base font-medium leading-none text-primary" : "text-base font-medium leading-none text-primary"
+        className={`text-base font-medium leading-none text-gray800 hover:text-gray ${
+          expandable ? "text-base font-medium leading-none text-gray800" : "text-base font-medium leading-none text-gray800"
         }`}
       >
         {label}
@@ -35,7 +35,7 @@ const NavItem: React.FC<NavItemProps> = ({
 
       {expandable && (
         <IoChevronDown
-          className={`transition-transform duration-300 text-primary ${
+          className={`transition-transform duration-300 text-gray800 ${
             isOpen ? "rotate-180 text-black" : "rotate-0 text-gray-400"
           }`}
           size={18}

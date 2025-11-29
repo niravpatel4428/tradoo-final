@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F4F4F6;
+  /* --background: #F4F4F6; */ --gray100: #F4F4F6;
   --foreground: #171717;
-  --primary: #272E3F;
+  /* --primary: #272E3F; */ --gray800: #272E3F;
   --secondary: #E6E8EB;
   --darblue: #101729;
   --gray: #8B909C;
@@ -11,9 +11,9 @@
   --darkgreen: #192E3C;
   --green: #286C66;
   --greenlight: #5FB98D;
-  --grayprimary: #E6E8EB;
+  /* --grayprimary: #E6E8EB; */ --gray200: #E6E8EB;
   --darkjunglegreen: #121828;
-  --darkgray: #545B6A;
+  /* --darkgray: #545B6A; */ --gray700: #545B6A;
   --gray400: #B2B6BC;
   --gray300: #DADCE0;
   --gray500: #8B909C;
@@ -23,9 +23,9 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-gray100: var(--gray100);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
+  --color-gray800: var(--gray800);
   --color-secondary: var(--secondary);
   --color-darblue: var(--darblue);
   --color-gray: var(--gray);
@@ -33,8 +33,8 @@
   --color-green: var(--green);
   --color-darkgreen: var(--darkgreen);
   --color-greenlight: var(--greenlight);
-  --color-grayprimary: var(--grayprimary);
-  --color-darkgray: var(--darkgray);
+  --color-gray200: var(--gray200);
+  --color-gray700: var(--gray700);
   --color-gray400: var(--gray400);
   --color-gray300: var(--gray300);
   --color-gray500: var(--gray500);

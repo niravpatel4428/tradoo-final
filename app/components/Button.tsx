@@ -31,16 +31,16 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   /** Variant styles */
   const variantClasses: Record<ButtonVariant, string> = {
-    primarydefault: "bg-primary text-white hover:bg-[#101729]",
-    secondarydefault: "bg-grayprimary text-primary hover:bg-[#DADCE0]",
-    contrastdefault: "bg-white text-primary hover:bg-primary hover:text-white",
+    primarydefault: "bg-gray800 text-white hover:bg-[#101729]",
+    secondarydefault: "bg-gray200 text-gray800 hover:bg-[#DADCE0]",
+    contrastdefault: "bg-white text-gray800 hover:bg-gray800 hover:text-white",
   };
 
   /** Icon bg + color per variant */
   const iconVariantClasses: Record<ButtonVariant, string> = {
     primarydefault: "bg-white text-[#101729]",      // white circle + dark icon
-    secondarydefault: "bg-primary text-white",      // dark bg + white icon
-    contrastdefault: "bg-primary text-white",       // dark bg + white icon
+    secondarydefault: "bg-gray800 text-white",      // dark bg + white icon
+    contrastdefault: "bg-gray800 text-white",       // dark bg + white icon
   };
 
   /** Base padding */

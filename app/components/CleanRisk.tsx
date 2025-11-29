@@ -100,7 +100,7 @@ export default function CleanRisk() {
   return (
     <div className="py-24 max-xs:py-16 relative z-20">
       <div className="container mb-12">
-        <h2 className="font-semibold text-primary text-40 max-xs:text-[32px] leading-[46px] xl:text-56 xl:leading-16 tracking-[-1.68px]">
+        <h2 className="font-semibold text-gray800 text-40 max-xs:text-[32px] leading-[46px] xl:text-56 xl:leading-16 tracking-[-1.68px]">
           <span className="text-gray">You choose a clear risk profile — </span>system handles allocation, continuous monitoring, and data-backed adjustments while you keep full control of your assets.
         </h2>
       </div>
@@ -112,10 +112,10 @@ export default function CleanRisk() {
             <div key={i} className="ticker-item">
               <Link
                 href={item.href}
-                className="pointer-events-none flex items-center gap-3 bg-white rounded-3xl py-5 px-8 hover:bg-grayprimary"
+                className="pointer-events-none flex items-center gap-3 bg-white rounded-3xl py-5 px-8 hover:bg-gray200"
               >
                 <Image src={item.img} alt={item.title} className="w-8 h-8" />
-                <span className="font-medium text-primary text-lg leading-5">{item.title}</span>
+                <span className="font-medium text-gray800 text-lg leading-5">{item.title}</span>
               </Link>
             </div>
           ))}

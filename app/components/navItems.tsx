@@ -20,9 +20,9 @@ export const NavListItem = ({
   return (
     <Link
       href={href} onClick={onClick}
-      className="rounded-xl cursor-pointer bg-white p-4 flex items-start gap-4 hover:bg-background transition-all duration-300 group"
+      className="rounded-xl cursor-pointer bg-white p-4 flex items-start gap-4 hover:bg-gray100 transition-all duration-300 group"
     >
-      <div className="bg-background rounded-xl size-14 flex-none flex items-center justify-center group-hover:bg-white transition-all duration-300">
+      <div className="bg-gray100 rounded-xl size-14 flex-none flex items-center justify-center group-hover:bg-white transition-all duration-300">
         <Image
           src={iconSrc}
           alt={title}
@@ -33,11 +33,11 @@ export const NavListItem = ({
       </div>
 
       <div className="space-y-2">
-        <span className="text-primary font-medium text-base leading-tight">
+        <span className="text-gray800 font-medium text-base leading-tight">
           {title}
         </span>
 
-        <p className="text-darkgray font-normal text-base leading-snug">
+        <p className="text-gray700 font-normal text-base leading-snug">
           {description}
         </p>
       </div>
@@ -59,12 +59,12 @@ export const MobileNavItem: React.FC<MobileNavItemProps> = ({
   onClick,
 }) => {
   const className = `w-full cursor-pointer flex items-center justify-between px-4 py-6 rounded-2xl
-                  bg-white hover:bg-background transition-all text-left`;
+                  bg-white hover:bg-gray100 transition-all text-left`;
 
   if (onClick) {
     return (
       <button onClick={onClick} className={className}>
-        <span className="text-primary text-base font-medium leading-tight capitalize">
+        <span className="text-gray800 text-base font-medium leading-tight capitalize">
           {label}
         </span>
 
@@ -77,7 +77,7 @@ export const MobileNavItem: React.FC<MobileNavItemProps> = ({
 
   return (
     <Link href={href} className={className}>
-      <span className="text-primary text-base font-medium leading-tight capitalize">
+      <span className="text-gray800 text-base font-medium leading-tight capitalize">
         {label}
       </span>
 
@@ -99,10 +99,10 @@ export const MobileBackButton: React.FC<MobileBackButtonProps> = ({
     <button
       onClick={onClick}
       className="w-full cursor-pointer flex items-center gap-4 px-4 py-6 rounded-2xl
-                 bg-background hover:bg-grayprimary transition-all text-left"
+                 bg-gray100 hover:bg-gray200 transition-all text-left"
     >
       <IoChevronBack size={24} className="text-darblue" />
-      <span className="text-base font-medium text-primary">{label}</span>
+      <span className="text-base font-medium text-gray800">{label}</span>
     </button>
   );
 };

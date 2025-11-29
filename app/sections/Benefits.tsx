@@ -68,9 +68,9 @@ const Benifits: React.FC = () => {
         <div className="max-sm:px-4">
           <Badge label="Benefits" />
 
-          <h3 className="max-xs:tracking-[-1px] mt-6 max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xxl:text-56 font-semibold xxl:leading-16 tracking-[-1.68px] text-primary">
+          <h2 className="max-xs:tracking-[-1px] mt-6 max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xxl:text-56 font-semibold xxl:leading-16 tracking-[-1.68px] text-gray800">
             Purpose-Built Infrastructure for Digital Wealth.
-          </h3>
+          </h2>
         </div>
 
         <div className="mt-14 xxl:mt-20">
@@ -89,10 +89,10 @@ const Benifits: React.FC = () => {
                     </div>
 
                     <div className="px-4 py-10 md:p-5 xxl:p-10 flex flex-col gap-y-5">
-                      <span className="text-2xl font-semibold leading-8 tracking-[-0.24px] text-primary">
+                      <span className="text-2xl font-semibold leading-8 tracking-[-0.24px] text-gray800">
                         {block.title}
                       </span>
-                      <p className="text-lg text-darkgray font-normal leading-[144%]">
+                      <p className="text-lg text-gray700 font-normal leading-[144%]">
                         {block.desc}
                       </p>
                     </div>
@@ -107,15 +107,15 @@ const Benifits: React.FC = () => {
                         key={i}
                         className="hover:bg-gray300 transition-all duration-300 flex flex-col justify-between gap-y-12 h-full px-4 py-10 md:p-5 xxl:p-10 rounded-3xl bg-white"
                       >
-                        <div className="rounded-xl w-16 h-16 flex justify-center items-center bg-background p-3">
+                        <div className="rounded-xl w-16 h-16 flex justify-center items-center bg-gray100 p-3">
                           <Image src={item.icon} alt="img" />
                         </div>
 
                         <div className="flex flex-col gap-y-5">
-                          <span className="text-2xl font-semibold leading-8 tracking-[-0.24px] text-primary">
+                          <span className="text-2xl font-semibold leading-8 tracking-[-0.24px] text-gray800">
                             {item.title}
                           </span>
-                          <p className="text-lg text-darkgray font-normal leading-[144%]">
+                          <p className="text-lg text-gray700 font-normal leading-[144%]">
                             {item.desc}
                           </p>
                         </div>

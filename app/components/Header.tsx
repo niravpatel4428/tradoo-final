@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <>
       {/* DESKTOP HEADER */}
-      <header className="hidden lg:block fixed left-0 right-0 top-0 z-50 bg-background">
+      <header className="hidden lg:block fixed left-0 right-0 top-0 z-50 bg-gray100">
         <div className="container">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -88,7 +88,7 @@ const Header = () => {
       </header>
 
       {/* MOBILE HEADER */}
-      <header className="py-5.5 lg:hidden fixed left-0 right-0 top-0 z-50 bg-background">
+      <header className="py-5.5 lg:hidden fixed left-0 right-0 top-0 z-50 bg-gray100">
         <div className="container">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -101,7 +101,7 @@ const Header = () => {
               onClick={() => setMobileOpen(true)}
               className="cursor-pointer"
             >
-              <IoMenu size={24} className="text-primary" />
+              <IoMenu size={24} className="text-gray800" />
             </button>
           </div>
         </div>
@@ -109,7 +109,7 @@ const Header = () => {
 
       {/* MOBILE MENU OVERLAY */}
       {mobileOpen && (
-        <div className="full-menu-block fixed inset-0 bg-background z-50 p-5 animate-slideLeft">
+        <div className="full-menu-block fixed inset-0 bg-gray100 z-50 p-5 animate-slideLeft">
           <div className="flex justify-between items-center mb-8">
             <Image src={logo} alt="logo" className="h-7 w-auto" />
             <button
@@ -119,7 +119,7 @@ const Header = () => {
                 setSubmenuOpen(false);
               }}
             >
-              <IoClose size={24} className="text-primary" />
+              <IoClose size={24} className="text-gray800" />
             </button>
           </div>
 
@@ -204,7 +204,7 @@ type NavItemProps = {
 const NavItem: React.FC<NavItemProps> = ({ label, arrow, linkUrl = "/" }) => (
   <Link
     href={linkUrl}
-    className="cursor-pointer flex items-center gap-2 text-primary text-base font-medium leading-tight hover:text-gray500 py-8.5 -mb-2 group transition"
+    className="cursor-pointer flex items-center gap-2 text-gray800 text-base font-medium leading-tight hover:text-gray500 py-8.5 -mb-2 group transition"
   >
     {label}
     {arrow && <ArrowDown />}

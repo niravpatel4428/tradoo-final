@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Badge from "../components/Badge";
 import Image from "next/image";
@@ -44,15 +42,15 @@ const Framework: React.FC = () => {
                   <Badge label="The Tradoo Framework" />
                 </div>
                 <div>
-                  <h3 className="max-xs:tracking-[-1px] max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xl:text-56 font-semibold text-primary tracking-[-1.68px] xl:leading-16">
+                  <h2 className="max-xs:tracking-[-1px] max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xl:text-56 font-semibold text-gray800 tracking-[-1.68px] xl:leading-16">
                     Structured by Design.{" "}
                     <span className="block text-gray">
                       Adaptive by Discipline.
                     </span>
-                  </h3>
+                  </h2>
                 </div>
                 <div className="mt-4">
-                  <p className="text-lg font-normal leading-[144%] text-darkgray">
+                  <p className="text-lg font-normal leading-[144%] text-gray700">
                     Tradoo interprets market regimes, volatility shifts and
                     behavioural dynamics to form a clear view of the current
                     environment — guiding disciplined portfolio weighting within
@@ -75,7 +73,7 @@ const Framework: React.FC = () => {
                   {items.map((item, index) => (
                     <div key={index} className="col-span-12 sm:col-span-6">
                       <div className="bg-white rounded-3xl p-5 xxl:p-8 flex flex-col gap-y-12 xxl:gap-y-13 justify-between h-full hover:bg-gray300 transition-all duration-300">
-                        <div className="w-16 h-16 rounded-xl p-3 bg-background flex justify-center items-center">
+                        <div className="w-16 h-16 rounded-xl p-3 bg-gray100 flex justify-center items-center">
                           <Image
                             src={item.icon}
                             alt="icon"
@@ -84,11 +82,11 @@ const Framework: React.FC = () => {
                         </div>
 
                         <div className="flex flex-col gap-4">
-                          <span className="text-2xl font-semibold leading-8 tracking-[-0.24px] text-primary">
+                          <span className="text-2xl font-semibold leading-8 tracking-[-0.24px] text-gray800">
                             {item.title}
                           </span>
 
-                          <p className="font-normal text-lg leading-[144%] text-darkgray">
+                          <p className="font-normal text-lg leading-[144%] text-gray700">
                             {item.text}
                           </p>
                         </div>

@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import { Leva } from "leva";
 import LevaWrapper from "./components/LevaWrapper";
-import Footer from "./sections/Footer";
+import Footer from "./components/Footer";
 
 
 

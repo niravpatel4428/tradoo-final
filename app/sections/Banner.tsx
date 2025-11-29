@@ -1,11 +1,9 @@
-"use client";
-
 import React from "react";
 import Badge from "../components/Badge";
 import Image from "next/image";
 import Button from "../components/Button";
 import dashboard from "@/public/image/dashboard.png";
-import mobiledshboard from "@/public/image/mobiledshboard.png";
+import mobiledashboard from "@/public/image/mobile-dashboard.png";
 
 const Banner: React.FC = () => {
   const data = [
@@ -48,7 +46,7 @@ const Banner: React.FC = () => {
               }
             />
             <div className="w-full max-w-250 mx-auto mt-8">
-              <h1 className="max-xs:tracking-[-1px] max-xs:text-3xl text-5xl xxl:text-80 font-semibold xxl:leading-22 tracking-[-2.40px] text-left md:text-center text-primary">
+              <h1 className="max-xs:tracking-[-1px] max-xs:text-3xl text-5xl xxl:text-80 font-semibold xxl:leading-22 tracking-[-2.40px] text-left md:text-center text-gray800">
                 Next Generation of Intelligent Wealth Management.
               </h1>
             </div>
@@ -69,7 +67,7 @@ const Banner: React.FC = () => {
       <div className="max-md:mt-20 flex justify-center relative banner-dashboard-image">
         <Image src={dashboard} alt="dashboard" className="hidden md:block" />
         <Image
-          src={mobiledshboard}
+          src={mobiledashboard}
           alt="dashboard"
           className="block md:hidden" 
         />
@@ -84,7 +82,7 @@ const Banner: React.FC = () => {
                   key={index}
                 >
                   <div className="flex flex-col gap-4 items-start">
-                    <h2 className="text-40 xxl:text-5xl font-semibold leading-16 tracking-[-1.68px] text-primary">
+                    <h2 className="text-40 xxl:text-5xl font-semibold leading-16 tracking-[-1.68px] text-gray800">
                       {item.percentage}
                     </h2>
 
@@ -92,7 +90,7 @@ const Banner: React.FC = () => {
                       {item.title}
                     </p>
 
-                    <span className="inline-flex py-2 px-3 rounded-6 bg-grayprimary text-base font-medium leading-4.5">
+                    <span className="inline-flex py-2 px-3 rounded-6 bg-gray200 text-base font-medium leading-4.5">
                       {item.tag}
                     </span>
                   </div>

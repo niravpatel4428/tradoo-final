@@ -23,7 +23,7 @@ const Badge: React.FC<BadgeProps> = ({
   const variantStyles: Record<BadgeVariant, string> = {
     lightgreen: "bg-lightgreen text-green",
     darkgreen: "bg-darkgreen text-greenlight",
-    gray: "bg-grayprimary text-darkgray",
+    gray: "bg-gray200 text-gray700",
   };
 
   return (
