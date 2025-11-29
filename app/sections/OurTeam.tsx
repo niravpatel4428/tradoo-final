@@ -177,9 +177,11 @@ const OurTeam = () => {
                                 <h2>Meet the core leadership responsible for strategy, governance, and execution.</h2>
                             </div>
                         </div>
+                        {/* Main Section Title */}
 
-                        {/* Dynamic Sections */}
+                        {/* Main Section Content */}
                         <div className="block">
+                            {/* Dynamic Sections */}
                             {teamSections.map((section, index) => (
                             <div key={index} className="block max-xs:mb-12 mb-[72px]">
                                 <div className="font-semibold max-xs:text-xl text-2xl max-xs:mb-5 mb-8 text-gray800 px-4 sm:px-0">
@@ -208,11 +210,12 @@ const OurTeam = () => {
                                 </div>
                             </div>
                             ))}
+                            {/* End Dynamic Sections */}
                         </div>
-                        {/* End Dynamic Sections */}
+                        {/* Main Section Content */}
                     </div>
                 </div>
-            </div> 
+            </div>
         </>
     );
 };

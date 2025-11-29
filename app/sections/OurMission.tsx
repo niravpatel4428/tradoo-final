@@ -7,11 +7,11 @@ import Badge from '../components/Badge';
 const OurMission = () => {
     return (
         <>
-            <div className="max-xs:pb-20 pb-[168px] md:py-20 lg:py-[168px] max-xs:mb-10 md:mb-14 lg:mb-[84px] bg-gray900">
+            <div className="max-xs:pb-20 pb-[168px] md:py-20 lg:py-[168px] bg-gray900 overflow-hidden">
                 <div className="container">
                     <div className="flex flex-wrap max-xs:gap-10 gap-20 md:gap-10 lg:gap-20 -mx-4 md:mx-0">
                         <div className="flex-none md:flex-1 w-full lg:w-1/2">
-                            <div className="block lg:rounded-3xl overflow-hidden lg:max-w-[448px] w-full">
+                            <div className="block md:rounded-2xl lg:rounded-3xl overflow-hidden lg:max-w-[448px] w-full">
                                 <Image src="/image/our-mission-img.jpg" alt="Our Mission Image" width={500} height={500} className="max-w-full w-full" />
                             </div>
                         </div>

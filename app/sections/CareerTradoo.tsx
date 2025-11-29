@@ -5,7 +5,7 @@ import Button from '../components/Button'
 const CareerTradoo = () => {
     return (
         <>
-            <div className="block max-xs:pt-12 pt-20 md:py-20 xl:pt-[84px] xl:pb-[168px]">
+            <div className="block max-xs:pt-12 pt-20 md:py-20 xl:pt-[84px] xl:pb-[168px] overflow-hidden">
                 <div className="container">
                     <div className="flex flex-wrap flex-row-reverse -mx-4 md:mx-0 gap-2">
                         <div className="flex-none w-full md:w-5/12 xl:w-[490px]">
