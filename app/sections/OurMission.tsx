@@ -1,12 +1,13 @@
+"use client";
+
 import React from 'react'
 import Image from 'next/image';
 import Badge from '../components/Badge';
-// import ourMissionImg from '@/public/image/our-mission-image.jpg';
 
 const OurMission = () => {
     return (
         <>
-            <div className="max-xs:pb-20 pb-[168px] md:py-20 lg:py-[168px] bg-gray900">
+            <div className="max-xs:pb-20 pb-[168px] md:py-20 lg:py-[168px] max-xs:mb-10 md:mb-14 lg:mb-[84px] bg-gray900">
                 <div className="container">
                     <div className="flex flex-wrap max-xs:gap-10 gap-20 md:gap-10 lg:gap-20 -mx-4 md:mx-0">
                         <div className="flex-none md:flex-1 w-full lg:w-1/2">
