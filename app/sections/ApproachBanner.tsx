@@ -29,13 +29,4 @@ const ApproachBanner: React.FC = () => {
   );
 };
 
-font-family: 'Inter Display', sans-serif;
-font-style: normal;
-font-size: 80px;
-font-weight: 600;
-line-height: 88px;
-letter-spacing: -2.40px;
-text-align: center;
-color: #1E2330;
-
 export default ApproachBanner;
