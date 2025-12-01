@@ -46,15 +46,21 @@ const GuidingPrinciples = () => {
 
     return (
         <>
-            <div className="block max-xs:py-14 pt-[168px] md:py-20 xl:pb-[84px] xl:pt-[168px]">
-                <div className="container">
+            <div className="block max-xs:pt-14 pt-[168px] pb-1 md:py-20 xl:pb-[84px] xl:pt-[168px]">
+                <div className="container max-sm:px-0">
                     <div className="flex flex-col max-xs:gap-10 gap-24 xl:gap-[72px]">
                         {/* Main Section Title */}
-                        <div className="block">
-                            <Badge label="Values & Culture" variant="lightgreen" className="mb-6" />
+                        <div className="flex flex-wrap flex-col max-xs:gap-7 gap-10 max-sm:px-4">
+                            <div className="block">
+                                <Badge label="Values & Culture" variant="lightgreen" className="mb-6" />
 
-                            <div className="block font-semibold text-gray800 text-40 leading-[46px] xl:text-56 xl:leading-16 max-xs:text-[32px] max-xs:leading-[40px] -tracking-[1.20px]">
-                                <h2><span className="text-gray500">Shared operating principles</span> guiding how we build, decide, and deliver.</h2>
+                                <div className="block font-semibold text-gray800 text-40 leading-[46px] xl:text-56 xl:leading-16 max-xs:text-[32px] max-xs:leading-[40px] -tracking-[1.20px]">
+                                    <h2><span className="text-gray500">Shared operating principles</span> guiding how we build, decide, and deliver.</h2>
+                                </div>
+                            </div>
+
+                            <div className="block md:hidden max-xs:text-base text-lg leading-snug text-gray700">
+                                <p>Tradoo interprets market regimes, volatility shifts and behavioural dynamics to form a clear view of the current environment — guiding disciplined portfolio weighting within your chosen risk profile.</p>
                             </div>
                         </div>
                         {/* Main Section Title */}

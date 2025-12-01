@@ -117,7 +117,19 @@ const teamSections = [
 //  CARD COMPONENT
 // =========================
 
-const MemberCard = ({ member }) => (
+interface SocialItem {
+  icon: React.ReactNode;
+  href: string;
+}
+
+interface Member {
+  name: string;
+  role: string;
+  img: string;
+  socials: SocialItem[];
+}
+
+const MemberCard = ({ member }: { member: Member }) => (
     <div className="block h-full max-xs:rounded-2xl rounded-3xl overflow-hidden bg-gray100">
         <div className="block max-xs:h-64 h-[340px] overflow-hidden">
             <Image

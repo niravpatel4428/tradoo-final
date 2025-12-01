@@ -8,14 +8,14 @@ import WantPart from '../sections/WantPart'
 
 const page = () => {
   return (
-    <div>
+    <main>
       <AboutBanner/>
       <OurTeam/>
       <OurMission/>
       <GuidingPrinciples/>
       <CareerTradoo/>
       <WantPart/>
-    </div>
+    </main>
   )
 }
 
