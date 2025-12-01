@@ -70,7 +70,7 @@ const Benefits: React.FC = () => {
         <div className="max-sm:px-4">
           <Badge label="Benefits" />
 
-          <h2 className="max-xs:tracking-[-1px] mt-6 max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xxl:text-56 font-semibold xxl:leading-16 tracking-[-1.68px] text-gray800">
+          <h2 className="max-xs:tracking-[-1px] mt-6 max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xxl:text-56 font-semibold xxl:leading-16 tracking-[-1.68px] text-gunmetal">
             Purpose-Built Infrastructure for Digital Wealth.
           </h2>
         </div>

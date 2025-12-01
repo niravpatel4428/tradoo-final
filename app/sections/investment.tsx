@@ -36,7 +36,7 @@ const Investment: React.FC = () => {
         <div className="container">
           <div>
             <div>
-              <h2 className="max-xs:tracking-[-1px] max-xs:text-3xl text-5xl xxl:text-56 font-semibold tracking-[-1.68px] xxl:leading-16 text-gray800">
+              <h2 className="max-xs:tracking-[-1px] max-xs:text-3xl text-5xl xxl:text-56 font-semibold tracking-[-1.68px] xxl:leading-16 text-gunmetal">
                 <span className="text-gray block">The Tradoo Dashboard —</span>{" "}
                 a clear and structured view of your investments.
               </h2>
