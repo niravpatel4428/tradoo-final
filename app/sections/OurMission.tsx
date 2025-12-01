@@ -36,7 +36,7 @@ const OurMission = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </>
     )
 }
