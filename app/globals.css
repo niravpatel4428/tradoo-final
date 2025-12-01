@@ -66,6 +66,9 @@
   --text-40: 40px;
   --text-56: 56px;
   --text-80: 80px;
+
+  /* box shadow */
+   --shadowactive: 0px 4px 32px 0px #F3F4F6;
 }
 
 @utility container {
