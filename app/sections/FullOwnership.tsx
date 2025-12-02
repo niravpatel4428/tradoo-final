@@ -140,7 +140,7 @@ const FullOwnership = () => {
                       }}
                     >
                       <div
-                        className={`overflow-hidden rounded-2xl bg-white shadow-[0px_8px_32px_#DCDFE4] p-4.5 lg:p-8 border border-gray-100`}
+                        className={`overflow-hidden rounded-2xl bg-white p-4.5 lg:p-8 border border-gray-100`}
                       >
                         <div className="flex items-center justify-between">
                           <div className="space-y-2">
