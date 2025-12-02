@@ -3,6 +3,7 @@ import Link from "next/link";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 interface NavListItemProps {
+  pathname: string;
   href: string;
   title: string;
   description: string;
@@ -11,6 +12,7 @@ interface NavListItemProps {
 }
 
 export const NavListItem = ({
+  pathname,
   href = "/",
   title,
   description,
@@ -32,8 +34,8 @@ export const NavListItem = ({
         />
       </div>
 
-      <div className="flex flex-wrap space-y-2">
-        <span className="text-gray800 font-medium text-base leading-tight">
+      <div className="flex flex-col flex-wrap space-y-2">
+        <span className={`text-gray800 font-medium text-base leading-tight`}>
           {title}
         </span>
 
@@ -46,6 +48,7 @@ export const NavListItem = ({
 };
 
 interface MobileNavItemProps {
+  pathname: string;
   label: string;
   href?: string;
   trailingIcon?: boolean; // show the ">" icon
@@ -54,6 +57,7 @@ interface MobileNavItemProps {
 
 export const MobileNavItem: React.FC<MobileNavItemProps> = ({
   label,
+  pathname,
   href = "/",
   trailingIcon = false,
   onClick,
@@ -63,21 +67,21 @@ export const MobileNavItem: React.FC<MobileNavItemProps> = ({
 
   if (onClick) {
     return (
-      <button onClick={onClick} className={className}>
-        <span className="text-gray800 text-base font-medium leading-tight capitalize">
+      <Link href={href} onClick={onClick} className={className}>
+        <span className={`text-gray800 text-base font-medium leading-tight capitalize ${pathname === href ? "text-gray500!" : ""}`}>
           {label}
         </span>
 
         {trailingIcon && (
           <IoChevronForward size={24} className="text-darblue" />
         )}
-      </button>
+      </Link>
     );
   }
 
   return (
     <Link href={href} className={className}>
-      <span className="text-gray800 text-base font-medium leading-tight capitalize">
+      <span className={`text-gray800 text-base font-medium leading-tight capitalize ${pathname === href ? "text-gray500!" : ""}`}>
         {label}
       </span>
 

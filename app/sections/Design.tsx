@@ -29,7 +29,7 @@ const Design: React.FC = () => {
     <div className="max-xs:py-12 py-42 bg-gray900">
       <div className="container max-sm:p-0">
         <div>
-          <div className="max-sm:px-4 sm:text-center lg:text-left grid grid-cols-12 gap-6">
+          <div className="max-sm:px-4 sm:text-left grid grid-cols-12 gap-6">
             <div className="col-span-12 lg:col-span-6">
               <div>
                 <div>

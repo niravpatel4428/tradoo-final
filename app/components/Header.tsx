@@ -7,11 +7,17 @@ import Link from "next/link";
 import Image, { type StaticImageData } from "next/image";
 import Button from "./Button";
 import { IoMenu, IoClose } from "react-icons/io5";
-import { MobileBackButton, MobileNavItem, NavListItem } from "./navItems"; 
+import { MobileBackButton, MobileNavItem, NavListItem } from "./navItems";
 
 import { navData } from "@/app/components/navData";
 
+
+import { usePathname } from 'next/navigation';
+
 const Header = () => {
+
+      const pathname = usePathname();
+
   type SubmenuItem = {
     href: string;
     title: string;
@@ -24,12 +30,12 @@ const Header = () => {
   const [submenuItems, setSubmenuItems] = useState<SubmenuItem[]>([]);
 
   useEffect(() => {
-  if (mobileOpen) {
-    document.documentElement.classList.add("overflow-hidden");
-  } else {
-    document.documentElement.classList.remove("overflow-hidden");
-  }
-}, [mobileOpen]);
+    if (mobileOpen) {
+      document.documentElement.classList.add("overflow-hidden");
+    } else {
+      document.documentElement.classList.remove("overflow-hidden");
+    }
+  }, [mobileOpen]);
 
 
   return (
@@ -49,19 +55,20 @@ const Header = () => {
                 <li key={i} className="relative group">
                   {/* Simple Link */}
                   {!item.submenu && (
-                    <NavItem label={item.label} linkUrl={item.href!} />
+                    <NavItem label={item.label} linkUrl={item.href!} pathname={pathname} />
                   )}
 
                   {/* Dropdown Parent */}
                   {item.submenu && (
                     <>
-                      <NavItem label={item.label} arrow />
+                      <NavItem label={item.label} arrow pathname={pathname} />
 
                       <div className="absolute left-0 top-full w-111 bg-white rounded-xl shadow-lg p-4 opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none transition">
                         <ul>
                           {item.items?.map((sub, idx) => (
                             <li key={idx}>
                               <NavListItem
+                              pathname={pathname}
                                 href={sub.href}
                                 title={sub.title}
                                 description={sub.description}
@@ -132,6 +139,7 @@ const Header = () => {
                   <li key={i}>
                     {!item.submenu ? (
                       <MobileNavItem
+                      pathname={pathname}
                         label={item.label}
                         href={item.href!}
                         onClick={() => {
@@ -141,6 +149,7 @@ const Header = () => {
                       />
                     ) : (
                       <MobileNavItem
+                      pathname={pathname}
                         label={item.label}
                         trailingIcon={true}
                         onClick={() => {
@@ -173,6 +182,7 @@ const Header = () => {
                 {submenuItems?.map((sub, i) => (
                   <li key={i}>
                     <NavListItem
+                      pathname={pathname}
                       href={sub.href}
                       title={sub.title}
                       description={sub.description}
@@ -196,32 +206,41 @@ const Header = () => {
 /* ----------------- SMALL COMPONENTS ------------------ */
 
 type NavItemProps = {
+  pathname: string;
   label: React.ReactNode | string;
   arrow?: boolean;
   linkUrl?: string;
 };
 
-const NavItem: React.FC<NavItemProps> = ({ label, arrow, linkUrl = "/" }) => (
-  <Link
-    href={linkUrl}
-    className="cursor-pointer flex items-center gap-2 text-gray800 text-base font-medium leading-tight hover:text-gray500 py-8.5 -mb-2 group transition"
-  >
-    {label}
-    {arrow && <ArrowDown />}
-  </Link>
-);
+const NavItem: React.FC<NavItemProps> = ({ pathname, label, arrow, linkUrl = "/" }) => {
+  const isActive = pathname === linkUrl;
 
-const ArrowDown = () => (
+  return (
+    <Link
+      href={linkUrl}
+      className={`cursor-pointer flex items-center gap-2 text-gray800 text-base font-medium leading-tight hover:text-gray500 py-8.5 -mb-2 group transition ${
+        isActive ? "!text-gray500" : ""
+      }`}
+    >
+      {label}
+      {arrow && <ArrowDown active={isActive} />}
+    </Link>
+  );
+};
+
+
+const ArrowDown = ({ active = false }: { active?: boolean }) => (
   <svg width="11" height="7" viewBox="0 0 11 7" fill="none">
     <path
       className="group-hover:stroke-[#8B909C]"
       d="M1 1L5.5 5.5L10 1"
-      stroke="#101729"
+      stroke={active ? "#8B909C" : "#101729"}   // 👈 active = hover color
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
   </svg>
 );
+
 
 export default Header;

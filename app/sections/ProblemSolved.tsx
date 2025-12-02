@@ -32,10 +32,10 @@ const gridItems = [
 const ProblemSolved = () => {
   return (
     <>
-      <div className="relative pt-21 max-xs:py-16 py-42">
-        <div className="container">
+      <div className="relative max-xs:pt-10 max-xs:py-16 max-sm:pt-42 pb-42">
+        <div className="container max-sm:p-0">
           <div className="space-y-16">
-            <div className="block px-4 sm:px-0 max-xs:mb-14 mb-[72px] xl:mb-24 w-full max-w-203">
+            <div className="max-sm:px-4 block px-4 sm:px-0 max-xs:mb-14 mb-[72px] xl:mb-24 w-full max-w-203">
               <span className="inline-flex items-center gap-2 rounded-6 px-3 py-2 text-base font-medium leading-tight bg-lightgreen text-green mb-7.5">
                 The Problem We Solve
               </span>
@@ -72,7 +72,7 @@ const ProblemSolved = () => {
               ))}
             </div>
 
-            <div>
+            <div className="max-sm:px-4">
               <Button label="Join Waitlist" href="#" trailingIcon />
             </div>
           </div>

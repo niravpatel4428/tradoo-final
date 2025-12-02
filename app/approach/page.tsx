@@ -18,7 +18,6 @@ const page = () => {
       <Works />
       <ProblemSolved />
       <FullOwnership />
-      <FullOwnership />
       <DigitalWealth />
     </main>
   );

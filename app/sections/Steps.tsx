@@ -71,7 +71,7 @@ const Steps: React.FC = () => {
       <div className="container max-sm:p-0">
         <div className="grid grid-cols-12 max-sm:gap-y-16 sm:gap-7">
           <div className="col-span-12 lg:col-span-6">
-            <div className="max-sm:px-4 sm:text-center lg:text-left sticky top-42">
+            <div className="max-sm:px-4 sm:text-left sticky top-42">
               <div>
                 <Badge label="Our Investment Framework" />
               </div>

@@ -19,7 +19,7 @@ const CareerTradoo = () => {
                                 <div className="block max-xs:mb-8 mb-12">
                                     <div className="block max-xs:mb-4 mb-8">
                                         <h3 className="max-xs:text-3xl text-4xl lg:text-[44px] font-semibold leading-10 tracking-[-1.25px] text-gray800">
-                                            Career at Tradoo
+                                            Careers at Tradoo
                                         </h3>
                                     </div>
 

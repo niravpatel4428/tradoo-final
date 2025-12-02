@@ -18,7 +18,7 @@ const DigitalWealth = () => {
                             <p>Tradoo combines institutional principles with user controlled infrastructure to provide a stable foundation for long-term wealth.</p>
                         </div>
 
-                        <div className="flex flex-wrap justify-center gap-4">
+                        <div className="max-sm:justify-start flex flex-wrap justify-center gap-4">
                             <Button label='Join Waitlist' href='#' trailingIcon={true} variant='contrastdefault' size='L' />
                             <Button label='Start With Your Risk Profile' href='#' variant='primarydefault' size='L' />
                         </div>

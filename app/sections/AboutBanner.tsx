@@ -23,7 +23,7 @@ const AboutBanner = () => {
                             </h1>
                         </div>
                         <div className="mt-8 w-full max-w-230 mx-auto">
-                            <p className="text-lg leading-[144%] font-normal">
+                            <p className="max-sm:text-lg text-xl leading-[144%] font-normal">
                                 A multidisciplinary team of engineers, researchers, and financial professionals aligned around one goal: systematic, research-driven wealth management at scale.
                             </p>
                         </div>
