@@ -2,6 +2,7 @@ import React from "react";
 import Badge from "../components/Badge";
 import Button from "../components/Button";
 import Image from "next/image";
+import infocircul from "@/public/image/svg/Info-circle.svg";
 
 const Steps: React.FC = () => {
   type Step = {
@@ -54,7 +55,7 @@ const Steps: React.FC = () => {
       ],
       badge: {
         text: "Trades only happen here. Never earlier in the process.",
-        icon: "/image/svg/info-circle.svg",
+        icon: infocircul,
       },
     },
     {
