@@ -42,10 +42,10 @@ const footerColumns = [
       {
         title: "Product",
         links: [
-          { label: "Approach", href: "/" },
+          { label: "Approach", href: "/approach" },
           { label: "Dashboard", href: "/" },
-          { label: "Risk Profiles", href: "/" },
-          { label: "Strategy Framework", href: "/" },
+          { label: "Risk Profiles", href: "/riskprofiles" },
+          { label: "Strategy Framework", href: "/strategy-framework" },
           { label: "Docs", href: "/" },
         ],
       },
