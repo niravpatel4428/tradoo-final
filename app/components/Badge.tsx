@@ -6,7 +6,7 @@ interface BadgeProps {
   label: string;
   variant?: BadgeVariant;
   icon?: React.ReactNode;  // ← any icon can be passed here
-  className?: string;
+  className?: string; 
 }
 
 const Badge: React.FC<BadgeProps> = ({
