@@ -26,5 +26,7 @@ export const navData = [
     ],
   },
 
+  { label: "Professionals", href: "/professionals" },
+
   { label: "Investors", href: "/investors" },
 ];
