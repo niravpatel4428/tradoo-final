@@ -277,7 +277,7 @@ const Footer = () => {
               </div>
               <div className="flex-none w-full sm:w-auto">
                 <ul className="flex flex-wrap gap-x-6 gap-y-2">
-                  {fbRightList.map((item, index) => (
+                  {fbRightList.map((item, index) => ( 
                     <li
                       key={index}
                       className="relative before:absolute before:content-[''] before:-right-[18px] before:top-1/2 before:-translate-1/2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-aurometalsaurus last:before:hidden"
