@@ -11,7 +11,7 @@ export const navData = [
     submenu: true,
     items: [
       {
-        href: "/",
+        href: "/riskprofiles",
         title: "Risk Profiles",
         description: "Choose the profile that matches your risk tolerance",
         iconSrc: risk,
@@ -25,6 +25,8 @@ export const navData = [
       },
     ],
   },
+
+  { label: "Professionals", href: "/professionals" },
 
   { label: "Investors", href: "/investors" },
 ];

@@ -1,5 +1,5 @@
 import React from "react";
-import ApproachBanner from "../sections/ApproachBanner";
+import ApproachBanner from "../sections/ApproachBanner"; 
 import Structure from "../sections/Sructure";
 import Steps from "../sections/Steps";
 import Design from "../sections/Design";
@@ -18,7 +18,7 @@ const page = () => {
       <Works />
       <ProblemSolved />
       <FullOwnership />
-      <DigitalWealth />
+      <DigitalWealth /> 
     </main>
   );
 };

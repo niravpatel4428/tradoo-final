@@ -15,7 +15,7 @@ const page = () => {
       <WhyStrategyFramework />
       <WhyStrategyFrameworkSteps />
       <DisciplinedStructure />
-      <div className="py-42 space-y-42">
+      <div className="py-42 space-y-42"> 
         <Strategies />
         <WhyStrategyFrameworkMechanisms />
       </div>

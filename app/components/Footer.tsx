@@ -22,46 +22,69 @@ const socialItems = [
 // Footer Columns array
 const footerColumns = [
   {
-    title: "Solutions",
-    links: [
-      { label: "For Individuals", href: "/" },
-      { label: "For Professionals", href: "/" },
-      { label: "Get Early Access", href: "/" },
+    groups: [
+      {
+        title: "For Individuals",
+        links: [{ label: "Personal Wealth", href: "/" }],
+      },
+      {
+        title: "For Professionals",
+        links: [
+          { label: "Stablecoin Treasury", href: "/" },
+          { label: "Institutional Vaults", href: "/" },
+        ],
+      },
     ],
   },
+
   {
-    title: "Product",
-    links: [
-      { label: "Approach", href: "/" },
-      { label: "Dashboard", href: "/" },
-      { label: "Risk Profiles", href: "/" },
-      { label: "Strategy Framework", href: "/" },
-      { label: "Docs", href: "/" },
+    groups: [
+      {
+        title: "Product",
+        links: [
+          { label: "Approach", href: "/approach" },
+          { label: "Dashboard", href: "/" },
+          { label: "Risk Profiles", href: "/riskprofiles" },
+          { label: "Strategy Framework", href: "/strategy-framework" },
+          { label: "Docs", href: "/" },
+        ],
+      },
     ],
   },
+
   {
-    title: "Company",
-    links: [
-      { label: "About Us", href: "/" },
-      { label: "Careers", href: "/" },
-      { label: "Contacts", href: "/" },
-      { label: "Support", href: "/" },
-      { label: "Become and Investor", href: "/" },
-      { label: "Join the Waitlist", href: "/" },
+    groups: [
+      {
+        title: "Company",
+        links: [
+          { label: "About Us", href: "/" },
+          { label: "Careers", href: "/" },
+          { label: "Contacts", href: "/" },
+          { label: "Support", href: "/" },
+          { label: "Become and Investor", href: "/" },
+          { label: "Join the Waitlist", href: "/" },
+        ],
+      },
     ],
   },
+
   {
-    title: "Legal",
-    links: [
-      { label: "Private Beta Terms", href: "/" },
-      { label: "Terms of Use", href: "/" },
-      { label: "Risk Disclosure", href: "/" },
-      { label: "Privacy Policy", href: "/" },
-      { label: "Imprint", href: "/" },
-      { label: "Cookie Policy", href: "/" },
+    groups: [
+      {
+        title: "Legal",
+        links: [
+          { label: "Private Beta Terms", href: "/" },
+          { label: "Terms of Use", href: "/" },
+          { label: "Risk Disclosure", href: "/" },
+          { label: "Privacy Policy", href: "/" },
+          { label: "Imprint", href: "/" },
+          { label: "Cookie Policy", href: "/" },
+        ],
+      },
     ],
   },
 ];
+
 
 // Footer Bottom Left array
 const fbLeftList = [
@@ -76,7 +99,7 @@ const fbLeftList = [
 const fbRightList = [
   "Zug, Switzerland",
   <Link href="/" className="flex gap-2 hover:opacity-75">
-    CHE-XXX.XXX.XXX
+    CHE-216.713.957
   </Link>,
 ];
 
@@ -133,34 +156,44 @@ const Footer = () => {
               {/* Right Columns */}
               <div className="flex-1 px-4">
                 <div className="flex flex-wrap xl:justify-end -mx-3">
+
                   {footerColumns.map((column, colIndex) => (
                     <div
                       key={colIndex}
-                      className="flex-none w-full max-w-[224px] px-3 mb-6"
+                      className={`flex-none w-full max-w-[224px] px-3 mb-6
+          ${column.groups.length > 1 ? "" : ""}`}
                     >
-                      <div className="flex flex-wrap flex-col gap-6 max-xs:gap-4">
-                        {/* Column Title */}
-                        <div className="block fontInter font-medium text-base leading-[22px] max-xs:text-[14px] max-xs:leading-[20px] text-white">
-                          <span>{column.title}</span>
-                        </div>
+                      <div className="flex flex-wrap flex-col max-sm:gap-6 gap-10 max-xs:gap-4">
 
-                        {/* Column Links */}
-                        <div className="block text-base leading-[22px] max-xs:text-[14px] max-xs:leading-[20px] leading-5">
-                          <ul className="flex flex-wrap flex-col gap-4 max-xs:gap-3">
-                            {column.links.map((item, index) => (
-                              <li key={index}>
-                                <FooterLink href={item.href}>
-                                  {item.label}
-                                </FooterLink>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                        {column.groups.map((group, gIndex) => (
+                          <div key={gIndex} className="flex flex-col gap-6 max-xs:gap-4">
+
+                            {/* Column Title */}
+                            <div className="block fontInter font-medium text-base leading-[22px] max-xs:text-[14px] max-xs:leading-[20px] text-white">
+                              <span>{group.title}</span>
+                            </div>
+
+                            {/* Column Links */}
+                            <div className="block text-base leading-[22px] max-xs:text-[14px] max-xs:leading-[20px] leading-5">
+                              <ul className="flex flex-wrap flex-col gap-4 max-xs:gap-3">
+                                {group.links.map((item, index) => (
+                                  <li key={index}>
+                                    <FooterLink href={item.href}>{item.label}</FooterLink>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+
+                          </div>
+                        ))}
+
                       </div>
                     </div>
                   ))}
+
                 </div>
               </div>
+
             </div>
           </div>
         </div>
