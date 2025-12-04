@@ -41,7 +41,7 @@ const Header = () => {
   return (
     <>
       {/* DESKTOP HEADER */}
-      <header className="hidden lg:block fixed left-0 right-0 top-0 z-50 bg-gray100">
+      <header className="hidden xl:block fixed left-0 right-0 top-0 z-50 bg-gray100">
         <div className="container">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -95,7 +95,7 @@ const Header = () => {
       </header>
 
       {/* MOBILE HEADER */}
-      <header className="py-5.5 lg:hidden fixed left-0 right-0 top-0 z-50 bg-gray100">
+      <header className="py-5.5 xl:hidden fixed left-0 right-0 top-0 z-50 bg-gray100">
         <div className="container">
           <div className="flex justify-between items-center">
             {/* Logo */}

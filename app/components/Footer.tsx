@@ -110,7 +110,7 @@ const Footer = () => {
   const pathname = usePathname();
 
   // PAGES where you want to HIDE gradient
-  const hideGradientPages = ["/careers"];
+  const hideGradientPages = ["/career"];
 
   const showGradient = !hideGradientPages.includes(pathname);
 
