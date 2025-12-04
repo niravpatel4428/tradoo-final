@@ -30,7 +30,7 @@ const WhyStrategyFramework = () => {
     ];
     return (
         <>
-            <div className="pt-27 md:pb-42 bg-white">
+            <div className="pt-27 pb-2 md:pb-42 bg-white">
                 <div>
                     <div className="container">
                         <div className='space-y-6 xl:space-y-8'>
@@ -55,7 +55,7 @@ const WhyStrategyFramework = () => {
                             <div className="grid grid-cols-12 gap-2">
                                 {features.map((item, index) => (
                                     <div key={index} className="col-span-12 md:col-span-6 lg:col-span-4">
-                                        <div className="h-full rounded-3xl bg-gray100 max-xl:px-4 xxl:p-10 flex flex-col gap-8 xl:gap-12">
+                                        <div className="h-full rounded-3xl bg-gray100 max-sm:px-4 max-sm:py-10 sm:p-10 flex flex-col gap-8 xl:gap-12">
                                             <div className="rounded-xl w-16 h-16 min-w-16 flex justify-center items-center bg-white p-3">
                                                 <Image src={item.icon} alt={item.alt} />
                                             </div>

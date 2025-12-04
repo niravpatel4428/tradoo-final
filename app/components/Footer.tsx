@@ -1,10 +1,12 @@
-import React from "react";
+"use client";
+import React, { use } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import Logo from "@/public/image/svg/logo.svg";
 import RedPlusIcon from "@/public/image/svg/red-plus-icon.svg";
 import FooterGradient from "@/public/image/footer-top-gradient.png";
+import { usePathname } from "next/navigation";
 
 // Icons from react-icons
 import { BsTwitterX } from "react-icons/bs";
@@ -58,7 +60,7 @@ const footerColumns = [
         title: "Company",
         links: [
           { label: "About Us", href: "/" },
-          { label: "Careers", href: "/" },
+          { label: "Careers", href: "/careers" },
           { label: "Contacts", href: "/" },
           { label: "Support", href: "/" },
           { label: "Become and Investor", href: "/" },
@@ -104,15 +106,25 @@ const fbRightList = [
 ];
 
 const Footer = () => {
+
+  const pathname = usePathname();
+
+  // PAGES where you want to HIDE gradient
+  const hideGradientPages = ["/careers"];
+
+  const showGradient = !hideGradientPages.includes(pathname);
+
   return (
     <footer className="block max-xs:pt-8 pt-[60px] bg-darkjunglegreen relative z-0">
-      <div className="absolute w-full max-w-480 mx-auto bottom-full left-1/2 -translate-x-1/2 h-[452px] overflow-hidden">
-        <Image
-          src={FooterGradient}
-          alt="Footer Gradient"
-          className="w-auto h-full object-cover object-center"
-        />
-      </div>
+      {showGradient && (
+        <div className="absolute w-full max-w-480 mx-auto bottom-full left-1/2 -translate-x-1/2 h-[452px] overflow-hidden">
+          <Image
+            src={FooterGradient}
+            alt="Footer Gradient"
+            className="w-auto h-full object-cover object-center"
+          />
+        </div>
+      )}
       {/* Footer Top */}
       <div className="block overflow-hidden">
         <div className="container">

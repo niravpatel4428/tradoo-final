@@ -4,7 +4,7 @@ import Image from "next/image";
 import structure from "@/public/image/structure.jpg";
 import siren from "@/public/image/svg/siren.svg";
 import graphdown from "@/public/image/svg/graph-down.svg";
-import shieldcheck from "@/public/image/svg/shield-checked.svg";
+import shieldcheck from "@/public/image/svg/shield-checked.svg"; 
 
 const Structure: React.FC = () => {
   type Feature = {
