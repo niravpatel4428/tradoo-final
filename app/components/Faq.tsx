@@ -111,7 +111,9 @@ const FAQ = () => {
                                     </button>
 
                                     <div
-                                        ref={(el) => (contentRefs.current[item.id] = el)}
+                                        ref={(el) => {
+                                            contentRefs.current[item.id] = el;
+                                        }}
                                         className="overflow-hidden transition-all duration-300"
                                         style={{
                                         maxHeight: active === item.id ? `${height}px` : "0px",
