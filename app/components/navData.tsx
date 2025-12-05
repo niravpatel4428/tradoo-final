@@ -17,7 +17,7 @@ export const navData = [
         iconSrc: risk,
       },
       {
-        href: "/strategy-framework",
+        href: "/strategy-framework", 
         title: "Strategy Framework",
         description:
           "See how Tradoo integrates proven principles behind the scenes",
@@ -27,7 +27,7 @@ export const navData = [
   },
 
   {
-    label: "Professionals", href: "/professionals",
+    label: "Professionals", href: "/professional",
     submenu: true,
     items: [
       {
