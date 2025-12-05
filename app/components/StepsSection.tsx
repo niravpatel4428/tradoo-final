@@ -5,10 +5,13 @@ import Image from "next/image";
 
 export type StepType = {
   id: number;
-  number: number;
+  number?: number;
+  icon?: string;
   title: string;
   description: string;
   list?: string[];
+  className?: string;     // custom wrapper class
+  iconBg?: string;        // ⭐ custom icon background class
   badge?: {
     text: string;
     icon: string;
@@ -22,6 +25,7 @@ type StepsSectionProps = {
   ctaLabel?: string;
   ctaHref?: string;
   steps: StepType[];
+  className?: string;
 };
 
 const StepsSection: React.FC<StepsSectionProps> = ({
@@ -31,27 +35,22 @@ const StepsSection: React.FC<StepsSectionProps> = ({
   ctaLabel,
   ctaHref,
   steps,
+  className = "",
 }) => {
   return (
-    <div className="max-sm:pb-2 max-xs:py-10 py-42">
+    <div className={`block max-sm:pb-2 max-xs:py-10 py-42 ${className}`}>
       <div className="container max-sm:p-0">
-        <div className="grid grid-cols-12 max-sm:gap-y-16 sm:gap-7 xxl:gap-16">
-
-          {/* LEFT CONTENT */}
+        <div className="grid grid-cols-12 max-sm:gap-y-10 sm:gap-7 xxl:gap-16">
+          {/* LEFT */}
           <div className="col-span-12 lg:col-span-6">
             <div className="max-sm:px-4 sm:text-left sticky top-42">
-
-              {badgeLabel && (
-                <div>
-                  <Badge label={badgeLabel} />
-                </div>
-              )}
+              {badgeLabel && <Badge label={badgeLabel} />}
 
               {title && (
                 <div className="mt-6">
-                  <h3 className="max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xxl:text-56 font-semibold xxl:leading-16 tracking-[-1.68px] text-gray800">
+                  <h2 className="max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xxl:text-56 font-semibold xxl:leading-16 tracking-[-1.68px] text-gray800">
                     {title}
-                  </h3>
+                  </h2>
                 </div>
               )}
 
@@ -71,20 +70,37 @@ const StepsSection: React.FC<StepsSectionProps> = ({
             </div>
           </div>
 
-          {/* RIGHT CONTENT - STEPS */}
+          {/* RIGHT (Steps) */}
           <div className="col-span-12 lg:col-span-6">
             <div className="w-full lg:max-w-171 ml-auto flex flex-col gap-2">
               {steps.map((item) => (
                 <div
                   key={item.id}
-                  className="rounded-3xl bg-white max-sm:py-10 max-sm:px-4 sm:p-7 xxl:p-10 flex flex-col items-start gap-y-14"
+                  className={`rounded-3xl bg-white max-sm:py-10 max-sm:px-4 sm:p-7 xxl:p-10 flex flex-col items-start max-xs:gap-y-7 gap-y-14 ${item.className || ""}`}
                 >
+                  {/* ICON / NUMBER */}
                   <div>
-                    <span className="text-5xl font-semibold leading-none tracking-[-1.44px] text-romansilver">
-                      {item.number}
-                    </span>
+                    {item.icon ? (
+                      <div
+                        className={`w-16 h-16 rounded-xl flex items-center justify-center 
+                        ${item.iconBg || "bg-gray100"}`}   // ⭐ Dynamic Icon BG here
+                      >
+                        <Image
+                          src={item.icon}
+                          alt="step-icon"
+                          width={32}
+                          height={32}
+                          className="max-w-full max-h-full"
+                        />
+                      </div>
+                    ) : (
+                      <span className="text-5xl font-semibold leading-none tracking-[-1.44px] text-romansilver">
+                        {item.number}
+                      </span>
+                    )}
                   </div>
 
+                  {/* TEXT PART */}
                   <div className="flex flex-col items-start gap-y-4">
                     <h4 className="text-2xl font-semibold leading-8 tracking-[-0.24px] text-gray800">
                       {item.title}
@@ -130,7 +146,6 @@ const StepsSection: React.FC<StepsSectionProps> = ({
               ))}
             </div>
           </div>
-
         </div>
       </div>
     </div>

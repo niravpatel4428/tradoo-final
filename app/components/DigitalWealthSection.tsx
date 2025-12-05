@@ -30,11 +30,8 @@ const DigitalWealthSection: React.FC<DigitalWealthProps> = ({ containerClass,
         <div className={`block max-xs:py-16 py-24 xxl:pt-42 relative ${bgColor}`}>
             <div className="container">
                 <div className={`flex flex-wrap flex-col md:text-center max-xs:gap-6 gap-10 relative z-10 ${containerClass} mx-auto`}>
-
                     {/* Title */}
-                    <div className={`block font-semibold text-white text-40 leading-[46px] -tracking-[1.20px] 
-              max-xs:text-[32px] max-xs:leading-10 max-xs:-tracking-[0.7px] 
-              xl:text-56 xl:leading-16 xl:-tracking-[1.68px]`}>
+                    <div className={`block font-semibold text-white text-40 leading-[46px] -tracking-[1.20px] max-xs:text-[32px] max-xs:leading-10 max-xs:-tracking-[0.7px] xl:text-56 xl:leading-16 xl:-tracking-[1.68px]`}>
                         <h2>{title}</h2>
                     </div>
 
