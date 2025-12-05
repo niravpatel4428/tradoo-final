@@ -25,7 +25,7 @@ export const NavListItem = ({
     <Link
       href={href} onClick={onClick}
       className={`rounded-xl cursor-pointer p-4 flex items-start gap-4 transition-all duration-300 group/card ${isDark ? "bg-gray800 hover:bg-gray700" : "bg-white hover:bg-gray100"
-            }`}
+        }`}
     >
       <div className="bg-gray100 rounded-xl size-14 flex-none flex items-center justify-center group-hover/card:bg-white transition-all duration-300">
         <Image
@@ -39,12 +39,12 @@ export const NavListItem = ({
 
       <div className="flex flex-col flex-wrap space-y-2">
         <span className={`font-medium text-base leading-tight ${isDark ? "text-white" : "text-gray800"
-            }`}>
+          }`}>
           {title}
         </span>
 
         <p className={`font-normal text-base leading-snug m-0 ${isDark ? "text-white" : "text-gray700"
-            }`}>
+          }`}>
           {description}
         </p>
       </div>
@@ -71,34 +71,54 @@ export const MobileNavItem: React.FC<MobileNavItemProps> = ({
 }) => {
   const className = `w-full cursor-pointer flex items-center justify-between px-4 py-6 rounded-2xl
                     transition-all text-left ${isDark ? "bg-gray800 text-white hover:bg-gray700" : "bg-white text-gray800 hover:bg-gray100"
-            }`;
+    }`;
 
   if (onClick) {
     return (
-      <Link href={href} onClick={onClick} className={className}>
-        <span className={`text-base font-medium leading-tight capitalize ${isDark ? "text-white" : "text-gray800!"
-            } ${pathname === href ? "text-gray500!" : ""}`}>
-          {label}
-        </span>
+      <>
+        {href === "/" ?
+          <>
+            <button onClick={onClick} className={className}>
+              <span className={`text-base font-medium leading-tight capitalize ${isDark ? "text-white" : "text-gray800!"
+                } ${pathname === href ? "text-gray500!" : ""}`}>
+                {label}
+              </span>
 
-        {trailingIcon && (
-          <IoChevronForward size={24} className={`text-darblue ${isDark ? "text-white" : "text-darblue"
-            }`} />
-        )}
-      </Link>
+              {trailingIcon && (
+                <IoChevronForward size={24} className={`text-darblue ${isDark ? "text-white" : "text-darblue"
+                  }`} />
+              )}
+            </button>
+          </>
+          : <>
+            <Link href={href} onClick={onClick} className={className}>
+              <span className={`text-base font-medium leading-tight capitalize ${isDark ? "text-white" : "text-gray800!"
+                } ${pathname === href ? "text-gray500!" : ""}`}>
+                {label}
+              </span>
+
+              {trailingIcon && (
+                <IoChevronForward size={24} className={`text-darblue ${isDark ? "text-white" : "text-darblue"
+                  }`} />
+              )}
+            </Link>
+          </>}
+      </>
     );
   }
 
   return (
-    <Link href={href} className={className}>
-      <span className={`text-base font-medium leading-tight capitalize ${isDark ? "text-white" : "text-gray800!"
-            } ${pathname === href ? "text-gray500!" : ""}`}>
-        {label}
-      </span>
+    <>
+      <Link href={href} className={className}>
+        <span className={`text-base font-medium leading-tight capitalize ${isDark ? "text-white" : "text-gray800!"
+          } ${pathname === href ? "text-gray500!" : ""}`}>
+          {label}
+        </span>
 
-      {trailingIcon && <IoChevronForward size={24} className={`text-darblue ${isDark ? "text-white" : "text-darblue"
-            }`} />}
-    </Link>
+        {trailingIcon && <IoChevronForward size={24} className={`text-darblue ${isDark ? "text-white" : "text-darblue"
+          }`} />}
+      </Link>
+    </>
   );
 };
 
@@ -110,19 +130,19 @@ interface MobileBackButtonProps {
 
 export const MobileBackButton: React.FC<MobileBackButtonProps> = ({
   label = "Back",
-  onClick,  isDark = false,
+  onClick, isDark = false,
 }) => {
   return (
     <button
       onClick={onClick}
       className={`w-full cursor-pointer flex items-center gap-4 px-4 py-6 rounded-2xl
                 transition-all text-left ${isDark ? "text-white bg-transparent" : "bg-gray100 text-gray800  hover:bg-gray200"
-            }`}
+        }`}
     >
       <IoChevronBack size={24} className={`${isDark ? "text-white" : "text-darblue"
-            }`} />
+        }`} />
       <span className={`text-base font-medium ${isDark ? "text-white" : "text-gray800"
-            }`}>{label}</span>
+        }`}>{label}</span>
     </button>
   );
 };

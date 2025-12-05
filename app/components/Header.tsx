@@ -303,6 +303,18 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 10);
+  };
+ 
+  // Run once on mount (covers page refresh / direct load)
+  handleScroll();
+ 
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   /** ---------------------------------
    *   Dynamic classes for styles
    * ----------------------------------*/
@@ -313,6 +325,10 @@ const Header = () => {
   //     : "bg-transparent";
 
   const headerBg = isDark
+    ? (isScrolled ? "bg-gray800" : "bg-transparent")
+    : (isScrolled ? "bg-gray100" : "bg-transparent");
+
+    const isScroll = isDark
     ? (isScrolled ? "bg-gray800" : "bg-transparent")
     : (isScrolled ? "bg-gray100" : "bg-transparent");
 
@@ -334,7 +350,7 @@ const Header = () => {
     <>
       {/* DESKTOP HEADER */}
       <header
-        className={`hidden xl:block fixed left-0 right-0 top-0 z-50 ${headerBg}`}
+        className={`hidden xl:block fixed left-0 right-0 top-0 z-50 ${headerBg} ${isScroll}`}
       >
         <div className="container">
           <div className="flex justify-between items-center">
@@ -362,6 +378,7 @@ const Header = () => {
                     <>
                       <NavItem
                         label={item.label}
+                        linkUrl={item.href!}
                         arrow
                         pathname={pathname}
                         isDark={isDark}
@@ -463,7 +480,7 @@ const Header = () => {
                         trailingIcon
                         isDark={isDark}
                         onClick={() => {
-                          setSubmenuItems(item.items);
+                          setSubmenuItems(item.items ?? []);
                           setSubmenuOpen(true);
                         }}
                       />
