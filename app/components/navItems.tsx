@@ -9,6 +9,7 @@ interface NavListItemProps {
   description: string;
   iconSrc: string;
   onClick?: () => void;
+  isDark?: boolean;
 }
 
 export const NavListItem = ({
@@ -18,11 +19,13 @@ export const NavListItem = ({
   description,
   iconSrc,
   onClick,
+  isDark = false,
 }: NavListItemProps) => {
   return (
     <Link
       href={href} onClick={onClick}
-      className="rounded-xl cursor-pointer bg-white p-4 flex items-start gap-4 hover:bg-gray100 transition-all duration-300 group/card"
+      className={`rounded-xl cursor-pointer p-4 flex items-start gap-4 transition-all duration-300 group/card ${isDark ? "bg-gray800 hover:bg-gray700" : "bg-white hover:bg-gray100"
+            }`}
     >
       <div className="bg-gray100 rounded-xl size-14 flex-none flex items-center justify-center group-hover/card:bg-white transition-all duration-300">
         <Image
@@ -35,11 +38,13 @@ export const NavListItem = ({
       </div>
 
       <div className="flex flex-col flex-wrap space-y-2">
-        <span className={`text-gray800 font-medium text-base leading-tight`}>
+        <span className={`font-medium text-base leading-tight ${isDark ? "text-white" : "text-gray800"
+            }`}>
           {title}
         </span>
 
-        <p className="text-gray700 font-normal text-base leading-snug m-0">
+        <p className={`font-normal text-base leading-snug m-0 ${isDark ? "text-white" : "text-gray700"
+            }`}>
           {description}
         </p>
       </div>
@@ -53,6 +58,7 @@ interface MobileNavItemProps {
   href?: string;
   trailingIcon?: boolean; // show the ">" icon
   onClick?: () => void;
+  isDark?: boolean;
 }
 
 export const MobileNavItem: React.FC<MobileNavItemProps> = ({
@@ -61,19 +67,23 @@ export const MobileNavItem: React.FC<MobileNavItemProps> = ({
   href = "/",
   trailingIcon = false,
   onClick,
+  isDark = false,
 }) => {
   const className = `w-full cursor-pointer flex items-center justify-between px-4 py-6 rounded-2xl
-                  bg-white hover:bg-gray100 transition-all text-left`;
+                    transition-all text-left ${isDark ? "bg-gray800 text-white hover:bg-gray700" : "bg-white text-gray800 hover:bg-gray100"
+            }`;
 
   if (onClick) {
     return (
       <Link href={href} onClick={onClick} className={className}>
-        <span className={`text-gray800 text-base font-medium leading-tight capitalize ${pathname === href ? "text-gray500!" : ""}`}>
+        <span className={`text-base font-medium leading-tight capitalize ${isDark ? "text-white" : "text-gray800!"
+            } ${pathname === href ? "text-gray500!" : ""}`}>
           {label}
         </span>
 
         {trailingIcon && (
-          <IoChevronForward size={24} className="text-darblue" />
+          <IoChevronForward size={24} className={`text-darblue ${isDark ? "text-white" : "text-darblue"
+            }`} />
         )}
       </Link>
     );
@@ -81,11 +91,13 @@ export const MobileNavItem: React.FC<MobileNavItemProps> = ({
 
   return (
     <Link href={href} className={className}>
-      <span className={`text-gray800 text-base font-medium leading-tight capitalize ${pathname === href ? "text-gray500!" : ""}`}>
+      <span className={`text-base font-medium leading-tight capitalize ${isDark ? "text-white" : "text-gray800!"
+            } ${pathname === href ? "text-gray500!" : ""}`}>
         {label}
       </span>
 
-      {trailingIcon && <IoChevronForward size={24} className="text-darblue" />}
+      {trailingIcon && <IoChevronForward size={24} className={`text-darblue ${isDark ? "text-white" : "text-darblue"
+            }`} />}
     </Link>
   );
 };
@@ -93,20 +105,24 @@ export const MobileNavItem: React.FC<MobileNavItemProps> = ({
 interface MobileBackButtonProps {
   label?: string;
   onClick: () => void;
+  isDark?: boolean;
 }
 
 export const MobileBackButton: React.FC<MobileBackButtonProps> = ({
   label = "Back",
-  onClick,
+  onClick,  isDark = false,
 }) => {
   return (
     <button
       onClick={onClick}
-      className="w-full cursor-pointer flex items-center gap-4 px-4 py-6 rounded-2xl
-                 bg-gray100 hover:bg-gray200 transition-all text-left"
+      className={`w-full cursor-pointer flex items-center gap-4 px-4 py-6 rounded-2xl
+                transition-all text-left ${isDark ? "text-white bg-transparent" : "bg-gray100 text-gray800  hover:bg-gray200"
+            }`}
     >
-      <IoChevronBack size={24} className="text-darblue" />
-      <span className="text-base font-medium text-gray800">{label}</span>
+      <IoChevronBack size={24} className={`${isDark ? "text-white" : "text-darblue"
+            }`} />
+      <span className={`text-base font-medium ${isDark ? "text-white" : "text-gray800"
+            }`}>{label}</span>
     </button>
   );
 };

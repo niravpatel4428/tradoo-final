@@ -7,7 +7,7 @@ import Button from "../components/Button";
 
 const Banner: React.FC = () => {
   return (
-    <div className="max-xs:pt-10 pt-46 max-md:pb-20 ">
+    <div className="max-xs:pt-30 pt-46 max-md:pb-20 ">
       <div>
         <div className="container">
           <div className="text-left md:text-center">
