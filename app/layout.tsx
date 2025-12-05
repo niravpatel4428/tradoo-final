@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
 import LevaWrapper from "./components/LevaWrapper";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 
 
 
@@ -35,7 +35,7 @@ export default function RootLayout({
         <Header />
         {children}
         <LevaWrapper />
-        {/* <Footer/> */}
+        <Footer/>
       </body>
     </html>
   );
