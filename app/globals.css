@@ -72,6 +72,7 @@
   /* box shadow */
    --shadowactive: 0px 4px 32px 0px #F3F4F6;
    --shadowtab: 0px 8px 24px 0px rgba(30, 35, 48, 0.07);
+   --shadowbox: 0px 8px 32px 0px rgba(84, 91, 106, 0.15);
 }
 
 @utility container {
