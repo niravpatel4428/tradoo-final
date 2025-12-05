@@ -60,7 +60,7 @@ const footerColumns = [
         title: "Company",
         links: [
           { label: "About Us", href: "/" },
-          { label: "Careers", href: "/careers" },
+          { label: "Careers", href: "/career" },
           { label: "Contacts", href: "/" },
           { label: "Support", href: "/" },
           { label: "Become and Investor", href: "/" },
@@ -110,7 +110,7 @@ const Footer = () => {
   const pathname = usePathname();
 
   // PAGES where you want to HIDE gradient
-  const hideGradientPages = ["/careers"];
+  const hideGradientPages = ["/career"];
 
   const showGradient = !hideGradientPages.includes(pathname);
 

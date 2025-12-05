@@ -26,7 +26,25 @@ export const navData = [
     ],
   },
 
-  { label: "Professionals", href: "/professionals" },
+  {
+    label: "Professionals", href: "/professionals",
+    submenu: true,
+    items: [
+      {
+        href: "/riskprofiles",
+        title: "Risk Profiles",
+        description: "Choose the profile that matches your risk tolerance",
+        iconSrc: risk,
+      },
+      {
+        href: "/strategy-framework",
+        title: "Strategy Framework",
+        description:
+          "See how Tradoo integrates proven principles behind the scenes",
+        iconSrc: strategy,
+      },
+    ],
+  },
 
   { label: "Investors", href: "/investors" },
 ];
