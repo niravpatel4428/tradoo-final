@@ -2,13 +2,13 @@
 
 :root {
   --gray50: #F7F8FA;
-  /* --background: #F4F4F6; */ --gray100: #F4F4F6; 
-  /* --grayprimary: #E6E8EB; */ --gray200: #E6E8EB;
+  --gray100: #F4F4F6; 
+  --gray200: #E6E8EB;
   --gray300: #DADCE0;
   --gray400: #B2B6BC;
   --gray500: #8B909C;
-  /* --darkgray: #545B6A; */ --gray700: #545B6A;
-  /* --primary: #272E3F; */ --gray800: #1E2330;
+  --gray700: #545B6A;
+  --gray800: #1E2330;
   --gray900: #141824;
   --foreground: #171717;
   --secondary: #E6E8EB;
