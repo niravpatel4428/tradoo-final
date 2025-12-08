@@ -478,7 +478,7 @@ const page = () => {
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141824" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg>
                                             </span>
                                             <h3 className="text-lg font-semibold text-gray900 mb-4">
-                                                3.1 "Wallet"
+                                                3.1 &quot;Wallet&quot;
                                             </h3>
                                         </div>
                                         <div className="space-y-3 text-gray700 leading-relaxed">
@@ -495,7 +495,7 @@ const page = () => {
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141824" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-primary mt-0.5 shrink-0"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                                             </span>
                                             <h3 className="text-lg font-semibold text-gray900 mb-4">
-                                                3.2 "Smart Contract Vault" ("Vault")
+                                                3.2 &quot;Smart Contract Vault&quot; (&quot;Vault&quot;)
                                             </h3>
                                         </div>
                                         <div className="space-y-3 text-gray700 leading-relaxed">
@@ -504,7 +504,7 @@ const page = () => {
                                             </p>
                                             <p>Deposits into the Vault occur exclusively through a user-authorized signature. Internal vault operations are technically limited to the strategy framework and risk parameters defined by the user and occur deterministically according to the execution logic embedded in the smart contracts. A change to the strategy framework, a free selection of assets, or a rebalancing between asset classes does not occur through the Vault and always requires a prior user decision.</p>
                                             <p>Withdrawals or transfers from the Vault can only be triggered by a valid user signature. Tradoo has neither private keys of the user nor any technical, contractual, or economic disposal capability over assets held in the Vault. No rehypothecation, pledging, commingling, or other reuse of user assets by Tradoo occurs.</p>
-                                            <p>If the Vault is subject to technical adjustment or update, this occurs exclusively within a transparent and time-delayed governance mechanism (e.g., Timelock or comparable procedures) that does not open any independent disposal over the user's assets.</p>
+                                            <p>If the Vault is subject to technical adjustment or update, this occurs exclusively within a transparent and time-delayed governance mechanism (e.g., Timelock or comparable procedures) that does not open any independent disposal over the user&quot;s assets.</p>
                                         </div>
                                     </div>
 
@@ -515,7 +515,7 @@ const page = () => {
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141824" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"></path><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
                                             </span>
                                             <h3 className="text-lg font-semibold text-gray900 mb-4">
-                                                3.3 "Non custodial architecture"
+                                                3.3 &quot;Non custodial architecture&quot;
                                             </h3>
                                         </div>
                                         <div className="space-y-3 text-gray700 leading-relaxed">
@@ -534,7 +534,7 @@ const page = () => {
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141824" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-primary mt-0.5 shrink-0"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg>
                                             </span>
                                             <h3 className="text-lg font-semibold text-gray900 mb-4">
-                                                3.4 "Risk parameters"
+                                                3.4 &quot;Risk parameters&quot;
                                             </h3>
                                         </div>
                                         <div className="space-y-3 text-gray700 leading-relaxed">
@@ -1102,7 +1102,7 @@ const page = () => {
                                         </h3>
                                         <div className="space-y-3 text-gray700 leading-relaxed">
                                             <p>
-                                                All user decisions regarding selection of strategy family, setting of risk parameters, amount of assets deployed, and activation, deactivation, or adjustment of strategy execution occur exclusively at the user's own responsibility and risk. Tradoo assumes no fiduciary position and no duty of care or protection regarding the user's investment decisions.
+                                                All user decisions regarding selection of strategy family, setting of risk parameters, amount of assets deployed, and activation, deactivation, or adjustment of strategy execution occur exclusively at the user&quot;s own responsibility and risk. Tradoo assumes no fiduciary position and no duty of care or protection regarding the user&quot;s investment decisions.
                                             </p>
                                         </div>
                                     </div>
@@ -1125,7 +1125,7 @@ const page = () => {
                                             12.3 No liability for private key losses
                                         </h3>
                                         <div className="space-y-3 text-gray700 leading-relaxed">
-                                            <p>Since Tradoo has no access to user private keys or seed phrases, any liability for loss, forgetting, damage, disclosure, or compromise of the user's private keys is excluded.</p>
+                                            <p>Since Tradoo has no access to user private keys or seed phrases, any liability for loss, forgetting, damage, disclosure, or compromise of the user&quot;s private keys is excluded.</p>
                                         </div>
                                     </div>
 
@@ -1272,7 +1272,7 @@ const page = () => {
                                             16.2 No assignment
                                         </h3>
                                         <div className="space-y-3 text-gray700 leading-relaxed">
-                                            <p>The user may not assign any rights or obligations under these Private Beta Terms without Tradoo's prior written consent. Tradoo is entitled to assign these Private Beta Terms in whole or in part to affiliated companies or successors.</p>
+                                            <p>The user may not assign any rights or obligations under these Private Beta Terms without Tradoo&quot;s prior written consent. Tradoo is entitled to assign these Private Beta Terms in whole or in part to affiliated companies or successors.</p>
                                         </div>
                                     </div>
 
