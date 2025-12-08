@@ -50,7 +50,7 @@ const tableOfContents = {
     ],
 };
 
-// export interface TermsSection {
+// export interface TermsSection { 
 //     id: number;
 //     title: string;
 //     items: {
