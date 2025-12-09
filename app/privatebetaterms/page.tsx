@@ -32,26 +32,31 @@ const tableOfContents = {
     subtitle: "Navigate to specific sections of these terms",
 
     items: [
-        "Preamble",
-        "Contracting Parties",
-        "Definitions",
-        "Scope and Usage Restrictions",
-        "Wallet and Asset Control",
-        "Strategy Selection",
-        "Fee Structure (Phase 1)",
-        "Risk Disclosure",
-        "No Advisory Services",
-        "Transition to Phase 2",
-        "User Obligations",
-        "Liability Limitations",
-        "Amendment of Terms",
-        "Governing Law",
-        "Contact and Notices",
-        "Final Provisions",
+         { id: "preamble", label: "Preamble" },
+         { id: "contracting-parties", label: "Contracting Parties" },
+         { id: "definitions", label: "Definitions" },
+         { id: "scope-restrictions", label: "Scope and Usage Restrictions" },
+         { id: "wallet-control", label: "Wallet and Asset Control" },
+         { id: "strategy-selection", label: "Strategy Selection" },
+         { id: "fee-structure", label: "Fee Structure (Phase 1)" },
+         { id: "risk-isclosure", label: "Risk Disclosure" },
+         { id: "no-advisory-services", label: "No Advisory Services" },
+         { id: "transition-to-phase-2", label: "Transition to Phase 2" },
+         { id: "user-obligations", label: "User Obligations" },
+         { id: "liability-limitations", label: "Liability Limitationss" },
+         { id: "amendment-of-terms", label: "Amendment of Terms" },
+         { id: "governing-law", label: "Governing Law" },
+         { id: "contact-and-notices", label: "Contact and Notices" },
+         { id: "final-provisions", label: "Final Provisions" },
     ],
 };
 
-
+const handleScroll = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+};
 
 
 const page = () => {
@@ -138,10 +143,10 @@ const page = () => {
                 </div>
                 <div className='space-y-20 pt-20'>
                     <div className="w-full px-5">
-                        <div className="max-w-224 mx-auto rounded-2xl border border-gray200 bg-gray100 p-8 shadow-sm">
+                        <div className="max-w-224 mx-auto rounded-2xl border border-gray200 bg-gray100 px-3 py-6 shadow-sm">
 
                             {/* Header */}
-                            <div className="flex items-start gap-3 mb-6">
+                            <div className="flex items-start gap-3 mb-6 px-3">
                                 <div className="mt-1 w-10 h-10 flex justify-center items-center bg-gray300 rounded-6">
                                     <FileText className="w-6 h-6 text-gray700" />
                                 </div>
@@ -160,13 +165,14 @@ const page = () => {
                                 {tableOfContents.items.map((label, index) => (
                                     <div
                                         key={index}
-                                        className="flex items-center gap-3 py-2"
+                                        onClick={() => handleScroll(label.id)}
+                                        className="flex items-center gap-3 py-2 px-3 hover:bg-white cursor-pointer rounded-lg hover:shadow-sm transition-all duration-300"
                                     >
                                         <span className="px-3 py-1 rounded-md bg-gray200 text-gray800 text-sm font-semibold">
                                             {index + 1}
                                         </span>
                                         <span className="text-gray800 text-sm">
-                                            {label}
+                                            {label.label}
                                         </span>
                                     </div>
                                 ))}
@@ -281,7 +287,7 @@ const page = () => {
                         <div className="max-w-224 mx-auto space-y-10">
 
                             {/* --------- SECTION 1 --------- */}
-                            <div>
+                            <div id="preamble" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -353,7 +359,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 2 --------- */}
-                            <div>
+                            <div id="contracting-parties" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -437,7 +443,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 3 --------- */}
-                            <div>
+                            <div id="definitions" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -577,7 +583,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 4 --------- */}
-                            <div>
+                            <div id="scope-restrictions" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -642,7 +648,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 5 --------- */}
-                            <div>
+                            <div id="wallet-control" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -685,7 +691,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 6 --------- */}
-                            <div>
+                            <div id="strategy-selection" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -727,7 +733,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 7 --------- */}
-                            <div>
+                            <div id="fee-structure" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -786,7 +792,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 8 --------- */}
-                            <div>
+                            <div id="risk-isclosure" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -872,7 +878,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 9 --------- */}
-                            <div>
+                            <div id="no-advisory-services" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -936,7 +942,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 10 --------- */}
-                            <div>
+                            <div id="transition-to-phase-2" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -1000,7 +1006,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 11 --------- */}
-                            <div>
+                            <div id="user-obligation" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -1060,7 +1066,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 12 --------- */} 
-                            <div>
+                            <div id="liability-limitations" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -1124,7 +1130,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 13 --------- */}
-                            <div>
+                            <div id="amendment-of-term" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -1151,7 +1157,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 14 --------- */}
-                            <div>
+                            <div id="governing-law" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -1194,7 +1200,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 15 --------- */}
-                            <div>
+                            <div id="contact-and-notices" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -1222,7 +1228,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 16 --------- */}
-                            <div>
+                            <div id="final-provisions" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
