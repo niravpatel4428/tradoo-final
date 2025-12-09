@@ -51,31 +51,10 @@ const tableOfContents = {
     ],
 };
 
-// export interface TermsSection { 
-//     id: number;
-//     title: string;
-//     items: {
-//         subtitle: string;
-//         type?: "default" | "card"; // NEW
-//         content?: (string | React.ReactNode)[];
-//         cardData?: {
-//             left: { text: string; color: string }[];
-//             right: {
-//                 label: string;
-//                 value: string;
-//             }[];
-//             link?: {
-//                 label: string;
-//                 href: string;
-//             };
-//         };
-//     }[];
-// }
 
 
 
-
-const page = () => {
+const page: React.FC = () => {
 
 
     return (
