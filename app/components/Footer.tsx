@@ -75,8 +75,8 @@ const footerColumns = [
       {
         title: "Legal",
         links: [
-          { label: "Private Beta Terms", href: "/" },
-          { label: "Terms of Use", href: "/" },
+          { label: "Private Beta Terms", href: "/privatebetaterms" },
+          { label: "Terms of Use", href: "/terms-of-use" },
           { label: "Risk Disclosure", href: "/" },
           { label: "Privacy Policy", href: "/" },
           { label: "Imprint", href: "/" },
@@ -110,7 +110,7 @@ const Footer = () => {
   const pathname = usePathname();
 
   // PAGES where you want to HIDE gradient
-  const hideGradientPages = ["/career", "/privatebetaterms"];
+  const hideGradientPages = ["/career", "/privatebetaterms" , "/terms-of-use"];
 
   const showGradient = !hideGradientPages.includes(pathname);
 

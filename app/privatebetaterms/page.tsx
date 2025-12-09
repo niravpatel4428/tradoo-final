@@ -74,7 +74,7 @@ const page = () => {
                                     </div>
 
                                     {/* Badge */}
-                                    <p className="text-gray400 text-sm mb-3">
+                                    <p className="text-gray400 uppercase text-sm mb-3">
                                         {privateBetaData.badge}
                                     </p>
 
