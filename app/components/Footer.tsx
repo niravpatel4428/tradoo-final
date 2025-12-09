@@ -78,7 +78,7 @@ const footerColumns = [
           { label: "Private Beta Terms", href: "/privatebetaterms" },
           { label: "Terms of Use", href: "/terms-of-use" },
           { label: "Risk Disclosure", href: "/" },
-          { label: "Privacy Policy", href: "/" },
+          { label: "Privacy Policy", href: "/privacy-policy" },
           { label: "Imprint", href: "/" },
           { label: "Cookie Policy", href: "/" },
         ],
