@@ -15,7 +15,7 @@ import riskIcon5 from "@/public/image/svg/risk-icon5.svg";
 import riskIcon6 from "@/public/image/svg/risk-icon6.svg";
 import UsdcFlows from '../sections/UsdcFlows'
 
-const steps = [
+const steps = [ 
   {
     id: 1,
     icon: riskIcon3,
