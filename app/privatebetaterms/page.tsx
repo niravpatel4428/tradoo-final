@@ -74,7 +74,7 @@ const page = () => {
                                     </div>
 
                                     {/* Badge */}
-                                    <p className="text-gray400 uppercase text-sm mb-3">
+                                    <p className="text-gray400 uppercase text-sm mb-3 tracking-wider">
                                         {privateBetaData.badge}
                                     </p>
 
@@ -1059,7 +1059,7 @@ const page = () => {
                                 </div>
                             </div>
 
-                            {/* --------- SECTION 12 --------- */}
+                            {/* --------- SECTION 12 --------- */} 
                             <div>
 
                                 {/* Section Header */}
@@ -1360,7 +1360,6 @@ const page = () => {
 
                         </div>
                     </div>
-
                 </div>
             </div>
         </main>

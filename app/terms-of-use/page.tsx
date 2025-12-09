@@ -70,7 +70,7 @@ const page = () => {
                                     </div>
 
                                     {/* Badge */}
-                                    <p className="text-gray400 uppercase text-sm mb-3">
+                                    <p className="text-gray400 uppercase text-sm mb-3 tracking-wider">
                                         {privateTermData.badge}
                                     </p>
 
@@ -705,7 +705,7 @@ const page = () => {
                                                     <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
                                                         {/* Terms of Use */}
-                                                        <Link
+                                                        <Link 
                                                             href="/"
                                                             className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                                         >
