@@ -79,6 +79,8 @@ const footerColumns = [
           { label: "Terms of Use", href: "/terms-of-use" },
           { label: "Risk Disclosure", href: "/risk-disclosure" },
           { label: "Privacy Policy", href: "/" },
+          { label: "Risk Disclosure", href: "/" },
+          { label: "Privacy Policy", href: "/privacy-policy" },
           { label: "Imprint", href: "/" },
           { label: "Cookie Policy", href: "/" },
         ],
