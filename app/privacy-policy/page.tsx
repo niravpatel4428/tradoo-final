@@ -38,29 +38,29 @@ const tableOfContents = {
     subtitle: "Navigate to specific sections of these terms",
 
     items: [
-        { id: "section1", label: "About This Privacy Notice", number: "1" },
-        { id: "section2", label: "Data Controller", number: "2" },
+        { id: "section1", label: "About This Privacy Notice", number: "1", icon: undefined },
+        { id: "section2", label: "Data Controller", number: "2", icon: undefined },
 
-        { id: "section3", label: "Data Controller", number: "3" },
-        { id: "section4", label: "Purposes of Processing", number: "4" },
+        { id: "section3", label: "Data Controller", number: "3", icon: undefined },
+        { id: "section4", label: "Purposes of Processing", number: "4", icon: undefined },
 
-        { id: "section5", label: "Legal Basis for Processing", number: "5" },
-        { id: "section6", label: "Profiling and Automated Decisions", number: "6" },
+        { id: "section5", label: "Legal Basis for Processing", number: "5", icon: undefined },
+        { id: "section6", label: "Profiling and Automated Decisions", number: "6", icon: undefined },
 
-        { id: "section7", label: "Data Sharing and Recipients", number: "7" },
-        { id: "section8", label: "International Data Transfers", number: "8" },
+        { id: "section7", label: "Data Sharing and Recipients", number: "7", icon: undefined },
+        { id: "section8", label: "International Data Transfers", number: "8", icon: undefined },
 
-        { id: "section9", label: "Data Retention Periods", number: "9" },
-        { id: "section10", label: "Data Security", number: "10" },
+        { id: "section9", label: "Data Retention Periods", number: "9", icon: undefined },
+        { id: "section10", label: "Data Security", number: "10", icon: undefined },
 
-        { id: "section11", label: "Your Rights", number: "11" },
-        { id: "section12", label: "Cookies and Tracking Technologies", number: "12" },
+        { id: "section11", label: "Your Rights", number: "11", icon: undefined },
+        { id: "section12", label: "Cookies and Tracking Technologies", number: "12", icon: undefined },
 
-        { id: "section13", label: "Social Media Presence", number: "13" },
-        { id: "section14", label: "Changes to This Notice", number: "14" },
+        { id: "section13", label: "Social Media Presence", number: "13", icon: undefined },
+        { id: "section14", label: "Changes to This Notice", number: "14", icon: undefined },
 
-        { id: "section15", label: "Regulatory Context", number: "15" },
-        { id: "section16", label: "Contact for Data Protection", number: "16" },
+        { id: "section15", label: "Regulatory Context", number: "15", icon: undefined },
+        { id: "section16", label: "Contact for Data Protection", number: "16", icon: undefined },
     ],
 };
 
@@ -166,18 +166,18 @@ const page = () => {
                             {/* Grid */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {tableOfContents.items.map((item, index) => {
-                                    const Icon = item.icon;
+                                    const IconComponent = item.icon as React.ComponentType<{ className?: string }> | undefined;
                                     return (
                                         <Link href={`#${item.id}`} key={index} className="group flex items-center gap-3 py-2 px-3 rounded-6 hover:bg-[#e8eaed80]">
                                             {/* ICON OR CUSTOM NUMBER */}
                                             <div className="w-7 h-7 flex justify-center items-center bg-gray200 rounded-md text-gray800 text-xs leading-tight font-semibold group-hover:bg-foreground group-hover:text-[#f6f8fe]">
-                                                {Icon ? (
-                                                    <Icon className="w-5 h-5 text-gray800" />
-                                                ) : item.number ? (
+                                                {IconComponent && (
+                                                    <IconComponent className="w-5 h-5 text-gray800" />
+                                                ) || (item.number ? (
                                                     <span>
                                                         {item.number}
                                                     </span>
-                                                ) : null}
+                                                ) : null)}
                                             </div>
 
                                             {/* LABEL */}
@@ -210,7 +210,7 @@ const page = () => {
 
                                 <div className="space-y-8">
                                     <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>Tradoo AG (hereinafter also "we", "us", or "Tradoo") collects and processes personal data relating to you and, in some cases, other individuals ("third parties"). In this Privacy Notice, the terms "data" and "personal data" are used interchangeably.</p>
+                                        <p>Tradoo AG (hereinafter also &quot;we&quot;, &quot;us&quot;, or &quot;Tradoo&quot;) collects and processes personal data relating to you and, in some cases, other individuals (&quot;third parties&quot;). In this Privacy Notice, the terms &quot;data&quot; and &quot;personal data&quot; are used interchangeably.</p>
                                     </div>
 
                                     <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
@@ -220,17 +220,17 @@ const page = () => {
                                             </div>
                                             <div className="block space-y-5">
                                                 <div className="block space-y-2 text-sm leading-5">
-                                                    <span className='block font-medium text-base text-foreground'>"Personal Data"</span>
+                                                    <span className='block font-medium text-base text-foreground'>&quot;Personal Data&quot;</span>
                                                     <p>Any information relating to an identified or identifiable natural person. A person is identifiable if they can be identified, directly or indirectly, by an identifier (e.g., name, identification number, location data, online identifier) or by one or more factors specific to their identity.</p>
                                                 </div>
 
                                                 <div className="block space-y-2 text-sm leading-5">
-                                                    <span className='block font-medium text-base text-foreground'>"Sensitive Personal Data"</span>
+                                                    <span className='block font-medium text-base text-foreground'>&quot;Sensitive Personal Data&quot;</span>
                                                     <p>A legally protected subcategory that may include data revealing racial or ethnic origin, religious or philosophical beliefs, health data, biometric data for identification, data concerning sex life or sexual orientation, genetic data, and data on trade union membership.</p>
                                                 </div>
 
                                                 <div className="block space-y-2 text-sm leading-5">
-                                                    <span className='block font-medium text-base text-foreground'>"Processing"</span>
+                                                    <span className='block font-medium text-base text-foreground'>&quot;Processing&quot;</span>
                                                     <p>Any operation performed on personal data, such as collection, recording, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination, alignment or combination, restriction, erasure, or destruction.</p>
                                                 </div>
                                             </div>
@@ -531,7 +531,7 @@ const page = () => {
                                                 <span className="text-md font-semibold text-gray900">Right to object / withdrawal</span>
                                             </div>
                                             <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>You can object to processing based on legitimate interests and you can withdraw consent at any time (see Section 11 and Section 12). For direct marketing, you can unsubscribe at any time via the unsubscribe link or by contacting <Link href="mailto:privacy@tradoo.io" class="text-primary hover:underline">privacy@tradoo.io</Link>.</p>
+                                                <p>You can object to processing based on legitimate interests and you can withdraw consent at any time (see Section 11 and Section 12). For direct marketing, you can unsubscribe at any time via the unsubscribe link or by contacting <Link href="mailto:privacy@tradoo.io" className="text-primary hover:underline">privacy@tradoo.io</Link>.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1223,7 +1223,7 @@ const page = () => {
                                                     <div className="space-y-2 text-gray700">
                                                         <p className="space-y-3"><span className="text-gray700 block text-sm">Company Identification (UID)</span><span className="font-medium text-sm text-gray900">CHE-216.713.957</span></p>
                                                         <p className="space-y-3"><span className="text-gray700 block text-sm">Commercial Register of Canton Zug</span></p>
-                                                        <p className="space-y-3"><span className="text-gray700 block font-medium"><Link href="https://zg.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-216.713.957" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-1">View Register Entry</Link></span></p>
+                                                        <p className="space-y-3"><span className="text-gray700 block font-medium"><Link href="https://zg.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-216.713.957" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-1">View Register Entry</Link></span></p>
                                                     </div>
                                                 </div>
                                             </div>
