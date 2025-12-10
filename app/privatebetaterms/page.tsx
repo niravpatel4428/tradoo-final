@@ -64,7 +64,7 @@ const page = () => {
 
     return (
         <main className='bg-white'>
-            <div className='py-25'>
+            <div className='py-20'>
                 <div className='bg-gray900 py-25'>
                     <div className='container'>
                         <div>
@@ -1033,7 +1033,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 11 --------- */}
-                            <div id="user-obligation" className="scroll-mt-28">
+                            <div id="user-obligations" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">

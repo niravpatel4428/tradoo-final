@@ -47,7 +47,7 @@ const handleScroll = (id: string) => {
 const page = () => {
     return (
         <main className='bg-white'>
-            <div className='py-25'>
+            <div className='py-20'>
                 <div className='bg-gray900 py-25'>
                     <div className='container'>
                         <div>
