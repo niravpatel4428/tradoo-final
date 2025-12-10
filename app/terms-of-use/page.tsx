@@ -359,7 +359,7 @@ const page = () => {
                                             {/* Right Info */}
                                             <div className="space-y-2 text-gray700">
                                                 <p className="space-y-3">
-                                                    <span className="text-gray700 block text-sm">Company Identification (UID)</span>
+                                                    <span className="text-gray700 block text-sm">Company Identification</span>
                                                     <span className="font-medium text-gray900">CHE-216.713.957</span>
                                                 </p>
                                                 <p className="space-y-3">
@@ -548,7 +548,7 @@ const page = () => {
 
                                     <div>
                                         <div className="space-y-3 text-gray700 leading-relaxed">
-                                            <p>The Platform may provide certain interfaces to external protocols, exchanges, or smart contracts..</p>
+                                            <p>The Platform may provide certain interfaces to external protocols, exchanges, or smart contracts.</p>
                                             <div className="bg-gray100 border border-gray300 rounded-xl p-4">
                                                 <div className="space-y-3 text-gray700 leading-relaxed">
                                                     <p>
@@ -597,7 +597,7 @@ const page = () => {
                                         9
                                     </span>
                                     <h2 className="text-xl md:text-2xl font-semibold text-gray900">
-                                        User Obligations
+                                        Liability
                                     </h2>
                                 </div>
 
@@ -634,9 +634,9 @@ const page = () => {
                                     <div>
                                         <div className="space-y-3 text-gray700 leading-relaxed">
                                             <p>
-                                                Tradoo is liable only for damages caused by intentional or grossly negligent conduct.
+                                                The processing of personal data is carried out in accordance with the Privacy Notice on the website.
                                             </p>
-                                            <Link href="/" className="inline-flex items-center text-sm font-medium text-gray900 hover:underline">View Privacy Policy<span className="ml-1">→</span></Link>
+                                            <Link href="/privacy-policy" className="inline-flex items-center text-sm font-medium text-gray900 hover:underline">View Privacy Policy<span className="ml-1">→</span></Link>
                                         </div>
                                     </div>
 
@@ -723,13 +723,13 @@ const page = () => {
                                                         </Link>
 
 
-                                                        {/* Risk Disclosure */}
+                                                        {/* Risk Disclosure */} 
                                                         <Link
                                                             href="/risk-disclosure"
                                                             className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                                         >
                                                             <h3 className="text-gray900 font-semibold text-base">Risk Disclosure</h3>
-                                                            <p className="text-gray700 text-sm mt-1">risk information</p>
+                                                            <p className="text-gray700 text-sm mt-1">Risk information</p>
                                                         </Link>
 
                                                         {/* Privacy Notice */}
@@ -762,7 +762,7 @@ const page = () => {
                             </div>
 
                             <div className="w-full border-t border-gray300 pt-6">
-                                <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between gap-6 text-gray700">
+                                <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 text-gray700">
 
                                     {/* Left Section */}
                                     <div className="space-y-1 text-sm">

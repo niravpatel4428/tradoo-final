@@ -86,18 +86,18 @@ const Strategies = () => {
                             <div className="max-md:px-4">
                                 <div>
                                     <Badge
-                                        label="The Tradoo Framework"
+                                        label="Our 15 Strategies"
                                     />
                                 </div>
                                 <div className="mt-8">
-                                    <h3 className="max-xs:text-3xl max-xs:leading-9 text-40 leading-11.5 xxl:text-56 font-semibold xxl:leading-16 tracking-[-1.20px] xxl:tracking-[-1.68px] text-gray800">Structured portfolios built for your risk tolerance.</h3>
+                                    <h3 className="max-xs:text-3xl max-xs:leading-9 text-40 leading-11.5 xxl:text-56 font-semibold xxl:leading-16 tracking-[-1.20px] xxl:tracking-[-1.68px] text-gray800">How the 15 strategies strategy modules shape your portfolio.</h3>
                                 </div>
                             </div>
                         </div>
                         <div className="col-span-12 md:col-span-6">
                             <div className="max-md:px-4 h-full w-full md:max-w-171 ml-auto flex flex-col gap-5 justify-end">
                                 <div>
-                                    <p className="text-lg font-normal leading-[144%] text-gray700">Tradoo adjusts exposure within your profile boundaries. We shift between growth assets and stability reserves based on market regimes, volatility conditions and behavioral indicators. No speculation. No strategy hopping. Just structure.</p>
+                                    <p className="text-lg font-normal leading-[144%] text-gray700">Each module has a clearly defined purpose. The Engine combines them to balance core stability, growth and risk control, tailored to your risk profile.</p>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +217,7 @@ const Strategies = () => {
                                                 {/* LABEL TAGS */}
                                                 <div className="flex flex-wrap gap-3">
                                                     {profiles[active].labels.map((label: string, i: Key | null | undefined) => (
-                                                        <Badge key={i} label={label} variant="gray" />
+                                                        <Badge className="text-gray800" key={i} label={label} variant="gray" />
                                                     ))}
                                                 </div>
                                             </div>

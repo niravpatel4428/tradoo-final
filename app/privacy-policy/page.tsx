@@ -91,7 +91,7 @@ const page = () => {
                                 <div className="block space-y-6">
                                     {/* Framework, version, date */}
                                     <div className="text-[#cbd5e1] text-lg space-y-4">
-                                        <p>{privateTermData.version} . {privateTermData.datetitle} {privateTermData.date}</p>
+                                        <p>{privateTermData.version} · {privateTermData.datetitle} {privateTermData.date}</p>
                                     </div>
 
                                     <div className="flex flex-wrap justify-center gap-2 text-sm">
@@ -230,7 +230,7 @@ const page = () => {
                                     <div className="space-y-3 text-gray700 leading-relaxed">
                                         <p>This Privacy Notice explains what we do with your data when you:</p>
 
-                                        <ul>
+                                        <ul className='list-disc pl-7'>
                                             <li>Access or use our websites (tradoo.finance, tradoo.io, tradoo.ai, tradoo.foundation)</li>
                                             <li>Obtain our services or products</li>
                                             <li>Subscribe to newsletters, events, or waitlists</li>
@@ -290,9 +290,7 @@ const page = () => {
                                     <div className="bg-gray100 border border-gray200 rounded-2xl shadow-sm p-6 md:p-8">
                                         <h2 className="text-lg md:text-xl font-semibold text-gray900 flex items-center gap-3">
                                             <span className="min-w-10 w-10 h-10 flex justify-center items-center bg-gray300 rounded-6">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lh-5 w-5">
-                                                    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe h-5 w-5"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
                                             </span>
                                             Data Protection Representative in the EEA
                                         </h2>
@@ -338,7 +336,7 @@ const page = () => {
                                             <div className="space-y-3 text-gray700 leading-relaxed">
                                                 <p>When you use our websites or other online offerings, we collect technical data to ensure functionality, security, and performance. This includes IP address, device and browser details, operating system, referrer URL, timestamps, pages viewed, interactions, session identifiers, cookie IDs and similar identifiers, and server log files.</p>
 
-                                                <p className="mt-3 text-xs bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 6-24 months; longer if required for security, forensic, legal, or technical reasons.</p>
+                                                <p className="mt-3 text-xs tracking-wider bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 6-24 months; longer if required for security, forensic, legal, or technical reasons.</p>
                                             </div>
                                         </div>
 
@@ -352,7 +350,7 @@ const page = () => {
                                             <div className="space-y-3 text-gray700 leading-relaxed">
                                                 <p>Certain offerings (e.g., account areas, investor or partner portals, newsletter subscriptions, event registrations) require a user account or sign-up. You provide data such as name, email, password (hashed), 2FA details (if enabled), organization, role, preferences; we also collect metadata about access and use of the service.</p>
 
-                                                <p className="mt-3 text-xs bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> For the duration of use plus typically 12 months after account closure or last use, unless longer retention is required for legal obligations, dispute resolution, or security.</p>
+                                                <p className="mt-3 text-xs tracking-wider bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> For the duration of use plus typically 12 months after account closure or last use, unless longer retention is required for legal obligations, dispute resolution, or security.</p>
                                             </div>
                                         </div>
 
@@ -364,9 +362,9 @@ const page = () => {
                                                 <h3 className="text-lg font-semibold text-gray900 mb-4">c) Communication data</h3>
                                             </div>
                                             <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Certain offerings (e.g., account areas, investor or partner portals, newsletter subscriptions, event registrations) require a user account or sign-up. You provide data such as name, email, password (hashed), 2FA details (if enabled), organization, role, preferences; we also collect metadata about access and use of the service.</p>
+                                                <p>When you contact us (contact forms, email, phone, chat, social media, mail), we process the content of the communication, your contact details, associated metadata, and—where legally permitted—recordings for training, support quality, or evidentiary purposes.</p>
 
-                                                <p className="mt-3 text-xs bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 12 months after last interaction; emails and formal correspondence may be retained up to 10 years if required for compliance or evidentiary purposes.</p>
+                                                <p className="mt-3 text-xs tracking-wider bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 12 months after last interaction; emails and formal correspondence may be retained up to 10 years if required for compliance or evidentiary purposes.</p>
                                             </div>
                                         </div>
 
@@ -380,7 +378,7 @@ const page = () => {
                                             <div className="space-y-3 text-gray700 leading-relaxed">
                                                 <p>Basic identity and relationship data required to manage our business relationships and for marketing/relationship management (where permitted): name, address, email, phone, language, job title/role, employer, relationship history, preferences, customer/investor numbers, powers of attorney, consent records, opt-outs, bank details (if relevant), and similar.</p>
 
-                                                <p className="mt-3 text-xs bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 10 years after last interaction or contract end; shorter (often up to 2 years) for pure marketing contacts, unless legally or for evidentiary purposes required longer.</p>
+                                                <p className="mt-3 text-xs tracking-wider bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 10 years after last interaction or contract end; shorter (often up to 2 years) for pure marketing contacts, unless legally or for evidentiary purposes required longer.</p>
                                             </div>
                                         </div>
 
@@ -394,7 +392,7 @@ const page = () => {
                                             <div className="space-y-3 text-gray700 leading-relaxed">
                                                 <p>Data arising in connection with contract initiation and performance: agreements, usage records, billing and payment information, deliverables, support cases, KYC/AML data (if legally required), feedback, and complaints.</p>
 
-                                                <p className="mt-3 text-xs bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 10 years after last contract activity or contract end; longer if legally or for evidentiary purposes required.</p>
+                                                <p className="mt-3 text-xs tracking-wider bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 10 years after last contract activity or contract end; longer if legally or for evidentiary purposes required.</p>
                                             </div>
                                         </div>
 
@@ -408,7 +406,7 @@ const page = () => {
                                             <div className="space-y-3 text-gray700 leading-relaxed">
                                                 <p>To improve our offerings and personalize communications (where permitted), we analyze how users interact with our websites and services (e.g., page flows, clicks, features used). We may combine this with other data (e.g., master/registration data) to infer preferences.</p>
 
-                                                <p className="mt-3 text-xs bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 2 weeks to 24 months, depending on relevance; longer if required for legal or technical reasons.</p>
+                                                <p className="mt-3 text-xs tracking-wider bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 2 weeks to 24 months, depending on relevance; longer if required for legal or technical reasons.</p>
                                             </div>
                                         </div>
 
@@ -420,7 +418,7 @@ const page = () => {
                                                 <h3 className="text-lg font-semibold text-gray900 mb-4">g) Other data</h3>
                                             </div>
                                             <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>To improve our offerings and personalize communications (where permitted), we analyze how users interact with our websites and services (e.g., page flows, clicks, features used). We may combine this with other data (e.g., master/registration data) to infer preferences.</p>
+                                                <p>Depending on context, we may process: access control data (visitor lists, badge logs), images or recordings from events (with appropriate on-site notice), data related to legal proceedings or regulatory inquiries, and data about shareholders/investors for corporate law purposes.</p>
                                             </div>
                                         </div>
 
@@ -1013,7 +1011,7 @@ const page = () => {
                                     <div className="space-y-3 text-gray700 leading-relaxed">
                                         <p>Certain third-party tools or embedded content (e.g., blockchain network widgets, chart visualizations, or social media sharing modules) may set their own cookies when loaded. These cookies are controlled by the respective third parties. Their own privacy and cookie policies apply.</p>
                                         <p>You can disable cookies via your browser settings. Please note that disabling certain cookies may impair the basic functionality of the websites.</p>
-                                        <p>For more details, see our Cookie Policy.</p>
+                                        <p>For more details, see our <Link href="/cookie-policy" className='text-gray900 hover:underline'>Cookie Policy.</Link></p>
                                     </div>
 
                                     <div className="space-y-8">
@@ -1042,7 +1040,7 @@ const page = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
 
                             {/* --------- SECTION 13 --------- */}
                             <div id="section13" className="scroll-mt-28">
@@ -1062,12 +1060,12 @@ const page = () => {
                                         <p>We maintain pages on social platforms (e.g., X/Twitter, LinkedIn, Instagram, YouTube, Telegram, Discord).</p>
 
                                         <p>When you visit or interact with such pages:</p>
-                                        <p>For details, please consult the privacy policies of the respective platforms.</p>
 
                                         <ul className='pl-8 list-disc'>
                                             <li>We may receive statistics and interaction data about visits and engagement</li>
                                             <li>The platform operators process your data independently for their own purposes (e.g., profiling, marketing, platform improvement)</li>
                                         </ul>
+                                        <p>For details, please consult the privacy policies of the respective platforms.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1275,8 +1273,8 @@ const page = () => {
                                 </div>
                             </div>
 
-                            <div className="w-full border-t border-gray300 pt-6">
-                                <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between gap-6 text-gray700">
+                            <div className="w-full border-t border-gray300 pt-6"> 
+                                <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 text-gray700">
 
                                     {/* Left Section */}
                                     <div className="space-y-1 text-sm">

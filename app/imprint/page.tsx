@@ -437,7 +437,7 @@ const page = () => {
 
                         </div>
                         <div className="max-w-224 mt-10 mx-auto w-full border-t border-gray300 pt-6">
-                            <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between gap-6 text-gray700">
+                            <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 text-gray700">
 
                                 {/* Left Section */}
                                 <div className="space-y-1 text-sm">

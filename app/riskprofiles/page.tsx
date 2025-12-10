@@ -9,7 +9,7 @@ import CommonBannerSection from '../components/CommonBannerSection'
 const page = () => {
     return (
         <main>
-            <CommonBannerSection
+            <CommonBannerSection 
                 badge={{
                     label: "Risk Profiles",
                     icon: "/image/svg/zap.svg",

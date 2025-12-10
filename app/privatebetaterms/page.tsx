@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 import { Shield } from "lucide-react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react"; 
 import { FileText } from "lucide-react";
 import Link from 'next/link';
 
@@ -16,7 +16,7 @@ const privateBetaData = {
 };
 
 const privateBetaSection2 = {
-    text: `These Phase 1 Terms (Execution Framework, "Private Beta Terms") govern the scope of services, execution mechanics, user responsibilities, fees, and usage restrictions during Phase 1 (Private Beta). They apply in addition to the Terms of Use and Risk Disclosure Statement of Tradao AG.`,
+    text: `These Phase 1 Terms (Execution Framework, "Private Beta Terms") govern the scope of services, execution mechanics, user responsibilities, fees, and usage restrictions during Phase 1 (Private Beta). They apply in addition to the Terms of Use and Risk Disclosure Statement of Tradoo AG.`,
 
     orderTitle: "Order of precedence in case of conflict:",
 
@@ -32,22 +32,22 @@ const tableOfContents = {
     subtitle: "Navigate to specific sections of these terms",
 
     items: [
-         { id: "preamble", label: "Preamble" },
-         { id: "contracting-parties", label: "Contracting Parties" },
-         { id: "definitions", label: "Definitions" },
-         { id: "scope-restrictions", label: "Scope and Usage Restrictions" },
-         { id: "wallet-control", label: "Wallet and Asset Control" },
-         { id: "strategy-selection", label: "Strategy Selection" },
-         { id: "fee-structure", label: "Fee Structure (Phase 1)" },
-         { id: "risk-isclosure", label: "Risk Disclosure" },
-         { id: "no-advisory-services", label: "No Advisory Services" },
-         { id: "transition-to-phase-2", label: "Transition to Phase 2" },
-         { id: "user-obligations", label: "User Obligations" },
-         { id: "liability-limitations", label: "Liability Limitationss" },
-         { id: "amendment-of-terms", label: "Amendment of Terms" },
-         { id: "governing-law", label: "Governing Law" },
-         { id: "contact-and-notices", label: "Contact and Notices" },
-         { id: "final-provisions", label: "Final Provisions" },
+        { id: "preamble", label: "Preamble" },
+        { id: "contracting-parties", label: "Contracting Parties" },
+        { id: "definitions", label: "Definitions" },
+        { id: "scope-restrictions", label: "Scope and Usage Restrictions" },
+        { id: "wallet-control", label: "Wallet and Asset Control" },
+        { id: "strategy-selection", label: "Strategy Selection" },
+        { id: "fee-structure", label: "Fee Structure (Phase 1)" },
+        { id: "risk-isclosure", label: "Risk Disclosure" },
+        { id: "no-advisory-services", label: "No Advisory Services" },
+        { id: "transition-to-phase-2", label: "Transition to Phase 2" },
+        { id: "user-obligations", label: "User Obligations" },
+        { id: "liability-limitations", label: "Liability Limitations" },
+        { id: "amendment-of-terms", label: "Amendment of Terms" },
+        { id: "governing-law", label: "Governing Law" },
+        { id: "contact-and-notices", label: "Contact and Notices" },
+        { id: "final-provisions", label: "Final Provisions" },
     ],
 };
 
@@ -457,6 +457,12 @@ const page = () => {
 
                                 <div className="space-y-8">
 
+                                    <div className="space-y-3 text-gray700 leading-relaxed">
+                                        <p>
+                                            The following definitions apply to these Private Beta Terms. They serve to provide clear legal and technical attribution of the terms used in this document.
+                                        </p>
+                                    </div>
+
                                     {/* Item 3.1 CARD */}
                                     <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
                                         <div className='flex gap-3'>
@@ -778,15 +784,36 @@ const page = () => {
                                             <p>
                                                 The management fee is 1.5% per year and relates exclusively to the provision of technical execution and infrastructure services in Phase 1. Calculation is pro rata temporis based on the assets deposited by the user in the Smart Contract Vault.
                                             </p>
+                                            <div className='space-y-3 bg-gray100 border border-gray300 p-4 rounded-xl border-solid shadow-sm'>
+                                                <div className="space-y-3 text-gray700 leading-relaxed">
+                                                    <p><strong>Applicable:</strong> Calculation occurs daily on a linear basis based on the respective Vault value. Implementation occurs through proportional adjustment of the user&apos;s economically assigned share within the Smart Contract Vault. No separate payment, transfer, or external transaction is required.</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
 
-                                    <div className='space-y-3 bg-gray100 border border-gray300 p-4 rounded-xl border-solid shadow-sm'>
+
+
+                                    {/* Item 7.3 DEFAULT */}
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-gray900 mb-2">
+                                            7.3 Performance fee (15% high-watermark)
+                                        </h3>
                                         <div className="space-y-3 text-gray700 leading-relaxed">
-                                            <p><strong>Applicable:</strong> The fee applies exclusively to actually realized gains (no fee on paper gains or interim fluctuations). Losses from prior periods must be fully recovered before a performance fee can be charged again (loss recapture principle).</p>
+                                            <p>
+                                                The performance fee is 15% on realized net gains above the last documented high-watermark.
+                                            </p>
+                                            <div className='space-y-3 bg-gray100 border border-gray300 p-4 rounded-xl border-solid shadow-sm'>
+                                                <div className="space-y-3 text-gray700 leading-relaxed">
+                                                    <p><strong>Applicable:</strong> The fee applies exclusively to actually realized gains (no fee on paper gains or interim fluctuations). Losses from prior periods must be fully recovered before a performance fee can be charged again (loss recapture principle).</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+
+
+
 
                                 </div>
                             </div>
@@ -1065,7 +1092,7 @@ const page = () => {
                                 </div>
                             </div>
 
-                            {/* --------- SECTION 12 --------- */} 
+                            {/* --------- SECTION 12 --------- */}
                             <div id="liability-limitations" className="scroll-mt-28">
 
                                 {/* Section Header */}
@@ -1186,7 +1213,7 @@ const page = () => {
                                                     14.2 Jurisdiction
                                                 </h3>
                                                 <div className="space-y-3 text-gray700 leading-relaxed">
-                                                    <p>TThe exclusive place of jurisdiction for all disputes arising from or in connection with these Private Beta Terms is Zug, Switzerland.</p>
+                                                    <p>The exclusive place of jurisdiction for all disputes arising from or in connection with these Private Beta Terms is Zug, Switzerland.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1216,7 +1243,7 @@ const page = () => {
 
                                     <div>
                                         <div className="space-y-3 text-gray700 leading-relaxed">
-                                            <p>All notices in connection with these Private Beta Terms may be transmitted electronically. For legally relevant notices, the email address legal@tradoo.io is deemed delivered, unless written form is expressly required by law or contract.</p>
+                                            <p>All notices in connection with these Private Beta Terms may be transmitted electronically. For legally relevant notices, the email address <Link href="mailto:legal@tradoo.io" className="text-gray900 hover:underline">legal@tradoo.io</Link> is deemed delivered, unless written form is expressly required by law or contract.</p>
                                         </div>
                                     </div>
 
@@ -1306,7 +1333,7 @@ const page = () => {
                                             </Link>
 
                                             {/* Cookie Policy */}
-                                            <Link 
+                                            <Link
                                                 href="/cookie-policy"
                                                 className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                             >

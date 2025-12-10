@@ -554,8 +554,8 @@ const page = () => {
                                                     <div className="space-y-2 font-medium">
                                                         <p className="text-base text-[#545B6A]">Baarerstrasse 8</p>
                                                         <p className="text-base text-[#545B6A]">CH-6300 Zug, Switzerland</p>
-                                                        <p className="text-sm text-[#545B6A] pt-5">Email (Privacy)</p>
-                                                        <p className="text-base text-[#545B6A]"><Link href="mailto:privacy@tradoo.io" className="text-primary hover:underline">privacy@tradoo.io</Link></p>
+                                                        <p className="text-sm text-[#545B6A] pt-5">Email</p>
+                                                        <p className="text-base text-gray900"><Link href="mailto:privacy@tradoo.io" className="text-primary hover:underline">privacy@tradoo.io</Link></p>
                                                     </div>
                                                     <div className="space-y-2 text-gray700">
                                                         <p className="space-y-3"><span className="text-gray700 block text-sm">Company Identification</span><span className="font-medium text-sm text-gray900">CHE-216.713.957</span></p>
@@ -614,9 +614,9 @@ const page = () => {
                             </div>
 
                             <div className="w-full border-t border-gray300 pt-6">
-                                <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between gap-6 text-gray700">
+                                <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 text-gray700">
 
-                                    {/* Left Section */}
+                                    {/* Left Section */} 
                                     <div className="space-y-1 text-sm">
                                         <h4 className="font-semibold">Tradoo AG</h4>
                                         <p>Baarerstrasse 8 • CH-6300 Zug • Switzerland</p>

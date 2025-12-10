@@ -19,13 +19,13 @@ const gridItems = [
   },
   {
     icon: icon3,
-    title: "Emotional Bias",
-    text: "Eliminated through predefined rules and profiles.",
+    title: "Inconsistent Strategy Choices",
+    text: "Avoided through stable, multi-factor weighting.",
   },
   {
     icon: icon4,
-    title: "Emotional Bias",
-    text: "Eliminated through predefined rules and profiles.",
+    title: "Custody Risk",
+    text: "Removed through individual smart-contract vaults.",
   },
 ];
 

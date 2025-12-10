@@ -17,7 +17,7 @@ const UsdcFlows = () => {
                             <div className="col-span-12 md:col-span-6">
                                 <div className="max-md:px-4 max-xs:space-y-6 space-y-10">
                                     <div className="block">
-                                        <Badge label="Risk Tolerance Sets Structure" variant="darkgreen" />
+                                        <Badge label="Transparency by Design" variant="darkgreen" />
                                     </div>
                                     <div className="block max-xs:text-3xl max-xs:leading-9 text-40 tracking-[-1.20px] xl:text-56 font-semibold text-white xl:tracking-[-1.68px] leading-tight">
                                         <h2>How Your USDC Flows Through the System</h2>
@@ -54,17 +54,17 @@ const UsdcFlows = () => {
                         </div> */}
 
                         <div className="flex flex-wrap items-center space-y-25 lg:-mx-10 xl:-mx-16">
-                            <div className="flex-none w-full lg:w-1/3 lg:px-10 xl:px-16 relative before:absolute before:content-[''] before:left-1/2 lg:before:left-auto lg:before:-right-8 before:top-full before:mt-10 lg:before:mt-0 lg:before:top-1/2 before:-translate-x-1/2 before:rotate-90 lg:before:rotate-0 lg:before:-translate-x-0 lg:before:-translate-y-1/2 before:w-16 before:h-3 before:bg-[url('/image/svg/usdc-flow-arrow.svg')] before:bg-no-repeat before:bg-[length:100%_100%] last:before:hidden">
+                            <div className="lg:m-0 flex-none w-full lg:w-1/3 lg:px-10 xl:px-16 relative before:absolute before:content-[''] before:left-1/2 lg:before:left-auto lg:before:-right-8 before:top-full before:mt-10 lg:before:mt-0 lg:before:top-1/2 before:-translate-x-1/2 before:rotate-90 lg:before:rotate-0 lg:before:-translate-x-0 lg:before:-translate-y-1/2 before:w-16 before:h-3 before:bg-[url('/image/svg/usdc-flow-arrow.svg')] before:bg-no-repeat before:bg-[length:100%_100%] last:before:hidden">
                                 <div className="block text-center">
                                     <Image src={usdcFlowImg1} alt="usdc-flow-img" className='inline-block max-w-full lg:w-full' />
                                 </div>
                             </div>
-                            <div className="flex-none w-full lg:w-1/3 lg:px-10 xl:px-16 relative before:absolute before:content-[''] before:left-1/2 lg:before:left-auto lg:before:-right-8 before:top-full before:mt-10 lg:before:mt-0 lg:before:top-1/2 before:-translate-x-1/2 before:rotate-90 lg:before:rotate-0 lg:before:-translate-x-0 lg:before:-translate-y-1/2 before:w-16 before:h-3 before:bg-[url('/image/svg/usdc-flow-arrow.svg')] before:bg-no-repeat before:bg-[length:100%_100%] last:before:hidden">
+                            <div className="lg:m-0 flex-none w-full lg:w-1/3 lg:px-10 xl:px-16 relative before:absolute before:content-[''] before:left-1/2 lg:before:left-auto lg:before:-right-8 before:top-full before:mt-10 lg:before:mt-0 lg:before:top-1/2 before:-translate-x-1/2 before:rotate-90 lg:before:rotate-0 lg:before:-translate-x-0 lg:before:-translate-y-1/2 before:w-16 before:h-3 before:bg-[url('/image/svg/usdc-flow-arrow.svg')] before:bg-no-repeat before:bg-[length:100%_100%] last:before:hidden">
                                 <div className="block text-center">
                                     <Image src={usdcFlowImg2} alt="usdc-flow-img" className='inline-block max-w-full lg:w-full' />
                                 </div>
                             </div>
-                            <div className="flex-none w-full lg:w-1/3 lg:px-10 xl:px-16 relative before:absolute before:content-[''] before:left-1/2 lg:before:left-auto lg:before:-right-8 before:top-full before:mt-10 lg:before:mt-0 lg:before:top-1/2 before:-translate-x-1/2 before:rotate-90 lg:before:rotate-0 lg:before:-translate-x-0 lg:before:-translate-y-1/2 before:w-16 before:h-3 before:bg-[url('/image/svg/usdc-flow-arrow.svg')] before:bg-no-repeat before:bg-[length:100%_100%] last:before:hidden">
+                            <div className="lg:m-0 flex-none w-full lg:w-1/3 lg:px-10 xl:px-16 relative before:absolute before:content-[''] before:left-1/2 lg:before:left-auto lg:before:-right-8 before:top-full before:mt-10 lg:before:mt-0 lg:before:top-1/2 before:-translate-x-1/2 before:rotate-90 lg:before:rotate-0 lg:before:-translate-x-0 lg:before:-translate-y-1/2 before:w-16 before:h-3 before:bg-[url('/image/svg/usdc-flow-arrow.svg')] before:bg-no-repeat before:bg-[length:100%_100%] last:before:hidden">
                                 <div className="block text-center">
                                     <Image src={usdcFlowImg3} alt="usdc-flow-img" className='inline-block max-w-full lg:w-full' />
                                 </div>
@@ -79,7 +79,7 @@ const UsdcFlows = () => {
                                     <Image src={infoCircleIcon} alt="info-icon" className='max-w-full max-h-full object-cover' />
                                 </div>
                                 <div className="block text-gray500 max-xs:text-base text-lg leading-tight">
-                                    <p>Submitting this form does not constitute an offer or the provision of regulated investment services. We currently provide demo access only.</p>
+                                    <p>USDC in. Smart vault routes to vetted, overcollateralized markets. Full on-chain ownership stays with you.</p>
                                 </div>
                             </div>
                         </div>
@@ -91,4 +91,4 @@ const UsdcFlows = () => {
     )
 }
 
-export default UsdcFlows
+export default UsdcFlows 

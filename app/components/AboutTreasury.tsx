@@ -55,11 +55,11 @@ const AboutTreasury = ({ className = "" }: AboutTreasuryProps) => {
                 </div>
 
                 <div className="mt-10 max-sm:px-4">
-                    <div className='flex items-start space-x-3.5 md:text-center'>
+                    <div className='flex items-start md:justify-center space-x-3.5 md:text-center'>
                         <div className="inline-flex items-center justify-center min-w-5 min-h-5 relative top-0.5">
                             <Image src={infoCircleIcon} alt="info-icon" className='max-w-full max-h-full object-cover' />
                         </div>
-                        <div className="block text-gray500 max-xs:text-base text-lg leading-tight">
+                        <div className="block text-gray500 md:text-center max-xs:text-base text-lg leading-tight">
                             <p>Submitting this form does not constitute an offer or the provision of regulated investment services. We currently provide demo access only.</p>
                         </div>
                     </div>

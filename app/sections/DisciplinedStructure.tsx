@@ -8,7 +8,7 @@ const DisciplinedStructure = () => {
                 <div className="container">
                     <div className="space-y-8">
                         <div>
-                            <Badge label="Disciplined Structure" />
+                            <Badge label="Disciplined Structure" variant='darkgreen' />
                         </div>
                         <div>
                             <h2 className="text-white max-xs:tracking-[-1px] max-xs:text-3xl text-5xl xxl:text-56 font-semibold tracking-[-1.68px] xxl:leading-16">

@@ -226,7 +226,7 @@ const Footer = () => {
                 >
                   waitlist
                 </Link>{" "}
-                . Tradoo provides information for general educational purposes
+                . Tradoo provides information for general educational purposes 
                 only. Nothing on this website is financial, legal, or tax
                 advice, and nothing should be interpreted as an offer or
                 recommendation to buy or sell digital assets. All investment

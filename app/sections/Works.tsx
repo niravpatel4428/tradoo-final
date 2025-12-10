@@ -88,7 +88,7 @@ const Works = () => {
                   </div>
                   <div className="absolute left-4 bottom-4 md:left-10 md:bottom-10 xl:left-14 xl:bottom-14 z-2">
                     <Button
-                      label="Join Waitlist"
+                      label="Explore Risk Profiles"
                       href="#"
                       trailingIcon={true}
                       variant="contrastdefault"

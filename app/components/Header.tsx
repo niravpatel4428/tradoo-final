@@ -265,7 +265,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import logo from "@/public/image/svg/logo-head.svg";
-import logoDark from "@/public/image/svg/logo-head-dark.svg"; //  add dark logo
+import logoDark from "@/public/image/svg/logo-head-dark.svg"; //  add dark logo 
 import Link from "next/link";
 import Image, { type StaticImageData } from "next/image";
 import Button from "./Button";

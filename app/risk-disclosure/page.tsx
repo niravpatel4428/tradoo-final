@@ -194,7 +194,7 @@ const page = () => {
                                                 <div className='flex gap-3'>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-triangle-alert h-5 w-5 text-amber-600 mt-0.5 shrink-0"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
                                                     <div className='space-y-3 text-gray900'>
-                                                        <span>No performance guarantee</span>
+                                                        <span className='font-medium'>No performance guarantee</span>
                                                         <p>Past performance is not an indicator of future results.</p>
                                                     </div>
                                                 </div>
@@ -659,7 +659,7 @@ const page = () => {
                                             <ul className='list-disc pl-7'>
                                                 <li>Financial gain</li>
                                                 <li>Economic advantagee</li>
-                                                <li>Preferential executio</li>
+                                                <li>Preferential execution</li>
                                                 <li>Improved outcomess</li>
                                             </ul>
                                             <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-gray700 text-base leading-relaxed">
@@ -741,7 +741,7 @@ const page = () => {
                                                             className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                                         >
                                                             <h3 className="text-gray-900 font-semibold text-base">Private Beta Terms</h3>
-                                                            <p className="text-gray-500 text-sm mt-1">Phase 1 Framework</p>
+                                                            <p className="text-gray-500 text-sm mt-1">Phase 1 Framework</p> 
                                                         </Link>
 
 
@@ -750,7 +750,7 @@ const page = () => {
                                                             href="/terms-of-use"
                                                             className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                                         >
-                                                            <h3 className="text-gray900 font-semibold text-base">Terms-of-use</h3>
+                                                            <h3 className="text-gray900 font-semibold text-base">Terms of use</h3>
                                                             <p className="text-gray700 text-sm mt-1">General Terms</p>
                                                         </Link>
 
@@ -783,7 +783,7 @@ const page = () => {
                             </div>
 
                             <div className="w-full border-t border-gray300 pt-6">
-                                <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between gap-6 text-gray700">
+                                <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 text-gray700">
 
                                     {/* Left Section */}
                                     <div className="space-y-1 text-sm">

@@ -75,7 +75,7 @@ const page = () => {
       />
       <Design />
       <Works />
-      <ProblemSolved />
+      <ProblemSolved /> 
       <FullOwnership />
       <DigitalWealthSection
         title="A Modern, Disciplined Approach to Digital Wealth"
