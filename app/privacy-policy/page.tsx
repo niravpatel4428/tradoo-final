@@ -1,17 +1,7 @@
 import React from 'react'
 import {
     FileText,
-    Building2,
     Shield,
-    Scale,
-    Users,
-    Link2,
-    Gavel,
-    Coins,
-    AlertTriangle,
-    Lock,
-    BookOpen,
-    MapPin,
     Mail,
     Globe,
 } from "lucide-react";
@@ -179,7 +169,7 @@ const page = () => {
                                                     </span>
                                                 ) : null)}
                                             </div>
-
+                                
                                             {/* LABEL */}
                                             <span className="text-gray800 text-sm">
                                                 {item.label}
@@ -898,73 +888,85 @@ const page = () => {
                                     </div>
 
                                     <div className="space-y-8">
-                                        {/* <div className="bg-gray100 border border-gray300 rounded-xl p-6"> */}
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <div className="flex flex-wrap space-y-5 -mx-5">
-                                                    <div className="flex-none w-full sm:w-1/2 px-5">
-                                                        {/* Access */}
-                                                        <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
-                                                            <h3 className="text-gray-900 font-medium text-base">Access</h3>
-                                                            <p className="text-gray-500 text-sm mt-1">Access to your personal data</p>
-                                                        </div>
+                                        <div className="space-y-3 text-gray700 leading-relaxed">
+                                            <div className="flex flex-wrap space-y-5 -mx-5">
+                                                <div className="flex-none w-full sm:w-1/2 [&:last-child:nth-child(odd)]:sm:w-full px-5">
+                                                    {/* Access */}
+                                                    <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
+                                                        <h3 className="text-gray-900 font-medium text-base">Access</h3>
+                                                        <p className="text-gray-500 text-sm mt-1">Access to your personal data</p>
                                                     </div>
-                                                    
-                                                    <div className="flex-none w-full sm:w-1/2 px-5">
-                                                        {/* Data Portability */}
-                                                        <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
-                                                            <h3 className="text-gray-900 font-medium text-base">Data Portability</h3>
-                                                            <p className="text-gray-500 text-sm mt-1">Receive a copy of your data in a common electronic format</p>
-                                                        </div>
+                                                </div>
+                                                
+                                                <div className="flex-none w-full sm:w-1/2 [&:last-child:nth-child(odd)]:sm:w-full px-5">
+                                                    {/* Data Portability */}
+                                                    <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
+                                                        <h3 className="text-gray-900 font-medium text-base">Data Portability</h3>
+                                                        <p className="text-gray-500 text-sm mt-1">Receive a copy of your data in a common electronic format</p>
                                                     </div>
-                                                    
-                                                    <div className="flex-none w-full sm:w-1/2 px-5">
-                                                        {/* Rectification */}
-                                                        <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
-                                                            <h3 className="text-gray-900 font-medium text-base">Rectification</h3>
-                                                            <p className="text-gray-500 text-sm mt-1">Correction of inaccurate or incomplete data</p>
-                                                        </div>
+                                                </div>
+                                                
+                                                <div className="flex-none w-full sm:w-1/2 [&:last-child:nth-child(odd)]:sm:w-full px-5">
+                                                    {/* Rectification */}
+                                                    <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
+                                                        <h3 className="text-gray-900 font-medium text-base">Rectification</h3>
+                                                        <p className="text-gray-500 text-sm mt-1">Correction of inaccurate or incomplete data</p>
                                                     </div>
-                                                    
-                                                    <div className="flex-none w-full sm:w-1/2 px-5">
-                                                        {/* Erasure */}
-                                                        <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
-                                                            <h3 className="text-gray-900 font-medium text-base">Erasure</h3>
-                                                            <p className="text-gray-500 text-sm mt-1">Deletion of your data (subject to legal limitations)</p>
-                                                        </div>
+                                                </div>
+                                                
+                                                <div className="flex-none w-full sm:w-1/2 [&:last-child:nth-child(odd)]:sm:w-full px-5">
+                                                    {/* Erasure */}
+                                                    <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
+                                                        <h3 className="text-gray-900 font-medium text-base">Erasure</h3>
+                                                        <p className="text-gray-500 text-sm mt-1">Deletion of your data (subject to legal limitations)</p>
                                                     </div>
-                                                    
-                                                    <div className="flex-none w-full sm:w-1/2 px-5">
-                                                        {/* Restriction */}
-                                                        <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
-                                                            <h3 className="text-gray-900 font-medium text-base">Restriction</h3>
-                                                            <p className="text-gray-500 text-sm mt-1">Restriction of processing</p>
-                                                        </div>
+                                                </div>
+                                                
+                                                <div className="flex-none w-full sm:w-1/2 [&:last-child:nth-child(odd)]:sm:w-full px-5">
+                                                    {/* Restriction */}
+                                                    <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
+                                                        <h3 className="text-gray-900 font-medium text-base">Restriction</h3>
+                                                        <p className="text-gray-500 text-sm mt-1">Restriction of processing</p>
                                                     </div>
-                                                    
-                                                    <div className="flex-none w-full sm:w-1/2 px-5">
-                                                        {/* Objection */}
-                                                        <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
-                                                            <h3 className="text-gray-900 font-medium text-base">Objection</h3>
-                                                            <p className="text-gray-500 text-sm mt-1">Object to processing based on legitimate interests</p>
-                                                        </div>
+                                                </div>
+                                                
+                                                <div className="flex-none w-full sm:w-1/2 [&:last-child:nth-child(odd)]:sm:w-full px-5">
+                                                    {/* Objection */}
+                                                    <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
+                                                        <h3 className="text-gray-900 font-medium text-base">Objection</h3>
+                                                        <p className="text-gray-500 text-sm mt-1">Object to processing based on legitimate interests</p>
                                                     </div>
+                                                </div>
 
-                                                    <div className="flex-none w-full sm:w-1/2 px-5">
-                                                        {/* Objection */}
-                                                        <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
-                                                            <h3 className="text-gray-900 font-medium text-base">Withdrawal of Consent</h3>
-                                                            <p className="text-gray-500 text-sm mt-1">At any time (for consent-based processing; with effect for the future)</p>
-                                                        </div>
+                                                <div className="flex-none w-full sm:w-1/2 [&:last-child:nth-child(odd)]:sm:w-full px-5">
+                                                    {/* Objection */}
+                                                    <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
+                                                        <h3 className="text-gray-900 font-medium text-base">Withdrawal of Consent</h3>
+                                                        <p className="text-gray-500 text-sm mt-1">At any time (for consent-based processing; with effect for the future)</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        {/* </div> */}
+                                        </div>
+                                        
+                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
+                                            <div className="block">
+                                                <span className="text-md font-semibold text-gray900">To exercise your rights, contact:</span>
+                                            </div>
+                                            <div className="space-y-3 text-gray700 leading-relaxed">
+                                                <p><Link href="mailto:privacy@tradoo.io" className="hover:underline">privacy@tradoo.io</Link></p>
+                                                <p>We may request proof of identity to prevent unauthorized access.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-3 text-gray700 leading-relaxed">
+                                        <p>If you are located in Switzerland, the EU, or the EEA, you have the right to lodge a complaint with the competent data protection authority. However, we encourage you to contact us first so we can address your concern.</p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* --------- SECTION 12 --------- */}
-                            <div>
+                            <div id="section12">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -972,83 +974,73 @@ const page = () => {
                                         12
                                     </span>
                                     <h2 className="text-xl md:text-2xl font-semibold text-gray900">
-                                        Governing Law and Jurisdiction
+                                        Cookies and Tracking Technologies
                                     </h2>
                                 </div>
 
                                 <div className="space-y-8">
-
-                                    <div>
-                                        <div className="space-y-3 text-gray700 leading-relaxed">
-                                            <div className="bg-gray100 border border-gray300 rounded-xl p-6">
-                                                <div className="space-y-3 text-gray700 leading-relaxed">
-                                                    <div className="grid sm:grid-cols-2 gap-6"><div><p className="text-sm text-gray700 mb-1">Governing Law</p><p className="font-medium text-gray800">Swiss Law</p></div><div><p className="text-sm text-gray700 mb-1">Jurisdiction</p><p className="font-medium text-gray800">Zug, Switzerland</p></div></div>
-                                                </div>
-
+                                    <div className="space-y-3 bg-[#f0fdf4] p-6 rounded-xl border border-solid border-green-200 shadow-sm">
+                                        <div className="flex gap-3">
+                                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-white shrink-0">
+                                                <span className="text-sm font-bold">✓</span>
                                             </div>
-                                            <div className="bg-gray100 border border-gray300 rounded-xl p-6">
-                                                <div className="space-y-3 text-gray700 leading-relaxed">
-                                                    {/* Header */}
-                                                    <div className="flex items-start gap-3 mb-6">
-                                                        <div className="mt-1 w-10 h-10 flex justify-center items-center bg-gray300 rounded-6">
-                                                            <FileText className="w-6 h-6 text-gray900" />
-                                                        </div>
-                                                        <div>
-                                                            <h2 className="text-xl font-semibold text-gray900">
-                                                                Supplementary Documents
-                                                            </h2>
-                                                            <p className="text-gray700 text-base">
-                                                                Additional legal documentation for our services
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-                                                        {/* Terms of Use */}
-                                                        <Link
-                                                            href="/"
-                                                            className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
-                                                        >
-                                                            <h3 className="text-gray-900 font-semibold text-base">Private Beta Terms</h3>
-                                                            <p className="text-gray-500 text-sm mt-1">Phase 1 Framework</p>
-                                                        </Link>
-
-
-                                                        {/* Risk Disclosure */}
-                                                        <Link
-                                                            href="/"
-                                                            className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
-                                                        >
-                                                            <h3 className="text-gray900 font-semibold text-base">Risk Disclosure</h3>
-                                                            <p className="text-gray700 text-sm mt-1">risk information</p>
-                                                        </Link>
-
-                                                        {/* Privacy Notice */}
-                                                        <Link
-                                                            href="/"
-                                                            className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
-                                                        >
-                                                            <h3 className="text-gray900 font-semibold text-base">Privacy Notice</h3>
-                                                            <p className="text-gray700 text-sm mt-1">Data protection</p>
-                                                        </Link>
-
-                                                        {/* Cookie Policy */}
-                                                        <Link
-                                                            href="/"
-                                                            className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
-                                                        >
-                                                            <h3 className="text-gray900 font-semibold text-base">Cookie Policy</h3>
-                                                            <p className="text-gray700 text-sm mt-1">Cookie Information</p>
-                                                        </Link>
-
-                                                    </div>
+                                            <div className='space-y-2'>
+                                                <h3 className="text-md font-medium text-gray900">Strictly necessary cookies only</h3>
+                                                <div className="space-y-1">
+                                                    <p>We use only strictly necessary cookies required for the technical operation and security of the websites. These cookies do not track your browsing behavior across websites and are not used for analytics, profiling, or targeted advertising.</p>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
 
+                                    <div className="space-y-3 bg-[#fef2f2] p-6 mt-8 rounded-xl border border-solid border-red-200 shadow-sm">
+                                        <div className="flex gap-3">
+                                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-white shrink-0">
+                                                <span className="text-sm font-bold">✗</span>
+                                            </div>
+                                            <div className='space-y-2'>
+                                                <h3 className="text-md font-medium text-gray900">We do NOT use</h3>
+                                                <div className="space-y-1">
+                                                    <p>Marketing cookies</p>
+                                                    <p>Cross-site tracking identifiers</p>
+                                                    <p>Advertising pixels</p>
+                                                    <p>Behavioral analytics cookies (e.g., Google Analytics, Meta Pixel, LinkedIn Insight Tag)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <div className="space-y-3 text-gray700 leading-relaxed">
+                                        <p>Certain third-party tools or embedded content (e.g., blockchain network widgets, chart visualizations, or social media sharing modules) may set their own cookies when loaded. These cookies are controlled by the respective third parties. Their own privacy and cookie policies apply.</p>
+                                        <p>You can disable cookies via your browser settings. Please note that disabling certain cookies may impair the basic functionality of the websites.</p>
+                                        <p>For more details, see our Cookie Policy.</p>
+                                    </div>
+
+                                    <div className="space-y-8">
+                                        <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
+                                            <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-3">
+                                                <div className="flex-none w-full md:flex-1">
+                                                    <div className="flex gap-3">
+                                                        <span className="mt-0.5">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-settings h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                                        </span>
+                                                        <h3 className="text-lg font-semibold text-gray900">Manage your cookie preferences</h3>
+                                                    </div>
+                                                    <div className="space-y-3 pl-8 text-gray700 leading-relaxed">
+                                                        <p>You can review and update your cookie settings at any time.</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex-none w-full md:w-auto">
+                                                    <div className="block">
+                                                        <Link href="/" className='inline-flex gap-3 font-semibold text-sm leading-snug border border-gray300 rounded-6 py-2 px-5 hover:bg-black/3'>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-cookie h-4 w-4"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>
+                                                            <span>Cookie Settings</span>
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
