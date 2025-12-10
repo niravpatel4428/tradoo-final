@@ -9,7 +9,7 @@ import infoCircleIcon from "@/public/image/svg/form-Info-circle.svg";
 const UsdcFlows = () => {
     return (
         <>
-            <div className="block bg-gray900 max-xs:py-20 py-42">
+            <div className="block bg-gray900 max-xs:py-20 py-42 overflow-hidden">
                 <div className="container">
                     <div className="block max-xs:space-y-16 space-y-24">
                         {/* Main Section Title */}

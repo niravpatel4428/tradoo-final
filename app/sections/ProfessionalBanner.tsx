@@ -36,7 +36,7 @@ const ProfessionalBanner: React.FC = () => {
                     <div className="mt-8 w-full max-w-230 mx-auto">
                         <p className="text-lg xxl:text-xl font-normal leading-7 text-gray400">Tradoo gives CFOs and treasury teams a non-custodial way to deploy USDC reserves into overcollateralized on-chain credit markets with conservative returns, diversified venues and a risk-first framework.</p>
                     </div>
-                    <div className='mt-12 md:mt-18'>
+                    <div className='relative z-10 mt-12 md:mt-18'>
                         <div className='grid grid-cols-12 gap-2'>
                             {data.map((item, index) => (
                                 <div key={index} className='col-span-12 md:col-span-4'>

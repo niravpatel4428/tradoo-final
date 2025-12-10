@@ -230,19 +230,19 @@ const page = () => {
                                         <div className="space-y-3 text-gray700 leading-relaxed">
                                             <ul className='space-y-3'>
                                                 <li className='flex items-center gap-3'>
-                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs shrink-0 mt-0.5">✗</span>
                                                     <span>User tracking</span>
                                                 </li>
                                                 <li className='flex items-center gap-3'>
-                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs shrink-0 mt-0.5">✗</span>
                                                     <span>Behavioral analytics</span>
                                                 </li>
                                                 <li className='flex items-center gap-3'>
-                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs shrink-0 mt-0.5">✗</span>
                                                     <span>Targeted or personalized advertising</span>
                                                 </li>
                                                 <li className='flex items-center gap-3'>
-                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs shrink-0 mt-0.5">✗</span>
                                                     <span>User profiling</span>
                                                 </li>
                                             </ul>
@@ -440,19 +440,19 @@ const page = () => {
                                         <div className="space-y-3 text-gray700 leading-relaxed">
                                             <ul className='space-y-3'>
                                                 <li className='flex items-center gap-3'>
-                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs shrink-0 mt-0.5">✗</span>
                                                     <span>Web beacons</span>
                                                 </li>
                                                 <li className='flex items-center gap-3'>
-                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs shrink-0 mt-0.5">✗</span>
                                                     <span>Fingerprinting</span>
                                                 </li>
                                                 <li className='flex items-center gap-3'>
-                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs shrink-0 mt-0.5">✗</span>
                                                     <span>Tracking pixels</span>
                                                 </li>
                                                 <li className='flex items-center gap-3'>
-                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs shrink-0 mt-0.5">✗</span>
                                                     <span>Clear GIFs</span>
                                                 </li>
                                             </ul>
