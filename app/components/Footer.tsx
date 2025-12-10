@@ -27,13 +27,13 @@ const footerColumns = [
     groups: [
       {
         title: "For Individuals",
-        links: [{ label: "Personal Wealth", href: "/" }],
+        links: [{ label: "Personal Wealth", href: "/personal-wealth" }],
       },
       {
         title: "For Professionals",
         links: [
-          { label: "Stablecoin Treasury", href: "/" },
-          { label: "Institutional Vaults", href: "/" },
+          { label: "Stablecoin Treasury", href: "/stablecoin-treasury" },
+          { label: "Institutional Vaults", href: "/institutional-vaults" },
         ],
       },
     ],
@@ -45,10 +45,10 @@ const footerColumns = [
         title: "Product",
         links: [
           { label: "Approach", href: "/approach" },
-          { label: "Dashboard", href: "/" },
+          { label: "Dashboard", href: "/dashboard" },
           { label: "Risk Profiles", href: "/riskprofiles" },
           { label: "Strategy Framework", href: "/strategy-framework" },
-          { label: "Docs", href: "/" },
+          { label: "Docs", href: "/label" },
         ],
       },
     ],
@@ -61,10 +61,10 @@ const footerColumns = [
         links: [
           { label: "About Us", href: "/about" },
           { label: "Careers", href: "/career" },
-          { label: "Contacts", href: "/" },
-          { label: "Support", href: "/" },
-          { label: "Become and Investor", href: "/" },
-          { label: "Join the Waitlist", href: "/" },
+          { label: "Contacts", href: "/contact" },
+          { label: "Support", href: "/support" },
+          { label: "Become and Investor", href: "/investor" },
+          { label: "Join the Waitlist", href: "/join-the-waitlist" },
         ],
       },
     ],
