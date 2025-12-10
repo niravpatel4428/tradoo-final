@@ -26,7 +26,7 @@ const tableOfContents = {
     subtitle: "Navigate to specific sections of this policy",
 
     items: [
-        { id: "section1", label: "1. Introduction", number: "", icon: FileText },
+        { id: "section1", label: "1. Introduction", number: "", icon: FileText }, 
         { id: "section2", label: "2. What Are Cookies?", number: "", icon: Cookie },
         { id: "section3", label: "3. How We Use Cookies", number: "", icon: Settings },
 
