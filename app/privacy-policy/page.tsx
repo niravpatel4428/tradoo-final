@@ -166,19 +166,18 @@ const page = () => {
                             {/* Grid */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {tableOfContents.items.map((item, index) => {
-                                    // Only use Icon if it's a valid function/component
-                                    const Icon = item.icon;
+                                    const IconComponent = item.icon as React.ComponentType<{ className?: string }> | undefined;
                                     return (
                                         <Link href={`#${item.id}`} key={index} className="group flex items-center gap-3 py-2 px-3 rounded-6 hover:bg-[#e8eaed80]">
                                             {/* ICON OR CUSTOM NUMBER */}
                                             <div className="w-7 h-7 flex justify-center items-center bg-gray200 rounded-md text-gray800 text-xs leading-tight font-semibold group-hover:bg-foreground group-hover:text-[#f6f8fe]">
-                                                {Icon && typeof Icon === "function" ? (
-                                                    React.createElement(Icon, { className: "w-5 h-5 text-gray800" })
-                                                ) : item.number ? (
+                                                {IconComponent && (
+                                                    <IconComponent className="w-5 h-5 text-gray800" />
+                                                ) || (item.number ? (
                                                     <span>
                                                         {item.number}
                                                     </span>
-                                                ) : null}
+                                                ) : null)}
                                             </div>
                                 
                                             {/* LABEL */}

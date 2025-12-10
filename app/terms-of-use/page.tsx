@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import {
     FileText,
@@ -30,26 +31,33 @@ const tableOfContents = {
     subtitle: "Navigate to specific sections of these terms",
 
     items: [
-        { label: "Relationship to Other Documents", icon: Link2 },
-        { label: "1. Scope of Application", icon: FileText },
+        { id: "relationship-documents", label: "Relationship to Other Documents", icon: Link2 },
+        { id: "scope-application", label: "1. Scope of Application", icon: FileText },
 
-        { label: "2. Operator", icon: Building2 },
-        { label: "3. Role of Tradoo", icon: Shield },
+        { id: "operator", label: "2. Operator", icon: Building2 },
+        { id: "role-tradoo", label: "3. Role of Tradoo", icon: Shield },
 
-        { label: "4. No Investment Advice", icon: Scale },
-        { label: "5. Private Beta Access", icon: Users },
+        { id: "investment-advice", label: "4. No Investment Advice", icon: Scale },
+        { id: "private-beta-access", label: "5. Private Beta Access", icon: Users },
 
-        { label: "6. Equity Participations", icon: Coins },
-        { label: "7. Third-Party Protocols", icon: Link2 },
+        { id: "equity-participations", label: "6. Equity Participations", icon: Coins },
+        { id: "third-party-protocols", label: "7. Third-Party Protocols", icon: Link2 },
 
-        { label: "8. Risk Notice", icon: AlertTriangle },
-        { label: "9. Liability", icon: Gavel },
+        { id: "risk-notice", label: "8. Risk Notice", icon: AlertTriangle },
+        { id: "liability", label: "9. Liability", icon: Gavel },
 
-        { label: "10. Data Protection", icon: Lock },
-        { label: "11. Intellectual Property", icon: BookOpen },
+        { id: "data-protection", label: "10. Data Protection", icon: Lock },
+        { id: "intellectual-property", label: "11. Intellectual Property", icon: BookOpen },
 
-        { label: "12. Governing Law and Jurisdiction", icon: MapPin },
+        { id: "law-jurisdiction", label: "12. Governing Law and Jurisdiction", icon: MapPin },
     ],
+};
+
+const handleScroll = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
 };
 
 const page = () => {
@@ -151,7 +159,8 @@ const page = () => {
                                     return (
                                         <div
                                             key={index}
-                                            className="flex items-center gap-3 py-2"
+                                            onClick={() => handleScroll(item.id)}
+                                            className="flex items-center gap-3 py-2 px-3 hover:bg-white cursor-pointer rounded-lg hover:shadow-sm transition-all duration-300"
                                         >
                                             <div className="w-9 h-9 flex justify-center items-center bg-gray200 rounded-md">
                                                 <Icon className="w-5 h-5 text-gray800" />
@@ -166,7 +175,7 @@ const page = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full px-5">
+                    <div className="w-full px-5 scroll-mt-28" id="relationship-documents">
                         <div className="max-w-224 mx-auto md:px-0">
 
 
@@ -284,7 +293,7 @@ const page = () => {
                     <div className="w-full px-5">
                         <div className="max-w-224 mx-auto space-y-10">
                             {/* --------- SECTION 1 --------- */}
-                            <div>
+                            <div id="scope-application" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -320,7 +329,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 2 --------- */}
-                            <div>
+                            <div id="operator" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -366,7 +375,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 3 --------- */}
-                            <div>
+                            <div id="role-tradoo" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -405,7 +414,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 4 --------- */}
-                            <div>
+                            <div id="investment-advice" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -442,7 +451,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 5 --------- */}
-                            <div>
+                            <div id="private-beta-access" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -485,7 +494,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 6 --------- */}
-                            <div>
+                            <div id="equity-participations" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -522,7 +531,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 7 --------- */}
-                            <div>
+                            <div id="third-party-protocols" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -558,7 +567,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 8 --------- */}
-                            <div>
+                            <div id="risk-notice" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -580,7 +589,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 9 --------- */}
-                            <div>
+                            <div id="liability" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -608,7 +617,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 10 --------- */}
-                            <div>
+                            <div id="data-protection" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -636,7 +645,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 11 --------- */}
-                            <div>
+                            <div id="intellectual-property" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -664,7 +673,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 12 --------- */}
-                            <div>
+                            <div id="law-jurisdiction" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
