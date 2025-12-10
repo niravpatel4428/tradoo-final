@@ -711,7 +711,7 @@ const page = () => {
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                                                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"> 
 
                                                         {/* Terms of Use */}
                                                         <Link
@@ -743,7 +743,7 @@ const page = () => {
 
                                                         {/* Cookie Policy */}
                                                         <Link
-                                                            href="/"
+                                                            href="/cookie-policy"
                                                             className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                                         >
                                                             <h3 className="text-gray900 font-semibold text-base">Cookie Policy</h3>

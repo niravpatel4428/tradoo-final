@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import {
     FileText,
@@ -28,30 +29,37 @@ const tableOfContents = {
     subtitle: "Navigate to specific sections of these terms",
 
     items: [
-        { id: "section1", label: "About This Privacy Notice", number: "1", icon: undefined },
-        { id: "section2", label: "Data Controller", number: "2", icon: undefined },
+        { id: "section1", label: "About This Privacy Notice", },
+        { id: "section2", label: "Data Controller", },
 
-        { id: "section3", label: "Data Controller", number: "3", icon: undefined },
-        { id: "section4", label: "Purposes of Processing", number: "4", icon: undefined },
+        { id: "section3", label: "Data Controller", },
+        { id: "section4", label: "Purposes of Processing", },
 
-        { id: "section5", label: "Legal Basis for Processing", number: "5", icon: undefined },
-        { id: "section6", label: "Profiling and Automated Decisions", number: "6", icon: undefined },
+        { id: "section5", label: "Legal Basis for Processing", },
+        { id: "section6", label: "Profiling and Automated Decisions", },
 
-        { id: "section7", label: "Data Sharing and Recipients", number: "7", icon: undefined },
-        { id: "section8", label: "International Data Transfers", number: "8", icon: undefined },
+        { id: "section7", label: "Data Sharing and Recipients", },
+        { id: "section8", label: "International Data Transfers", },
 
-        { id: "section9", label: "Data Retention Periods", number: "9", icon: undefined },
-        { id: "section10", label: "Data Security", number: "10", icon: undefined },
+        { id: "section9", label: "Data Retention Periods", },
+        { id: "section10", label: "Data Security",  },
 
-        { id: "section11", label: "Your Rights", number: "11", icon: undefined },
-        { id: "section12", label: "Cookies and Tracking Technologies", number: "12", icon: undefined },
+        { id: "section11", label: "Your Rights",  },
+        { id: "section12", label: "Cookies and Tracking Technologies",  },
 
-        { id: "section13", label: "Social Media Presence", number: "13", icon: undefined },
-        { id: "section14", label: "Changes to This Notice", number: "14", icon: undefined },
+        { id: "section13", label: "Social Media Presence",  },
+        { id: "section14", label: "Changes to This Notice",  },
 
-        { id: "section15", label: "Regulatory Context", number: "15", icon: undefined },
-        { id: "section16", label: "Contact for Data Protection", number: "16", icon: undefined },
+        { id: "section15", label: "Regulatory Context",  },
+        { id: "section16", label: "Contact for Data Protection",  },
     ],
+};
+
+const handleScroll = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
 };
 
 const page = () => {
@@ -155,28 +163,20 @@ const page = () => {
 
                             {/* Grid */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {tableOfContents.items.map((item, index) => {
-                                    const IconComponent = item.icon as React.ComponentType<{ className?: string }> | undefined;
-                                    return (
-                                        <Link href={`#${item.id}`} key={index} className="group flex items-center gap-3 py-2 px-3 rounded-6 hover:bg-[#e8eaed80]">
-                                            {/* ICON OR CUSTOM NUMBER */}
-                                            <div className="w-7 h-7 flex justify-center items-center bg-gray200 rounded-md text-gray800 text-xs leading-tight font-semibold group-hover:bg-foreground group-hover:text-[#f6f8fe]">
-                                                {IconComponent && (
-                                                    <IconComponent className="w-5 h-5 text-gray800" />
-                                                ) || (item.number ? (
-                                                    <span>
-                                                        {item.number}
-                                                    </span>
-                                                ) : null)}
-                                            </div>
-                                
-                                            {/* LABEL */}
-                                            <span className="text-gray800 text-sm">
-                                                {item.label}
-                                            </span>
-                                        </Link>
-                                    );
-                                })}
+                                {tableOfContents.items.map((label, index) => (
+                                    <div
+                                        key={index}
+                                        onClick={() => handleScroll(label.id)}
+                                        className="flex items-center gap-3 py-2 px-3 hover:bg-white cursor-pointer rounded-lg hover:shadow-sm transition-all duration-300"
+                                    >
+                                        <span className="px-3 py-1 rounded-md bg-gray200 text-gray800 text-sm font-semibold">
+                                            {index + 1}
+                                        </span>
+                                        <span className="text-gray800 text-sm">
+                                            {label.label}
+                                        </span>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -186,7 +186,7 @@ const page = () => {
                     <div className="w-full px-5">
                         <div className="max-w-224 mx-auto space-y-10">
                             {/* --------- SECTION 1 --------- */}
-                            <div id="section1">
+                            <div id="section1" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -248,7 +248,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 2 --------- */}
-                            <div id="section2">
+                            <div id="section2" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -289,7 +289,7 @@ const page = () => {
 
                                     <div className="bg-gray100 border border-gray200 rounded-2xl shadow-sm p-6 md:p-8">
                                         <h2 className="text-lg md:text-xl font-semibold text-gray900 flex items-center gap-3">
-                                            <span className="min-w-10 w-10 h-10 flex justify-center items-center bg-gray300 rounded-6"> 
+                                            <span className="min-w-10 w-10 h-10 flex justify-center items-center bg-gray300 rounded-6">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lh-5 w-5">
                                                     <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
                                                 </svg>
@@ -310,7 +310,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 3 --------- */}
-                            <div id="section3">
+                            <div id="section3" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -435,7 +435,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 4 --------- */}
-                            <div id="section4">
+                            <div id="section4" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -461,7 +461,7 @@ const page = () => {
                                                 <p>Responding to inquiries, providing information, customer support, exercising data subject rights; documentation for training, quality assurance, and evidentiary purposes.</p>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
                                             <div className="block">
                                                 <span className="text-md font-semibold text-gray900">Website operation and security</span>
@@ -470,7 +470,7 @@ const page = () => {
                                                 <p>Providing and improving functionality, availability, performance, information security (including fraud/abuse detection, incident handling), user experience, and accessibility.</p>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
                                             <div className="block">
                                                 <span className="text-md font-semibold text-gray900">Contract initiation and performance</span>
@@ -529,7 +529,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 5 --------- */}
-                            <div id="section5">
+                            <div id="section5" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -555,7 +555,7 @@ const page = () => {
                                                 <p>E.g., newsletters, certain cookies/analytics, specific optional features. You can withdraw consent at any time with effect for the future.</p>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
                                             <div className="block">
                                                 <span className="text-md font-semibold text-gray900">Contract performance or pre-contractual measures (Art. 6(1)(b) GDPR)</span>
@@ -564,7 +564,7 @@ const page = () => {
                                                 <p>E.g., account creation, service provision, billing.</p>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
                                             <div className="block">
                                                 <span className="text-md font-semibold text-gray900">Legitimate interests (Art. 6(1)(f) GDPR)</span>
@@ -600,7 +600,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 6 --------- */}
-                            <div id="section6">
+                            <div id="section6" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -638,7 +638,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 7 --------- */}
-                            <div id="section7">
+                            <div id="section7" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -705,7 +705,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 8 --------- */}
-                            <div id="section8">
+                            <div id="section8" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -746,7 +746,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 9 --------- */}
-                            <div id="section9">
+                            <div id="section9" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -826,7 +826,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 10 --------- */}
-                            <div id="section10">
+                            <div id="section10" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -870,7 +870,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 11 --------- */}
-                            <div id="section11">
+                            <div id="section11" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -897,7 +897,7 @@ const page = () => {
                                                         <p className="text-gray-500 text-sm mt-1">Access to your personal data</p>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div className="flex-none w-full sm:w-1/2 [&:last-child:nth-child(odd)]:sm:w-full px-5">
                                                     {/* Data Portability */}
                                                     <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
@@ -905,7 +905,7 @@ const page = () => {
                                                         <p className="text-gray-500 text-sm mt-1">Receive a copy of your data in a common electronic format</p>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div className="flex-none w-full sm:w-1/2 [&:last-child:nth-child(odd)]:sm:w-full px-5">
                                                     {/* Rectification */}
                                                     <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
@@ -913,7 +913,7 @@ const page = () => {
                                                         <p className="text-gray-500 text-sm mt-1">Correction of inaccurate or incomplete data</p>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div className="flex-none w-full sm:w-1/2 [&:last-child:nth-child(odd)]:sm:w-full px-5">
                                                     {/* Erasure */}
                                                     <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
@@ -921,7 +921,7 @@ const page = () => {
                                                         <p className="text-gray-500 text-sm mt-1">Deletion of your data (subject to legal limitations)</p>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div className="flex-none w-full sm:w-1/2 [&:last-child:nth-child(odd)]:sm:w-full px-5">
                                                     {/* Restriction */}
                                                     <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
@@ -929,7 +929,7 @@ const page = () => {
                                                         <p className="text-gray-500 text-sm mt-1">Restriction of processing</p>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div className="flex-none w-full sm:w-1/2 [&:last-child:nth-child(odd)]:sm:w-full px-5">
                                                     {/* Objection */}
                                                     <div className="block bg-gray100 px-6 py-5 rounded-xl border border-gray-200">
@@ -947,7 +947,7 @@ const page = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
                                             <div className="block">
                                                 <span className="text-md font-semibold text-gray900">To exercise your rights, contact:</span>
@@ -966,7 +966,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 12 --------- */}
-                            <div id="section12">
+                            <div id="section12" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -1018,11 +1018,11 @@ const page = () => {
 
                                     <div className="space-y-8">
                                         <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
-                                            <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-3">
+                                            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
                                                 <div className="flex-none w-full md:flex-1">
                                                     <div className="flex gap-3">
                                                         <span className="mt-0.5">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round" className="lucide lucide-settings h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-settings h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                                                         </span>
                                                         <h3 className="text-lg font-semibold text-gray900">Manage your cookie preferences</h3>
                                                     </div>
@@ -1033,7 +1033,7 @@ const page = () => {
                                                 <div className="flex-none w-full md:w-auto">
                                                     <div className="block">
                                                         <Link href="/" className='inline-flex gap-3 font-semibold text-sm leading-snug border border-gray300 rounded-6 py-2 px-5 hover:bg-black/3'>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round" className="lucide lucide-cookie h-4 w-4"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cookie h-4 w-4"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>
                                                             <span>Cookie Settings</span>
                                                         </Link>
                                                     </div>
@@ -1045,7 +1045,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 13 --------- */}
-                            <div id="section13">
+                            <div id="section13" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -1073,7 +1073,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 14 --------- */}
-                            <div id="section14">
+                            <div id="section14" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -1109,7 +1109,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 15 --------- */}
-                            <div id="section15">
+                            <div id="section15" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -1185,7 +1185,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 16 --------- */}
-                            <div id="section16">
+                            <div id="section16" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -1244,7 +1244,7 @@ const page = () => {
                                                     <h3 className="text-gray-900 font-medium text-base">Private Beta Terms</h3>
                                                     <p className="text-gray-500 text-sm mt-1">Phase 1 Execution Framework</p>
                                                 </Link>
-                                                
+
                                                 {/* Terms of Use */}
                                                 <Link href="/terms-of-use" className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all">
                                                     <h3 className="text-gray-900 font-medium text-base">Terms of Use</h3>
@@ -1253,7 +1253,7 @@ const page = () => {
 
 
                                                 {/* Risk Disclosure */}
-                                                <Link href="/terms-of-use" className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+                                                <Link href="/risk-disclosure" className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all">
                                                     <h3 className="text-gray-900 font-medium text-base">Risk Disclosure</h3>
                                                     <p className="text-gray-500 text-sm mt-1">Risk Disclosure</p>
                                                 </Link>

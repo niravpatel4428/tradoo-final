@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import {
     FileText,
@@ -26,19 +27,26 @@ const tableOfContents = {
     subtitle: "Navigate to specific sections of this policy",
 
     items: [
-        { id: "section1", label: "1. Introduction", number: "", icon: FileText }, 
-        { id: "section2", label: "2. What Are Cookies?", number: "", icon: Cookie },
-        { id: "section3", label: "3. How We Use Cookies", number: "", icon: Settings },
+        { id: "section1", label: "1. Introduction", icon: FileText },
+        { id: "section2", label: "2. What Are Cookies?", icon: Cookie },
+        { id: "section3", label: "3. How We Use Cookies", icon: Settings },
 
-        { id: "section4", label: "4. Third-Party Cookies and Embedded Content", number: "", icon: Link2 },
-        { id: "section5", label: "5. Do-Not-Track Signals", number: "", icon: Eye },
-        { id: "section6", label: "6. Managing or Disabling Cookies", number: "", icon: ToggleLeft },
+        { id: "section4", label: "4. Third-Party Cookies and Embedded Content", icon: Link2 },
+        { id: "section5", label: "5. Do-Not-Track Signals", icon: Eye },
+        { id: "section6", label: "6. Managing or Disabling Cookies", icon: ToggleLeft },
 
 
-        { id: "section7", label: "7. Additional Web Technologies", number: "", icon: Code },
-        { id: "section8", label: "8. Data Usage", number: "", icon: Database },
-        { id: "section9", label: "9. Contact", number: "", icon: Mail },
+        { id: "section7", label: "7. Additional Web Technologies", icon: Code },
+        { id: "section8", label: "8. Data Usage", icon: Database },
+        { id: "section9", label: "9. Contact", icon: Mail },
     ],
+};
+
+const handleScroll = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
 };
 
 const page = () => {
@@ -135,27 +143,23 @@ const page = () => {
                             </div>
 
                             {/* Grid */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {tableOfContents.items.map((item, index) => {
-                                    const IconComponent = item.icon as React.ComponentType<{ className?: string }> | undefined;
+                                    const Icon = item.icon;
                                     return (
-                                        <Link href={`#${item.id}`} key={index} className="group flex items-center gap-3 py-2 px-3 rounded-6 hover:bg-[#e8eaed80]">
-                                            {/* ICON OR CUSTOM NUMBER */}
-                                            <div className="w-7 h-7 p-1 flex justify-center items-center bg-gray200 rounded-md text-gray800 text-xs leading-tight font-semibold group-hover:bg-foreground group-hover:text-[#f6f8fe]">
-                                                {IconComponent && (
-                                                    <IconComponent className="w-5 h-5 text-gray80" />
-                                                ) || (item.number ? (
-                                                    <span>
-                                                        {item.number}
-                                                    </span>
-                                                ) : null)}
+                                        <div
+                                            key={index}
+                                            onClick={() => handleScroll(item.id)}
+                                            className="flex items-center gap-3 py-2 px-3 hover:bg-white cursor-pointer rounded-lg hover:shadow-sm transition-all duration-300"
+                                        >
+                                            <div className="w-9 h-9 flex justify-center items-center bg-gray200 rounded-md">
+                                                <Icon className="w-5 h-5 text-gray800" />
                                             </div>
-                                
-                                            {/* LABEL */}
+
                                             <span className="text-gray800 text-sm">
                                                 {item.label}
                                             </span>
-                                        </Link>
+                                        </div>
                                     );
                                 })}
                             </div>
@@ -167,7 +171,7 @@ const page = () => {
                     <div className="w-full px-5">
                         <div className="max-w-224 mx-auto space-y-10">
                             {/* --------- SECTION 1 --------- */}
-                            <div id="section1">
+                            <div id="section1" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -202,7 +206,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 2 --------- */}
-                            <div id="section2">
+                            <div id="section2" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -252,7 +256,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 3 --------- */}
-                            <div id="section3">
+                            <div id="section3" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -295,7 +299,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 4 --------- */}
-                            <div id="section4">
+                            <div id="section4" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -330,7 +334,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 5 --------- */}
-                            <div id="section5">
+                            <div id="section5" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -350,7 +354,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 6 --------- */}
-                            <div id="section6">
+                            <div id="section6" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -368,28 +372,28 @@ const page = () => {
                                     </div>
 
                                     <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
-                                            <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-3">
-                                                <div className="flex-none w-full md:flex-1">
-                                                    <div className="flex gap-3">
-                                                        <span className="mt-0.5">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-settings h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                                        </span>
-                                                        <h3 className="text-lg font-semibold text-gray900">Manage your cookie preferences</h3>
-                                                    </div>
-                                                    <div className="space-y-3 pl-8 text-gray700 leading-relaxed">
-                                                        <p>You can review and update your cookie settings at any time.</p>
-                                                    </div>
+                                        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+                                            <div className="flex-none w-full md:flex-1">
+                                                <div className="flex gap-3">
+                                                    <span className="mt-0.5">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-settings h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                                    </span>
+                                                    <h3 className="text-lg font-semibold text-gray900">Manage your cookie preferences</h3>
                                                 </div>
-                                                <div className="flex-none w-full md:w-auto">
-                                                    <div className="block">
-                                                        <Link href="/" className='inline-flex gap-3 font-semibold text-sm leading-snug border border-gray300 rounded-6 py-2 px-5 hover:bg-black/3'>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cookie h-4 w-4"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>
-                                                            <span>Cookie Settings</span>
-                                                        </Link>
-                                                    </div>
+                                                <div className="space-y-3 pl-8 text-gray700 leading-relaxed">
+                                                    <p>You can review and update your cookie settings at any time.</p>
+                                                </div>
+                                            </div>
+                                            <div className="flex-none w-full md:w-auto">
+                                                <div className="block">
+                                                    <Link href="/" className='inline-flex gap-3 font-semibold text-sm leading-snug border border-gray300 rounded-6 py-2 px-5 hover:bg-black/3'>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cookie h-4 w-4"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>
+                                                        <span>Cookie Settings</span>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
                                     <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
                                         <div className="flex gap-3">
@@ -416,7 +420,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 7 --------- */}
-                            <div id="section7">
+                            <div id="section7" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -470,7 +474,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 8 --------- */}
-                            <div id="section8">
+                            <div id="section8" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -523,7 +527,7 @@ const page = () => {
                             </div>
 
                             {/* --------- SECTION 9 --------- */}
-                            <div id="section9">
+                            <div id="section9" className="scroll-mt-28">
 
                                 {/* Section Header */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -585,13 +589,13 @@ const page = () => {
                                                     <h3 className="text-gray-900 font-medium text-base">Privacy Policy</h3>
                                                     <p className="text-gray-500 text-sm mt-1">Privacy Policy</p>
                                                 </Link>
-                                                
+
                                                 {/* Terms of Use */}
                                                 <Link href="/terms-of-use" className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all">
                                                     <h3 className="text-gray-900 font-medium text-base">Terms of Use</h3>
                                                     <p className="text-gray-500 text-sm mt-1">General Terms</p>
                                                 </Link>
-                                                
+
                                                 {/* Private Beta Terms */}
                                                 <Link href="/privatebetaterms" className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all">
                                                     <h3 className="text-gray-900 font-medium text-base">Private Beta Terms</h3>

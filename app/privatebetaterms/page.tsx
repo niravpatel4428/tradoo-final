@@ -1306,8 +1306,8 @@ const page = () => {
                                             </Link>
 
                                             {/* Cookie Policy */}
-                                            <Link
-                                                href="/"
+                                            <Link 
+                                                href="/cookie-policy"
                                                 className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                             >
                                                 <h3 className="text-gray900 font-semibold text-lg">Cookie Policy</h3>

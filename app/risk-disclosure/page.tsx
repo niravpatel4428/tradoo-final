@@ -756,7 +756,7 @@ const page = () => {
 
 
                                                         <Link
-                                                            href="/"
+                                                            href="/privacy-policy"
                                                             className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                                         >
                                                             <h3 className="text-gray900 font-semibold text-base">Privacy Notice</h3>
@@ -765,7 +765,7 @@ const page = () => {
 
 
                                                         <Link
-                                                            href="/"
+                                                            href="/cookie-policy"
                                                             className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                                         >
                                                             <h3 className="text-gray900 font-semibold text-base">Cookie Policy</h3>
