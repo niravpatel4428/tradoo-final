@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import { AlertTriangle, ChevronsLeftRight, CircleCheckBig, Coins, FileText, Gauge, KeyRound, MapPin, UserRound, Wifi } from "lucide-react";
+import { AlertTriangle, ChevronsLeftRight, CircleCheckBig, Coins, FileText, Gauge, KeyRound, MapPin, UserRound, Wifi } from "lucide-react"; 
 import Link from 'next/link';
 import {
     Droplets,

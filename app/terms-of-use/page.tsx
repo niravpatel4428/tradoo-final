@@ -714,8 +714,8 @@ const page = () => {
                                                     <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
                                                         {/* Terms of Use */}
-                                                        <Link 
-                                                            href="/"
+                                                        <Link
+                                                            href="/privatebetaterms"
                                                             className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                                         >
                                                             <h3 className="text-gray-900 font-semibold text-base">Private Beta Terms</h3>
@@ -725,7 +725,7 @@ const page = () => {
 
                                                         {/* Risk Disclosure */}
                                                         <Link
-                                                            href="/"
+                                                            href="/risk-disclosure"
                                                             className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                                         >
                                                             <h3 className="text-gray900 font-semibold text-base">Risk Disclosure</h3>
@@ -734,7 +734,7 @@ const page = () => {
 
                                                         {/* Privacy Notice */}
                                                         <Link
-                                                            href="/"
+                                                            href="/privacy-policy"
                                                             className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                                         >
                                                             <h3 className="text-gray900 font-semibold text-base">Privacy Notice</h3>

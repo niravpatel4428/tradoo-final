@@ -1279,7 +1279,7 @@ const page = () => {
 
                                             {/* Terms of Use */}
                                             <Link
-                                                href="/"
+                                                href="/terms-of-use"
                                                 className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                             >
                                                 <h3 className="text-gray-900 font-semibold text-lg">Terms of Use</h3>
@@ -1289,7 +1289,7 @@ const page = () => {
 
                                             {/* Risk Disclosure */}
                                             <Link
-                                                href="/"
+                                                href="/risk-disclosure"
                                                 className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                             >
                                                 <h3 className="text-gray900 font-semibold text-lg">Risk Disclosure</h3>
@@ -1298,7 +1298,7 @@ const page = () => {
 
                                             {/* Privacy Notice */}
                                             <Link
-                                                href="/"
+                                                href="/privacy-policy"
                                                 className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                             >
                                                 <h3 className="text-gray900 font-semibold text-lg">Privacy Notice</h3>
@@ -1316,7 +1316,7 @@ const page = () => {
 
                                             {/* Imprint */}
                                             <Link
-                                                href="/"
+                                                href="/imprint"
                                                 className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                             >
                                                 <h3 className="text-gray900 font-semibold text-lg">Imprint</h3>
