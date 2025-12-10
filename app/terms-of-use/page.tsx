@@ -204,7 +204,7 @@ const page = () => {
 
                                     {/* Terms of Use */}
                                     <Link
-                                        href="/"
+                                        href="/privatebetaterms"
                                         className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                     >
                                         <h3 className="text-gray-900 font-semibold text-lg">Private Beta Terms</h3>
@@ -214,7 +214,7 @@ const page = () => {
 
                                     {/* Risk Disclosure */}
                                     <Link
-                                        href="/"
+                                        href="/risk-disclosure"
                                         className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                     >
                                         <h3 className="text-gray900 font-semibold text-lg">Risk Disclosure Statement</h3>
@@ -223,7 +223,7 @@ const page = () => {
 
                                     {/* Privacy Notice */}
                                     <Link
-                                        href="/"
+                                        href="/privacy-policy"
                                         className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                     >
                                         <h3 className="text-gray900 font-semibold text-lg">Privacy Notice</h3>
@@ -232,7 +232,7 @@ const page = () => {
 
                                     {/* Cookie Policy */}
                                     <Link
-                                        href="/"
+                                        href="/cookie-policy"
                                         className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all"
                                     >
                                         <h3 className="text-gray900 font-semibold text-lg">Cookie Policy</h3>
@@ -761,7 +761,7 @@ const page = () => {
                                 </div>
                             </div>
 
-                            <div className="w-full border-t border-gray300 pt-6">
+                            <div className="w-full border-t border-gray300 pt-6"> 
                                 <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center justify-between gap-6 text-gray700">
 
                                     {/* Left Section */}
