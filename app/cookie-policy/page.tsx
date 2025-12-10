@@ -1,56 +1,43 @@
 import React from 'react'
 import {
     FileText,
-    Shield,
     Mail,
-    Globe,
+    Cookie,
+    Building2,
+    Settings,
+    Link2,
+    Eye,
+    ToggleLeft,
+    Code,
+    Database,
 } from "lucide-react";
 import NextLink from 'next/link';
 import Link from 'next/link';
 
 const privateTermData = {
     badge: "Legal Document",
-    title: "Privacy Policy",
-    version: "Privacy Notice",
-    datetitle: "Last Updated:",
-    date: "December 1, 2025",
+    title: "Cookie Policy",
+    datetitle: "Last Updated :",
+    date: "November 2025",
 };
-
-const bannerDomains = [
-    "tradoo.finance",
-    "tradoo.io",
-    "tradoo.ai",
-    "tradoo.foundation",
-];
 
 const tableOfContents = {
     title: "Table of Contents",
-    subtitle: "Navigate to specific sections of these terms",
+    subtitle: "Navigate to specific sections of this policy",
 
     items: [
-        { id: "section1", label: "About This Privacy Notice", number: "1", icon: undefined },
-        { id: "section2", label: "Data Controller", number: "2", icon: undefined },
+        { id: "", label: "1. Introduction", number: "", icon: FileText },
+        { id: "section2", label: "2. What Are Cookies?", number: "", icon: Cookie },
+        { id: "section3", label: "3. How We Use Cookies", number: "", icon: Settings },
 
-        { id: "section3", label: "Data Controller", number: "3", icon: undefined },
-        { id: "section4", label: "Purposes of Processing", number: "4", icon: undefined },
+        { id: "section4", label: "4. Third-Party Cookies and Embedded Content", number: "", icon: Link2 },
+        { id: "section5", label: "5. Do-Not-Track Signals", number: "", icon: Eye },
+        { id: "section6", label: "6. Managing or Disabling Cookies", number: "", icon: ToggleLeft },
 
-        { id: "section5", label: "Legal Basis for Processing", number: "5", icon: undefined },
-        { id: "section6", label: "Profiling and Automated Decisions", number: "6", icon: undefined },
 
-        { id: "section7", label: "Data Sharing and Recipients", number: "7", icon: undefined },
-        { id: "section8", label: "International Data Transfers", number: "8", icon: undefined },
-
-        { id: "section9", label: "Data Retention Periods", number: "9", icon: undefined },
-        { id: "section10", label: "Data Security", number: "10", icon: undefined },
-
-        { id: "section11", label: "Your Rights", number: "11", icon: undefined },
-        { id: "section12", label: "Cookies and Tracking Technologies", number: "12", icon: undefined },
-
-        { id: "section13", label: "Social Media Presence", number: "13", icon: undefined },
-        { id: "section14", label: "Changes to This Notice", number: "14", icon: undefined },
-
-        { id: "section15", label: "Regulatory Context", number: "15", icon: undefined },
-        { id: "section16", label: "Contact for Data Protection", number: "16", icon: undefined },
+        { id: "section7", label: "7. Additional Web Technologies", number: "", icon: Code },
+        { id: "section8", label: "8. Data Usage", number: "", icon: Database },
+        { id: "section9", label: "9. Contact", number: "", icon: Mail },
     ],
 };
 
@@ -66,7 +53,7 @@ const page = () => {
                                 {/* Icon */}
                                 <div className="flex justify-center mb-6">
                                     <div className="w-14 h-14 rounded-full border border-white/20 bg-white/10 flex items-center justify-center">
-                                        <Shield className="w-7 h-7 text-white" />
+                                        <Cookie className="w-7 h-7 text-white" />
                                     </div>
                                 </div>
 
@@ -83,13 +70,7 @@ const page = () => {
                                 <div className="block space-y-6">
                                     {/* Framework, version, date */}
                                     <div className="text-[#cbd5e1] text-lg space-y-4">
-                                        <p>{privateTermData.version} . {privateTermData.datetitle} {privateTermData.date}</p>
-                                    </div>
-
-                                    <div className="flex flex-wrap justify-center gap-2 text-sm">
-                                        {bannerDomains.map((item, index) => (
-                                            <span key={index} className="py-1 px-3 rounded-2xl bg-white/10 text-[#e5e7eb]">{item}</span>
-                                        ))}
+                                        <p>{privateTermData.datetitle} {privateTermData.date}</p>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +86,7 @@ const page = () => {
                             {/* Operator */}
                             <div className='col-span-12 md:col-span-8'>
                                 <div className="flex items-center gap-3">
-                                    <Globe className="min-w-6 w-6 h-6 text-gray900" />
+                                    <Building2 className="min-w-6 w-6 h-6 text-gray900" />
                                     <div>
                                         <p className="text-sm text-gray700 mb-1">Data Controller</p>
                                         <p className="text-gray900 font-medium leading-relaxed">Tradoo AG · Baarerstrasse 8, CH-6300 Zug, Switzerland</p>
@@ -154,15 +135,15 @@ const page = () => {
                             </div>
 
                             {/* Grid */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                                 {tableOfContents.items.map((item, index) => {
                                     const IconComponent = item.icon as React.ComponentType<{ className?: string }> | undefined;
                                     return (
                                         <Link href={`#${item.id}`} key={index} className="group flex items-center gap-3 py-2 px-3 rounded-6 hover:bg-[#e8eaed80]">
                                             {/* ICON OR CUSTOM NUMBER */}
-                                            <div className="w-7 h-7 flex justify-center items-center bg-gray200 rounded-md text-gray800 text-xs leading-tight font-semibold group-hover:bg-foreground group-hover:text-[#f6f8fe]">
+                                            <div className="w-7 h-7 p-1 flex justify-center items-center bg-gray200 rounded-md text-gray800 text-xs leading-tight font-semibold group-hover:bg-foreground group-hover:text-[#f6f8fe]">
                                                 {IconComponent && (
-                                                    <IconComponent className="w-5 h-5 text-gray800" />
+                                                    <IconComponent className="w-5 h-5 text-gray80" />
                                                 ) || (item.number ? (
                                                     <span>
                                                         {item.number}
@@ -194,55 +175,28 @@ const page = () => {
                                         1
                                     </span>
                                     <h2 className="text-xl md:text-2xl font-semibold text-gray900">
-                                        About This Privacy Notice
+                                        Introduction
                                     </h2>
                                 </div>
 
                                 <div className="space-y-8">
                                     <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>Tradoo AG (hereinafter also &quot;we&quot;, &quot;us&quot;, or &quot;Tradoo&quot;) collects and processes personal data relating to you and, in some cases, other individuals (&quot;third parties&quot;). In this Privacy Notice, the terms &quot;data&quot; and &quot;personal data&quot; are used interchangeably.</p>
+                                        <p>This Cookie Policy (&quot;Policy&quot;) explains how Tradoo AG (&quot;Tradoo&quot;, &quot;we&quot;, or &quot;us&quot;) uses cookies and similar technologies in connection with our website and related interfaces (the &quot;Site&quot;).</p>
+
+                                        <p>This Policy has been designed to comply with applicable data protection laws, including the Swiss Federal Act on Data Protection (FADP) and, where applicable, the EU General Data Protection Regulation (GDPR).</p>
                                     </div>
 
                                     <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
-                                        <div className="block space-y-4">
-                                            <div className="block text-lg font-semibold text-gray900">
-                                                <h3 className="">Key definitions</h3>
-                                            </div>
-                                            <div className="block space-y-5">
-                                                <div className="block space-y-2 text-sm leading-5">
-                                                    <span className='block font-medium text-base text-foreground'>&quot;Personal Data&quot;</span>
-                                                    <p>Any information relating to an identified or identifiable natural person. A person is identifiable if they can be identified, directly or indirectly, by an identifier (e.g., name, identification number, location data, online identifier) or by one or more factors specific to their identity.</p>
-                                                </div>
-
-                                                <div className="block space-y-2 text-sm leading-5">
-                                                    <span className='block font-medium text-base text-foreground'>&quot;Sensitive Personal Data&quot;</span>
-                                                    <p>A legally protected subcategory that may include data revealing racial or ethnic origin, religious or philosophical beliefs, health data, biometric data for identification, data concerning sex life or sexual orientation, genetic data, and data on trade union membership.</p>
-                                                </div>
-
-                                                <div className="block space-y-2 text-sm leading-5">
-                                                    <span className='block font-medium text-base text-foreground'>&quot;Processing&quot;</span>
-                                                    <p>Any operation performed on personal data, such as collection, recording, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination, alignment or combination, restriction, erasure, or destruction.</p>
-                                                </div>
-                                            </div>
+                                        <div className="flex gap-3">
+                                            <span className="mt-0.5">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-shield h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+                                            </span>
+                                            <p>Tradoo operates in Phase 1 (Private Beta, Execution-Only). Access to the Platform is restricted exclusively to authorized users.</p>
                                         </div>
                                     </div>
 
                                     <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>This Privacy Notice explains what we do with your data when you:</p>
-
-                                        <ul>
-                                            <li>Access or use our websites (tradoo.finance, tradoo.io, tradoo.ai, tradoo.foundation)</li>
-                                            <li>Obtain our services or products</li>
-                                            <li>Subscribe to newsletters, events, or waitlists</li>
-                                            <li>Interact or communicate with us (e.g., via email, phone, forms, social media)</li>
-                                            <li>Otherwise engage with us as a customer, supplier, partner, investor, or prospect</li>
-                                        </ul>
-
-                                        <p>Where applicable, we may provide just-in-time notices for specific processing activities not covered by or supplementing this Privacy Notice. We may also inform you separately (e.g., in consent forms, contract terms, additional privacy notices, forms, and other communications).</p>
-
-                                        <p>If you disclose personal data about third parties to us (e.g., colleagues, employees, business partners), you confirm that you are authorized to do so, that such data is accurate, and that those individuals have been informed about this Privacy Notice.</p>
-
-                                        <p>This Privacy Notice is governed by the Swiss Federal Act on Data Protection (FADP) and, where applicable, the EU General Data Protection Regulation (GDPR). The specific application of these laws depends on the individual case.</p>
+                                        <p>For more information about our data practices, please see our <Link href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link>.</p>
                                     </div>
                                 </div>
                             </div>
@@ -256,55 +210,43 @@ const page = () => {
                                         2
                                     </span>
                                     <h2 className="text-xl md:text-2xl font-semibold text-gray900">
-                                        Data Controller
+                                        What Are Cookies?
                                     </h2>
                                 </div>
 
                                 <div className="space-y-8">
                                     <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>Tradoo AG is the controller for the processing described in this Privacy Notice, unless we inform you otherwise in a specific case (e.g., in an additional privacy notice, on a form, in a contract, or when a service provider acts as an independent controller).</p>
+                                        <p>Cookies are small files stored on your device when you visit a website. Your browser may send these cookies back on subsequent visits to support website functionality or to store certain settings.</p>
                                     </div>
 
                                     <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
-                                        <div className="block space-y-4">
-                                            <div className="block text-lg font-semibold text-gray900">
-                                                <h3 className="">Contact for privacy matters and to exercise your rights</h3>
-                                            </div>
-                                            <div className="block space-y-5">
-                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                    <div className="space-y-2 font-medium">
-                                                        <p className="text-base text-[#171717]">Tradoo AG</p>
-                                                        <p className="text-base text-[#545B6A]">Baarerstrasse 8</p>
-                                                        <p className="text-base text-[#545B6A]">CH-6300 Zug, Switzerland</p>
-                                                        <p className="text-base text-[#545B6A]">Email: <Link href="mailto:privacy@tradoo.io" className="text-primary hover:underline">privacy@tradoo.io</Link></p>
-                                                    </div>
-                                                    <div className="space-y-2 text-gray700">
-                                                        <p className="space-y-3"><span className="text-gray700 block text-sm">Company Identification (UID)</span><span className="font-medium text-sm text-gray900">CHE-216.713.957</span></p>
-                                                        <p className="space-y-3"><span className="text-gray700 block font-medium"><Link href="https://www.zefix.ch/de/search/entity/list/firm/1721689" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Commercial Register of Canton Zug</Link></span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div className="flex gap-3">
+                                            <h3 className="text-lg font-semibold text-gray900 mb-4">Tradoo does not use cookies for:</h3>
                                         </div>
-                                    </div>
-
-                                    <div className="bg-gray100 border border-gray200 rounded-2xl shadow-sm p-6 md:p-8">
-                                        <h2 className="text-lg md:text-xl font-semibold text-gray900 flex items-center gap-3">
-                                            <span className="min-w-10 w-10 h-10 flex justify-center items-center bg-gray300 rounded-6">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lh-5 w-5">
-                                                    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                                                </svg>
-                                            </span>
-                                            Data Protection Representative in the EEA
-                                        </h2>
-                                        <div className="mt-1 space-y-5 text-gray700 text-base pl-13">
-                                            <p>To ensure compliance with Art. 27 of the General Data Protection Regulation (GDPR), Tradoo has appointed a data protection representative within the European Economic Area (EEA). The EEA includes the European Union (EU) as well as the Principality of Liechtenstein, Iceland, and Norway.</p>
-
-                                            <p>Our subsidiary, <strong>VGS Datenschutzpartner GmbH,</strong> located in Germany, serves as our official data protection representative in the EEA. They act as an additional point of contact for supervisory authorities and data subjects regarding all inquiries related to ensuring compliance with the GDPR.</p>
+                                        <div className="space-y-3 text-gray700 leading-relaxed">
+                                            <ul className='space-y-3'>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span>User tracking</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span>Behavioral analytics</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span>Targeted or personalized advertising</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span>User profiling</span>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
 
                                     <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>We may also appoint additional representatives or a data protection officer for specific jurisdictions if required by law; where applicable, relevant details will be provided in the respective local notice.</p>
+                                        <p>We do not collect cookie-based identifiers for marketing or commercial resale purposes.</p>
                                     </div>
                                 </div>
                             </div>
@@ -318,118 +260,36 @@ const page = () => {
                                         3
                                     </span>
                                     <h2 className="text-xl md:text-2xl font-semibold text-gray900">
-                                        What Data We Process
+                                        How We Use Cookies
                                     </h2>
                                 </div>
 
                                 <div className="space-y-8">
                                     <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>Depending on your interaction with us, we process various categories of data. The main categories are:</p>
+                                        <p>We may use only technically necessary cookies, such as:</p>
                                     </div>
 
-                                    <div className="space-y-8">
-                                        <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
-                                            <div className="flex gap-3">
-                                                <span className="mt-0.5">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141824" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg>
-                                                </span>
-                                                <h3 className="text-lg font-semibold text-gray900 mb-4">a) Technical data</h3>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>When you use our websites or other online offerings, we collect technical data to ensure functionality, security, and performance. This includes IP address, device and browser details, operating system, referrer URL, timestamps, pages viewed, interactions, session identifiers, cookie IDs and similar identifiers, and server log files.</p>
-
-                                                <p className="mt-3 text-xs bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 6-24 months; longer if required for security, forensic, legal, or technical reasons.</p>
-                                            </div>
+                                    <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
+                                        <div className="space-y-3 text-gray700 leading-relaxed">
+                                            <ul className='space-y-3'>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#071a4b33] text-primary text-xs shrink-0 mt-0.5">✓</span>
+                                                    <span>Session management cookies (if applicable)</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#071a4b33] text-primary text-xs shrink-0 mt-0.5">✓</span>
+                                                    <span>Preference settings (e.g., language or display mode)</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#071a4b33] text-primary text-xs shrink-0 mt-0.5">✓</span>
+                                                    <span>Security and abuse prevention systems</span>
+                                                </li>
+                                            </ul>
                                         </div>
+                                    </div>
 
-                                        <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
-                                            <div className="flex gap-3">
-                                                <span className="mt-0.5">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-users h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                                </span>
-                                                <h3 className="text-lg font-semibold text-gray900 mb-4">b) Registration data</h3>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Certain offerings (e.g., account areas, investor or partner portals, newsletter subscriptions, event registrations) require a user account or sign-up. You provide data such as name, email, password (hashed), 2FA details (if enabled), organization, role, preferences; we also collect metadata about access and use of the service.</p>
-
-                                                <p className="mt-3 text-xs bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> For the duration of use plus typically 12 months after account closure or last use, unless longer retention is required for legal obligations, dispute resolution, or security.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
-                                            <div className="flex gap-3">
-                                                <span className="mt-0.5">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-mail h-5 w-5 text-primary mt-0.5 shrink-0"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                                                </span>
-                                                <h3 className="text-lg font-semibold text-gray900 mb-4">c) Communication data</h3>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Certain offerings (e.g., account areas, investor or partner portals, newsletter subscriptions, event registrations) require a user account or sign-up. You provide data such as name, email, password (hashed), 2FA details (if enabled), organization, role, preferences; we also collect metadata about access and use of the service.</p>
-
-                                                <p className="mt-3 text-xs bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 12 months after last interaction; emails and formal correspondence may be retained up to 10 years if required for compliance or evidentiary purposes.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
-                                            <div className="flex gap-3">
-                                                <span className="mt-0.5">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-file-text h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
-                                                </span>
-                                                <h3 className="text-lg font-semibold text-gray900 mb-4">d) Master data</h3>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Basic identity and relationship data required to manage our business relationships and for marketing/relationship management (where permitted): name, address, email, phone, language, job title/role, employer, relationship history, preferences, customer/investor numbers, powers of attorney, consent records, opt-outs, bank details (if relevant), and similar.</p>
-
-                                                <p className="mt-3 text-xs bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 10 years after last interaction or contract end; shorter (often up to 2 years) for pure marketing contacts, unless legally or for evidentiary purposes required longer.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
-                                            <div className="flex gap-3">
-                                                <span className="mt-0.5">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-scale h-5 w-5 text-primary mt-0.5 shrink-0"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path></svg>
-                                                </span>
-                                                <h3 className="text-lg font-semibold text-gray900 mb-4">e) Contract data</h3>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Data arising in connection with contract initiation and performance: agreements, usage records, billing and payment information, deliverables, support cases, KYC/AML data (if legally required), feedback, and complaints.</p>
-
-                                                <p className="mt-3 text-xs bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 10 years after last contract activity or contract end; longer if legally or for evidentiary purposes required.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
-                                            <div className="flex gap-3">
-                                                <span className="mt-0.5">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-settings h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                                </span>
-                                                <h3 className="text-lg font-semibold text-gray900 mb-4">f) Behavioral and preference data</h3>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>To improve our offerings and personalize communications (where permitted), we analyze how users interact with our websites and services (e.g., page flows, clicks, features used). We may combine this with other data (e.g., master/registration data) to infer preferences.</p>
-
-                                                <p className="mt-3 text-xs bg-[#e8eaed80] p-2 rounded"><strong>Retention:</strong> Typically 2 weeks to 24 months, depending on relevance; longer if required for legal or technical reasons.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
-                                            <div className="flex gap-3">
-                                                <span className="mt-0.5">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-database h-5 w-5 text-primary mt-0.5 shrink-0"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
-                                                </span>
-                                                <h3 className="text-lg font-semibold text-gray900 mb-4">g) Other data</h3>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>To improve our offerings and personalize communications (where permitted), we analyze how users interact with our websites and services (e.g., page flows, clicks, features used). We may combine this with other data (e.g., master/registration data) to infer preferences.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-[#FFFBEB] border border-[#fde68a] rounded-lg p-4 text-gray700 text-base leading-relaxed p-6 md:p-8 space-y-3">
-                                            <h3 className="text-lg font-medium text-gray900">Obligation to provide data</h3>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>You are generally not obligated to provide data. However, certain services (account creation, contracts, access to protected areas) cannot be provided without necessary data. The websites cannot be used without processing technical data. For marketing analytics and non-essential cookies, you can refuse or withdraw consent (see Section 12).</p>
-                                            </div>
-                                        </div>
+                                    <div className="space-y-3 text-gray700 leading-relaxed">
+                                        <p>These cookies exclusively support core functionality and do not track your browsing behavior across websites.</p>
                                     </div>
                                 </div>
                             </div>
@@ -443,86 +303,27 @@ const page = () => {
                                         4
                                     </span>
                                     <h2 className="text-xl md:text-2xl font-semibold text-gray900">
-                                        Purposes of Processing
+                                        Third-Party Cookies and Embedded Content
                                     </h2>
                                 </div>
 
                                 <div className="space-y-8">
                                     <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>We process personal data for the following purposes (and compatible purposes):</p>
+                                        <p>Certain parts of the Site may contain embedded tools or services from third parties, such as:</p>
+
+                                        <ul className='pl-8 list-disc'>
+                                            <li>Blockchain network widgets</li>
+                                            <li>Charts or analytics dashboards</li>
+                                            <li>Sharing or integration modules</li>
+                                            <li>Embedded maps or external resources</li>
+                                        </ul>
+
+                                        <p>These third parties may set their own cookies when their features are loaded.</p>
                                     </div>
 
-                                    <div className="space-y-8">
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Communication</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Responding to inquiries, providing information, customer support, exercising data subject rights; documentation for training, quality assurance, and evidentiary purposes.</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Website operation and security</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Providing and improving functionality, availability, performance, information security (including fraud/abuse detection, incident handling), user experience, and accessibility.</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Contract initiation and performance</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Concluding, managing, and performing agreements with customers, suppliers, partners, and investors; account management; billing; compliance checks (e.g., AML/KYC, where locally applicable).</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Product/service improvement and market research</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Analyzing usage and feedback to develop and improve features, content, design, and performance.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Marketing and relationship management</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Sending information about our products and services (including newsletters), where permitted; personalizing content and offers where consent is given; organizing events and community activities.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Legal compliance and internal governance</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Fulfilling legal obligations (commercial, tax, corporate, regulatory), record-keeping, enforcing or defending legal claims, risk management, and corporate governance.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Security and access control</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Protecting facilities, infrastructure, networks, and data; managing visitor access and incident response.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Right to object / withdrawal</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>You can object to processing based on legitimate interests and you can withdraw consent at any time (see Section 11 and Section 12). For direct marketing, you can unsubscribe at any time via the unsubscribe link or by contacting <Link href="mailto:privacy@tradoo.io" className="text-primary hover:underline">privacy@tradoo.io</Link>.</p>
-                                            </div>
+                                    <div className="bg-[#FFFBEB] border border-[#fde68a] rounded-lg p-4 text-gray700 text-base leading-relaxed p-6 md:p-8 space-y-3">
+                                        <div className="space-y-3 text-gray700 leading-relaxed">
+                                            <p><strong>Important:</strong> Tradoo does not control these cookies and does not receive or store their data. When you interact with these external services, their own privacy and cookie policies apply.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -537,64 +338,13 @@ const page = () => {
                                         5
                                     </span>
                                     <h2 className="text-xl md:text-2xl font-semibold text-gray900">
-                                        Legal Basis for Processing
+                                        Do-Not-Track Signals
                                     </h2>
                                 </div>
 
                                 <div className="space-y-8">
                                     <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>Depending on the specific processing and jurisdiction, we rely on:</p>
-                                    </div>
-
-                                    <div className="space-y-8">
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Consent (Art. 6(1)(a) GDPR / Swiss FADP principles)</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>E.g., newsletters, certain cookies/analytics, specific optional features. You can withdraw consent at any time with effect for the future.</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Contract performance or pre-contractual measures (Art. 6(1)(b) GDPR)</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>E.g., account creation, service provision, billing.</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Legitimate interests (Art. 6(1)(f) GDPR)</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>E.g., website security and analytics, communicating with you, improving and managing our business, defending legal claims, ensuring network and information security.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Legal obligations (Art. 6(1)(c) GDPR; Swiss law)</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>E.g., retention obligations, accounting, corporate, tax, or regulatory requirements (including AML/KYC, where applicable).</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Vital interests / public interest in exceptional cases (Art. 6(1)(d/e) GDPR)</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>In rare cases only.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>Where we process sensitive personal data, we do so only if and to the extent a legal basis exists (e.g., explicit consent, necessity for the establishment, exercise, or defense of legal claims, overriding public interest, or as otherwise permitted under applicable law).</p>
+                                        <p>Industry standards regarding Do-Not-Track browser settings are still evolving. At this time, the Site may not respond to Do-Not-Track signals.</p>
                                     </div>
                                 </div>
                             </div>
@@ -608,30 +358,58 @@ const page = () => {
                                         6
                                     </span>
                                     <h2 className="text-xl md:text-2xl font-semibold text-gray900">
-                                        Profiling and Automated Decisions
+                                        Managing or Disabling Cookies
                                     </h2>
                                 </div>
 
                                 <div className="space-y-8">
                                     <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>We may analyze personal aspects concerning you (profiling) based on the data described in Section 3, in order to:</p>
-                                        <ul className='pl-8 list-disc'>
-                                            <li>Infer preferences to improve content and UX</li>
-                                            <li>Detect abuse and enhance security</li>
-                                            <li>Conduct statistical analyses, forecasts, and capacity planning</li>
-                                            <li>Tailor information (including, where consent is given, marketing)</li>
-                                        </ul>
-                                        <p>We aim for proportionality and accuracy and implement safeguards against misuse.</p>
+                                        <p>You can disable or delete cookies through your browser settings.</p>
                                     </div>
 
-                                    <div className="space-y-8">
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Automated individual decisions</span>
+                                    <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
+                                            <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-3">
+                                                <div className="flex-none w-full md:flex-1">
+                                                    <div className="flex gap-3">
+                                                        <span className="mt-0.5">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-settings h-5 w-5 text-primary mt-0.5 shrink-0"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                                        </span>
+                                                        <h3 className="text-lg font-semibold text-gray900">Manage your cookie preferences</h3>
+                                                    </div>
+                                                    <div className="space-y-3 pl-8 text-gray700 leading-relaxed">
+                                                        <p>You can review and update your cookie settings at any time.</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex-none w-full md:w-auto">
+                                                    <div className="block">
+                                                        <Link href="/" className='inline-flex gap-3 font-semibold text-sm leading-snug border border-gray300 rounded-6 py-2 px-5 hover:bg-black/3'>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-cookie h-4 w-4"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>
+                                                            <span>Cookie Settings</span>
+                                                        </Link>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>Automated individual decisions with legal effect or similarly significant impact on you are not made without human review. If such decisions become necessary (e.g., for legally required fraud prevention), we will inform you as required by law and provide the opportunity to obtain human intervention and contest the decision.</p>
-                                            </div>
+                                        </div>
+
+                                    <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
+                                        <div className="flex gap-3">
+                                            <h3 className="text-lg font-semibold text-gray900 mb-4">Please note:</h3>
+                                        </div>
+                                        <div className="space-y-3 text-gray700 leading-relaxed">
+                                            <ul className='space-y-3'>
+                                                <li className='flex items-center gap-3'>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-help h-5 w-5 text-muted-foreground shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
+                                                    <span>Disabling certain cookies may limit basic website functions</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-help h-5 w-5 text-muted-foreground shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
+                                                    <span>Some embedded third-party features may not display correctly without cookies</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-help h-5 w-5 text-muted-foreground shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
+                                                    <span>Consult your browser provider&apos;s documentation for instructions</span>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -646,60 +424,47 @@ const page = () => {
                                         7
                                     </span>
                                     <h2 className="text-xl md:text-2xl font-semibold text-gray900">
-                                        Data Sharing and Recipients
+                                        Additional Web Technologies
                                     </h2>
                                 </div>
 
                                 <div className="space-y-8">
-                                    <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>In connection with the purposes described in Section 4, we may disclose personal data to the following categories of recipients. These recipients may process the data as processors (acting on our behalf), joint controllers, or independent controllers:</p>
+                                    <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
+                                        <div className="flex gap-3">
+                                            <h3 className="text-lg font-semibold text-gray900 mb-4">Tradoo intentionally does not use:</h3>
+                                        </div>
+                                        <div className="space-y-3 text-gray700 leading-relaxed">
+                                            <ul className='space-y-3'>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span>Web beacons</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span>Fingerprinting</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span>Tracking pixels</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs shrink-0 mt-0.5">✗</span>
+                                                    <span>Clear GIFs</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
 
-                                    <div className="space-y-8">
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">a) Service providers (processors)</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>We use carefully selected third-party providers in Switzerland or abroad to perform certain tasks on our behalf, such as: IT hosting, cloud storage, and server infrastructure; website operation and analytics; communication tools (email providers, support platforms); payment and billing service providers; identity verification or security service providers (if applicable).</p>
-                                            </div>
-                                        </div>
+                                    <div className="space-y-3 text-gray700 leading-relaxed">
+                                        <p>Some third-party service providers may use such technologies exclusively for:</p>
 
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">b) Contractual partners and business contacts</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>We may share data with customers, suppliers, advisors, investors, or other contractual partners where necessary for contract performance, due diligence, collaboration, negotiations, reporting, advisory services, or relationship management.</p>
-                                            </div>
-                                        </div>
+                                        <ul className='pl-8 list-disc'>
+                                            <li>Operational reliability</li>
+                                            <li>Security</li>
+                                            <li>Aggregated, non-identifiable performance measurement</li>
+                                        </ul>
 
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">c) Authorities, courts, and regulators</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>We may disclose data when: legally obligated to do so; fulfilling regulatory or reporting obligations; necessary for the establishment, exercise, or defense of legal claims; necessary to protect our rights, property, or safety.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">d) Professional advisors</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>We may disclose data to lawyers, auditors, tax advisors, and consultants. These parties are subject to professional confidentiality obligations.</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">e) Other recipients</span>
-                                            </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p>In some cases, data may be disclosed to third parties in the context of transactions (e.g., mergers, acquisitions, financing arrangements), strictly to the extent required and under confidentiality obligations.</p>
-                                            </div>
-                                        </div>
+                                        <p><strong>No personal user profiles are created.</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -713,34 +478,46 @@ const page = () => {
                                         8
                                     </span>
                                     <h2 className="text-xl md:text-2xl font-semibold text-gray900">
-                                        International Data Transfers
+                                        Data Usage
                                     </h2>
                                 </div>
 
                                 <div className="space-y-8">
                                     <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>As set out in Section 7, personal data may be disclosed:</p>
-                                        <ul className='pl-8 list-disc'>
-                                            <li>Within Switzerland</li>
-                                            <li>Within the European Economic Area (EEA)</li>
-                                            <li>And in certain cases worldwide (e.g., United States)</li>
-                                        </ul>
-                                        <p>If the recipient is located in a country without adequate data protection under Swiss or EU law, we ensure protection through one or more of the following measures:</p>
-                                        <ul className='pl-8 list-disc'>
-                                            <li>Adequacy decision by the Swiss Federal Council or European Commission</li>
-                                            <li>Standard Contractual Clauses (SCCs) of the European Commission</li>
-                                            <li>Binding Corporate Rules of the recipient</li>
-                                            <li>Your explicit consent, where appropriate</li>
-                                            <li>Situations where disclosure is contractually, legally, in the public interest, or for legal claims required</li>
-                                        </ul>
+                                        <p>All technical data collected through cookies or server logs is used exclusively for:</p>
                                     </div>
 
-                                    <div className="space-y-8">
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-2 p-6 md:p-8">
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <p><strong>Note:</strong> Internet routing may involve data transmission across borders even when sender and recipient are in the same country.</p>
-                                            </div>
+                                    <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
+                                        <div className="space-y-3 text-gray700 leading-relaxed">
+                                            <ul className='space-y-3'>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#071a4b33] text-primary text-xs shrink-0 mt-0.5">✓</span>
+                                                    <span>Maintaining and improving website security and performance</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#071a4b33] text-primary text-xs shrink-0 mt-0.5">✓</span>
+                                                    <span>Preventing fraud or abuse</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#071a4b33] text-primary text-xs shrink-0 mt-0.5">✓</span>
+                                                    <span>Ensuring stable platform operation</span>
+                                                </li>
+                                                <li className='flex items-center gap-3'>
+                                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#071a4b33] text-primary text-xs shrink-0 mt-0.5">✓</span>
+                                                    <span>Fulfilling legal obligations, where required</span>
+                                                </li>
+                                            </ul>
                                         </div>
+                                    </div>
+
+                                    <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
+                                        <div className="space-y-3 text-gray700 leading-relaxed">
+                                            <p><strong>No behavioral tracking or targeted advertising is conducted.</strong></p>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-3 text-gray700 leading-relaxed">
+                                        <p>For more details on how we process personal data, please see our Privacy Policy.</p>
                                     </div>
                                 </div>
                             </div>
@@ -754,73 +531,80 @@ const page = () => {
                                         9
                                     </span>
                                     <h2 className="text-xl md:text-2xl font-semibold text-gray900">
-                                        Data Retention Periods
+                                        Contact
                                     </h2>
                                 </div>
 
                                 <div className="space-y-8">
                                     <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>We store personal data for as long as necessary:</p>
-
-                                        <ul className='pl-8 list-disc'>
-                                            <li>To fulfill the purposes described in Section 4</li>
-                                            <li>To meet legal and regulatory retention requirements</li>
-                                            <li>Or for our legitimate interests in documentation and evidence preservation (e.g., to enforce or defend legal claims)</li>
-                                        </ul>
+                                        <p>For questions about this Policy:</p>
                                     </div>
 
-                                    <div className="space-y-8">
-                                        <div className="bg-gray100 border border-gray300 rounded-xl space-y-4 p-6 md:p-8">
-                                            <div className="block">
-                                                <span className="text-md font-semibold text-gray900">Common retention periods</span>
+                                    <div className="bg-gray100 border border-gray300 rounded-xl p-6 md:p-8">
+                                        <div className="block space-y-4">
+                                            <div className="block text-lg font-semibold text-gray900">
+                                                <h3>Tradoo AG</h3>
                                             </div>
-                                            <div className="space-y-3 text-gray700 leading-relaxed">
-                                                <div className="overflow-x-auto">
-                                                    <table className='w-full text-left text-foreground text-sm'>
-                                                        <thead>
-                                                            <tr className='border-b border-[#e5e7eb]'>
-                                                                <th className="font-medium py-2 px-4 first:pl-0 last:pr-0">Data Type</th>
-                                                                <th className="font-medium py-2 px-4 first:pl-0 last:pr-0">Typical Retention Period</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr className='border-b border-[#e5e7eb] last:border-none'>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">Technical / Analytics data</td>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">6-24 months</td>
-                                                            </tr>
-                                                            <tr className='border-b border-[#e5e7eb] last:border-none'>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">Registration and account data</td>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">Duration of use + 12 months</td>
-                                                            </tr>
-                                                            <tr className='border-b border-[#e5e7eb] last:border-none'>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">Emails and correspondence</td>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">Up to 10 years (evidence and legal compliance)</td>
-                                                            </tr>
-                                                            <tr className='border-b border-[#e5e7eb] last:border-none'>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">Contract and billing records</td>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">10 years (statutory retention)</td>
-                                                            </tr>
-                                                            <tr className='border-b border-[#e5e7eb] last:border-none'>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">Visitor and access logs</td>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">Typically up to 3 months</td>
-                                                            </tr>
-                                                            <tr className='border-b border-[#e5e7eb] last:border-none'>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">Marketing contact data</td>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">Until withdrawal or 2 years after last interaction</td>
-                                                            </tr>
-                                                            <tr className='border-b border-[#e5e7eb] last:border-none'>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">Investor / shareholder records</td>
-                                                                <td className="py-2 px-4 first:pl-0 last:pr-0">As legally required (may exceed 10 years)</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                            <div className="block space-y-5">
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                    <div className="space-y-2 font-medium">
+                                                        <p className="text-base text-[#545B6A]">Baarerstrasse 8</p>
+                                                        <p className="text-base text-[#545B6A]">CH-6300 Zug, Switzerland</p>
+                                                        <p className="text-sm text-[#545B6A] pt-5">Email (Privacy)</p>
+                                                        <p className="text-base text-[#545B6A]"><Link href="mailto:privacy@tradoo.io" className="text-primary hover:underline">privacy@tradoo.io</Link></p>
+                                                    </div>
+                                                    <div className="space-y-2 text-gray700">
+                                                        <p className="space-y-3"><span className="text-gray700 block text-sm">Company Identification</span><span className="font-medium text-sm text-gray900">CHE-216.713.957</span></p>
+                                                        <p className="space-y-3"><span className="text-gray700 block text-sm">Commercial Register of Canton Zug</span></p>
+                                                        <p className="space-y-3"><span className="text-gray700 block font-medium"><Link href="https://zg.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-216.713.957" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-1">View Register Entry</Link></span></p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className="space-y-3 text-gray700 leading-relaxed">
-                                        <p>After the applicable retention period expires, we delete or anonymize the data in accordance with our normal operational procedures.</p>
+                                    <div className="bg-gray100 border border-gray300 rounded-xl p-6">
+                                        <div className="space-y-3 text-gray700 leading-relaxed">
+                                            {/* Header */}
+                                            <div className="flex items-start gap-3 mb-6">
+                                                <div className="mt-1 w-10 h-10 flex justify-center items-center bg-gray300 rounded-6">
+                                                    <FileText className="w-6 h-6 text-gray900" />
+                                                </div>
+                                                <div>
+                                                    <h2 className="text-xl font-semibold text-gray900">
+                                                        Related Documents
+                                                    </h2>
+                                                    <p className="text-gray700 text-base">
+                                                        Additional legal documentation for our services
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                                                {/* Privacy Policy */}
+                                                <Link href="/privacy-policy" className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+                                                    <h3 className="text-gray-900 font-medium text-base">Privacy Policy</h3>
+                                                    <p className="text-gray-500 text-sm mt-1">Privacy Policy</p>
+                                                </Link>
+                                                
+                                                {/* Terms of Use */}
+                                                <Link href="/terms-of-use" className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+                                                    <h3 className="text-gray-900 font-medium text-base">Terms of Use</h3>
+                                                    <p className="text-gray-500 text-sm mt-1">General Terms</p>
+                                                </Link>
+                                                
+                                                {/* Private Beta Terms */}
+                                                <Link href="/privatebetaterms" className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+                                                    <h3 className="text-gray-900 font-medium text-base">Private Beta Terms</h3>
+                                                    <p className="text-gray-500 text-sm mt-1">Phase 1 Framework</p>
+                                                </Link>
+
+                                                {/* Imprint */}
+                                                <Link href="/imprint" className="block px-6 py-5 rounded-xl border border-gray-200 hover:shadow-md transition-all">
+                                                    <h3 className="text-gray-900 font-medium text-base">Imprint</h3>
+                                                    <p className="text-gray-500 text-sm mt-1">Legal Notice</p>
+                                                </Link>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1317,7 +1101,3 @@ const page = () => {
 }
 
 export default page
-
-
-
-
