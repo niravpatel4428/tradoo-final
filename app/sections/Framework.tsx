@@ -9,7 +9,7 @@ import chart from "@/public/image/svg/chart.svg";
 import globus from "@/public/image/svg/globus.svg";
 import turning from "@/public/image/svg/turning.svg";
 
-const Framework: React.FC = () => {
+const Framework: React.FC = () => { 
   const items = [
     {
       icon: graph,

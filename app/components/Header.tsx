@@ -280,7 +280,7 @@ const Header = () => {
   /** ---------------------------------
    *   🔥 DEFINE PAGES THAT USE DARK HEADER
    * ----------------------------------*/
-  const darkPages = ["/professional"];
+  const darkPages = ["/professional", "/vaults"];
 
   const isDark = darkPages.includes(pathname);
 
@@ -292,7 +292,7 @@ const Header = () => {
   const [submenuItems, setSubmenuItems] = useState<SubmenuItem[]>([]);
 
   useEffect(() => {
-    if (mobileOpen) document.documentElement.classList.add("overflow-hidden");
+    if (mobileOpen) document.documentElement.classList.add("overflow-hidden"); 
     else document.documentElement.classList.remove("overflow-hidden");
   }, [mobileOpen]);
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Badge from "../components/Badge";
+import Badge from "../components/Badge"; 
 import Image from "next/image";
 import Button from '../components/Button';
 import FooterGradient from "@/public/image/footer-top-gradient.png";

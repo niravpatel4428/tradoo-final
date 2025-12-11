@@ -21,7 +21,7 @@
   --darkjunglegreen: #121828;
   --aurometalsaurus: #6B7280;
   --romansilver: #8B909C;
-  --darkGunmetal: #1C2233;
+  --darkGunmetal: #1C2233; 
   --gunmetal: #272E3F;
 }
 
@@ -193,4 +193,34 @@ body {
 
 .ticker-item {
   flex-shrink: 0;
+}
+
+.claim-blue {
+  --claim-bg: rgba(59, 130, 246, 0.2);    
+  --claim-text: rgba(96, 165, 250, 0.6); 
+  --claim-icon: rgb(96, 165, 250);       
+}
+
+.claim-purple {
+  --claim-bg: rgba(168, 85, 247, 0.2);
+  --claim-text: rgba(192, 132, 252, 0.6);
+  --claim-icon: rgb(192, 132, 252);
+}
+
+.claim-green {
+  --claim-bg: rgba(34, 197, 94, 0.2);
+  --claim-text: rgba(74, 222, 128, 0.6);
+  --claim-icon: rgb(74, 222, 128);
+}
+
+.claim-box-bg {
+  background-color: var(--claim-bg);
+}
+
+.claim-box-text {
+  color: var(--claim-icon);
+}
+
+.claim-count-text {
+  color: var(--claim-text);
 }
