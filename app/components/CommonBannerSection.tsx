@@ -18,14 +18,18 @@ type BadgeType = {
 type BannerSectionProps = {
   badge?: BadgeType;
   title?: string;
+  titleContainer?: string;
   description?: string;
+  descContainer?: string;
   buttons: ButtonType[];
 };
 
 const CommonBannerSection: React.FC<BannerSectionProps> = ({
   badge,
   title,
+  titleContainer,
   description,
+  descContainer,
   buttons,
 }) => {
   return (
@@ -51,14 +55,14 @@ const CommonBannerSection: React.FC<BannerSectionProps> = ({
           )}
 
           {/* Title */}
-          <div className="mt-8">
+          <div className={`mt-8 ${titleContainer}`}>
             <h1 className="max-xs:text-3xl max-xs:leading-9 text-5xl leading-13 xxl:text-80 font-semibold xxl:leading-22 tracking-[-1.44px] xxl:tracking-[-2.40px] text-gray800">
               {title}
             </h1>
           </div>
 
           {/* Description */}
-          {description && <div className="mt-8 w-full lg:max-w-230 sm:mx-auto">
+          {description && <div className={`mt-8 w-full lg:max-w-230 sm:mx-auto ${descContainer}`}>
             <p className="text-lg xxl:text-xl font-normal leading-7 text-gray700">
               {description}
             </p>
