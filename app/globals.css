@@ -10,6 +10,7 @@
   --gray700: #545B6A;
   --gray800: #1E2330;
   --gray900: #141824;
+  --lightgray900: #202533;
   --foreground: #171717;
   --secondary: #E6E8EB;
   --darblue: #101729;
@@ -35,6 +36,7 @@
   --color-gray700: var(--gray700);
   --color-gray800: var(--gray800);
   --color-gray900: var(--gray900);
+  --color-lightgray900: var(--lightgray900);
   --color-foreground: var(--foreground);
   --color-secondary: var(--secondary);
   --color-darblue: var(--darblue);
@@ -73,6 +75,7 @@
    --shadowactive: 0px 4px 32px 0px #F3F4F6;
    --shadowtab: 0px 8px 24px 0px rgba(30, 35, 48, 0.07);
    --shadowbox: 0px 8px 32px 0px rgba(84, 91, 106, 0.15);
+   --shadowcard: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 @utility container {

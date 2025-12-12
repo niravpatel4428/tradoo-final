@@ -1,392 +1,240 @@
+
 import React from 'react'
-import {
-    Building2,
-    FileText,
-    ChartColumn,
-    ChartPie,
-    Layers,
-    Settings,
-    Users,
-    Lock,
-    Shield,
-    ArrowRight,
-    Box,
-    ArrowDown
-} from "lucide-react";
-import { CircleCheck } from "lucide-react";
+import Badge from '../components/Badge'
+import Image from 'next/image';
+import whiteshield from "@/public/image/svg/white-shield-check.svg";
+import widget from "@/public/image/svg/widget.svg";
+import whiteturning from "@/public/image/svg/white-tuning.svg";
+import whiteuser from "@/public/image/svg/white-users.svg";
+
+export const featureItems = [
+    {
+        id: 1,
+        img: "/icons/asset-mix.png",
+        title: "Asset mix & risk envelope",
+        description: "Define BTC/ETH/USDC ranges, volatility and drawdown bands.",
+    },
+    {
+        id: 2,
+        img: "/icons/modules.png",
+        title: "Modules",
+        description: "Define BTC/ETH/USDC ranges, volatility and drawdown bands.",
+    },
+    {
+        id: 3,
+        img: "/icons/rules.png",
+        title: "Rules & limits",
+        description:
+            "Configure DCA, hedges, profit taking, venue and concentration limits.",
+    },
+    {
+        id: 4,
+        img: "/icons/integrations.png",
+        title: "Integrations & clients",
+        description:
+            "Map vaults to mandates and clients, connect via API to existing systems.",
+    },
+];
+
+
 
 
 const ToolBox: React.FC = () => {
 
-    // LEFT: Existing Systems Cards
-    const leftCards = [
-        { icon: Building2, title: "Existing systems", subtitle: "ERP, Treasury, Portfolio" },
-        { icon: FileText, title: "Existing systems", subtitle: "ERP, Treasury, Portfolio" },
-        { icon: ChartColumn, title: "Existing systems", subtitle: "ERP, Treasury, Portfolio" },
-    ];
-
-    // CENTER: Toolbox Grid Items
-    const toolboxItems = [
+    const steps = [
         {
-            icon: ChartPie,
-            title: "Asset Mix & Risk Envelope",
-            description: "Define BTC / ETH / USDC ranges, volatility and drawdown bands, time horizon",
-        },
-        {
-            icon: Layers,
-            title: "Strategy Modules",
-            description: "Select allowed core, growth and hedging modules for each mandate",
-        },
-        {
-            icon: Settings,
-            title: "Rules & Automation",
-            description: "Configure DCA, trend filters, hedges, profit taking and venue limits",
-        },
-        {
-            icon: Users,
-            title: "Integrations & Client Mapping",
-            description: "Connect via API, map vaults to mandates and clients, export data",
-        },
-    ];
-
-    // RIGHT: Vault Icons
-    const vaultIcons = [
-        { icon: Lock },
-        { icon: Shield },
-        { icon: Layers },
-    ];
-
-    const topIcons = [
-        { icon: Building2 },
-        { icon: FileText },
-    ];
-
-    // ---------------- TOOLBOX FEATURES LIST ----------------
-    const toolboxFeatures = [
-        {
-            icon: ChartPie,
-            title: "Asset Mix & Risk Envelope",
-            desc: "Define BTC / ETH / USDC ranges, volatility and drawdown bands, time horizon"
-        },
-        {
-            icon: Layers,
-            title: "Strategy Modules",
-            desc: "Select allowed core, growth and hedging modules for each mandate"
-        },
-        {
-            icon: Settings,
-            title: "Rules & Automation",
-            desc: "Configure DCA, trend filters, hedges, profit taking and venue limits"
-        },
-        {
-            icon: Users,
-            title: "Integrations & Client Mapping",
-            desc: "Connect via API, map vaults to mandates and clients, export data"
-        },
-    ];
-
-    // ---------------- BOTTOM ICON BLOCK ----------------
-    const bottomIcons = [
-        { icon: Lock },
-        { icon: Shield },
-    ];
-
-    interface HighlightItem {
-        title: string;
-        description: string;
-    }
-
-    const highlights: HighlightItem[] = [
-        {
+            number: 1,
             title: "Start from mandates, not from protocols.",
-            description:
+            detail:
                 "You define objectives and risk envelope – the toolbox translates them into modules, not the other way round.",
         },
         {
+            number: 2,
             title: "Full control without building your own infrastructure.",
-            description:
+            detail:
                 "Use our modules, vault engine and APIs instead of stitching together wallets, protocols and dashboards yourself.",
         },
         {
-            title: "Non custodial by default.",
-            description:
+            number: 3,
+            title: "Non-custodial by default.",
+            detail:
                 "Client assets sit in dedicated smart vaults; Tradoo operates the rules within your agreed limits.",
         },
         {
+            number: 4,
             title: "Ready to connect to your stack.",
-            description:
+            detail:
                 "Use APIs to feed vault data into your existing reporting, treasury or portfolio systems.",
         },
     ];
 
+    const toolboxcenter = [
+        {
+            icon: whiteturning,
+            title: "Asset mix & risk envelope",
+            detail:
+                "Define BTC/ETH/USDC ranges, volatility and drawdown bands.",
+        },
+        {
+            icon: widget,
+            title: "Modules",
+            detail:
+                "Define BTC/ETH/USDC ranges, volatility and drawdown bands.",
+        },
+        {
+            icon: whiteshield,
+            title: "Rules & limits",
+            detail:
+                "Configure DCA, hedges, profit taking, venue and concentration limits.",
+        },
+        {
+            icon: whiteuser,
+            title: "Integrations & clients",
+            detail:
+                "Map vaults to mandates and clients, connect via API to existing systems.",
+        },
+    ];
 
     return (
-        <div className='max-xs:py-10 max-xs:pb-12 max-sm:pb-12 py-42'>
-            <div className='container'>
-                <div>
-                    <div className='max-sm:text-left text-center'>
-                        <div className=''>
-                            <h2 className="max-xs:tracking-[-1px] max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xl:text-56 font-semibold text-gray800 tracking-[-1.68px] xl:leading-16">
-                                Inside the Tradoo strategy toolbox.
-                            </h2>
-                        </div>
-                        <div className="mt-4 w-full max-w-180 mx-auto">
-                            <p className="text-lg font-normal leading-[144%] text-gray700">
-                                Asset mix, modules, rules and integrations – the toolbox sits between your existing systems and on-chain infrastructure and turns mandates into non custodial strategy vaults.
-                            </p>
-                        </div>
-                    </div>
-                    <div className='mt-16'>
-                        <div className="hidden lg:block">
-                            <div className="relative max-w-6xl mx-auto">
-                                <div className="absolute inset-0 pointer-events-none">
-                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 rounded-full blur-3xl"></div>
+        <div className='max-xs:py-15 py-42 bg-gray900'>
+            <div className='container max-sm:p-0'>
+                <div className='space-y-24'>
+                    <div className='max-sm:px-4 grid grid-cols-12 gap-4 lg:gap-8'>
+                        <div className='col-span-12 md:col-span-6'>
+                            <div className='space-y-6'>
+                                <div>
+                                    <Badge label="Strategy Toolbox" variant='darkgreen' />
                                 </div>
-
-                                <div className="relative grid grid-cols-[240px_1fr_240px] gap-12 items-center">
-
-                                    {/* LEFT SIDE – Existing Systems */}
-                                    <div className="relative">
-                                        <div className="bg-white backdrop-blur-sm border border-gray200 rounded-2xl p-6 shadow-lg">
-
-                                            {/* Icons */}
-                                            <div className="flex justify-center gap-2 mb-4">
-                                                {leftCards.map((item, idx) => {
-                                                    const Icon = item.icon;
-                                                    return (
-                                                        <div
-                                                            key={idx}
-                                                            className="h-11 w-11 rounded-xl bg-gray200 flex items-center justify-center shadow-sm"
-                                                        >
-                                                            <Icon className="h-5 w-5 text-gray800" />
-                                                        </div>
-                                                    );
-                                                })}
-                                            </div>
-
-                                            <p className="text-sm font-semibold text-center mb-1 text-gray800">Existing systems</p>
-                                            <p className="text-sm text-gray700 text-center">
-                                                ERP, Treasury, Portfolio
-                                            </p>
-                                        </div>
-
-                                        {/* API Arrow */}
-                                        <div className="absolute top-1/2 -right-12 -translate-y-1/2 flex items-center">
-                                            <div className="w-8 h-[2px] bg-gradient-to-r from-border to-gray700"></div>
-                                            <div className="px-2 py-1 bg-gray200 backdrop-blur-sm rounded text-[10px] font-semibold uppercase tracking-widest text-gray700 border border-gray200">
-                                                API
-                                            </div>
-                                            <ArrowRight className="h-4 w-4 text-gray700 ml-1" />
-                                        </div>
-                                    </div>
-
-                                    {/* CENTER – Toolbox */}
-                                    <div className="relative">
-                                        <div className="relative bg-gradient-to-b from-[#FFF]/100 via-[#FFF]/50 to-[#E6E8EB] border border-gray400 rounded-3xl p-6 xl:p-10 shadow-2xl backdrop-blur-sm">
-
-                                            {/* Decorative Corners */}
-                                            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-gray200 to-transparent rounded-tr-3xl"></div>
-                                            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-gray200 to-transparent rounded-bl-3xl"></div>
-
-                                            {/* Header */}
-                                            <div className="text-center mb-8">
-                                                <div className="inline-flex items-center justify-center h-20 w-20 rounded-2xl bg-gradient-to-br from-[#001A4D]/20 via-[#001A4D]/10 to-transparent text-gray900 mb-5 shadow-lg border border-gray400">
-                                                    <Box className="h-10 w-10" />
-                                                </div>
-
-                                                <h3 className="text-2xl font-semibold mb-3 text-gray800">Tradoo strategy toolbox</h3>
-
-                                                <div className="flex items-center justify-center gap-3 text-sm text-gray700">
-                                                    <span className="flex items-center gap-1.5">
-                                                        <span className="h-1.5 w-1.5 rounded-full bg-gray700"></span>
-                                                        Non custodial
-                                                    </span>
-                                                    <span className="flex items-center gap-1.5">
-                                                        <span className="h-1.5 w-1.5 rounded-full bg-gray700"></span>
-                                                        BTC / ETH / USDC
-                                                    </span>
-                                                    <span className="flex items-center gap-1.5">
-                                                        <span className="h-1.5 w-1.5 rounded-full bg-gray700"></span>
-                                                        Module based
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                                            {/* 4 Dynamic Cards */}
-                                            <div className="relative z-50 grid grid-cols-2 gap-4">
-                                                {toolboxItems.map((item, idx) => {
-                                                    const Icon = item.icon;
-                                                    return (
-                                                        <div
-                                                            key={idx}
-                                                            className="group bg-gray100 hover:bg-white border border-gray300 rounded-xl p-5 transition-all"
-                                                        >
-                                                            <div className="flex items-center gap-3 mb-2">
-                                                                <div className="min-w-8 h-8 w-8 rounded-lg bg-gray200 flex items-center justify-center">
-                                                                    <Icon className="h-4 w-4 text-gray800" />
-                                                                </div>
-                                                                <p className="text-xs font-semibold text-gray800 uppercase tracking-wider">
-                                                                    {item.title}
-                                                                </p>
-                                                            </div>
-
-                                                            <p className="text-sm text-gray700 leading-relaxed">
-                                                                {item.description}
-                                                            </p>
-                                                        </div>
-                                                    );
-                                                })}
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* RIGHT SIDE – Vaults */}
-                                    <div className="relative">
-                                        <div className="absolute top-1/2 -left-12 -translate-y-1/2 flex items-center">
-                                            <ArrowRight className="h-4 w-4 text-gray900 mr-1" />
-                                            <div className="px-2 py-1 bg-gray300 backdrop-blur-sm rounded text-[10px] font-semibold uppercase tracking-widest text-gray900 border border-gray400">
-                                                Vaults
-                                            </div>
-                                            <div className="w-8 h-[2px] bg-gradient-to-r from-gray900 to-gray300"></div>
-                                        </div>
-
-                                        <div className="bg-gradient-to-br from-gray100 to-gray700/20 border border-gray500 rounded-2xl p-6 shadow-lg">
-                                            <div className="flex justify-center gap-2">
-                                                {vaultIcons.map((item, idx) => {
-                                                    const Icon = item.icon;
-                                                    return (
-                                                        <div
-                                                            key={idx}
-                                                            className="h-11 w-11 rounded-xl bg-gray400/50 flex items-center justify-center shadow-sm border border-gray500"
-                                                        >
-                                                            <Icon className="h-5 w-5 text-gray900" />
-                                                        </div>
-                                                    );
-                                                })}
-                                            </div>
-                                            <div className='mt-5'>
-                                                <p className="text-sm font-semibold text-center mb-1 text-gray800">
-                                                    On-chain infrastructure</p>
-                                                <p className="text-sm text-gray700 text-center">
-                                                    Smart vaults & whitelisted venues
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                <div>
+                                    <h3 className='max-xs:tracking-normal max-xs:text-3xl max-xs:leading-9 text-40 leading-11.5 tracking-[-1.20px] xxl:text-56 font-semibold xxl:leading-16 xxl:tracking-[-1.68px] text-white'>Inside the Tradoo strategy toolbox.</h3>
                                 </div>
                             </div>
                         </div>
-                        <div className="lg:hidden">
-                            <div className="max-w-md mx-auto space-y-8">
-
-                                {/* ---------------- EXISTING SYSTEMS CARD ---------------- */}
-                                <div className="bg-white backdrop-blur-sm border border-gray200 rounded-2xl p-6 shadow-lg">
-                                    <div className="flex justify-center gap-2 mb-4">
-                                        {topIcons.map(({ icon: Icon }, i) => (
-                                            <div
-                                                key={i}
-                                                className="h-10 w-10 rounded-xl bg-gray200 flex items-center justify-center"
-                                            >
-                                                <Icon className="h-5 w-5 text-gray800" />
-                                            </div>
-                                        ))}
+                        <div className='col-span-12 md:col-span-6'>
+                            <div className='flex flex-col h-full justify-end gap-5 ml-auto'>
+                                <p className='text-lg font-normal leading-[144%] text-gray400'>Asset mix, modules, rules and integrations – the toolbox sits between your existing systems and on-chain infrastructure and turns mandates into non-custodial strategy vaults.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+                        {steps.map((item) => (
+                            <div key={item.number} className="block">
+                                <div className="flex flex-col gap-12 max-xs:gap-6 bg-gray800 rounded-xl md:rounded-3xl py-8 px-4 max-xs:py-6 md:p-6 xxl:p-8 h-full">
+                                    {/* Number */}
+                                    <div className="block font-semibold text-gray500 text-5xl max-xs:text-3xl leading-none tracking-[-1.44px]">
+                                        <span>{item.number}</span>
                                     </div>
 
-                                    <p className="text-base font-semibold text-center text-gray800">Existing systems</p>
-                                    <p className="text-sm text-gray700 text-center">ERP, Treasury, Portfolio</p>
+                                    {/* Title + Detail */}
+                                    <div className="block">
+                                        {/* Title */}
+                                        <div className="max-xs:tracking-normal block text-white text-2xl max-xs:text-lg leading-8 tracking-[-0.24px] font-semibold capitalize mb-5">
+                                            <span>{item.title}</span>
+                                        </div>
+
+                                        {/* Detail */}
+                                        <div className="block text-gray300 text-lg max-xs:text-base font-normal leading-[144%]">
+                                            <p>{item.detail}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <div className='max-lg:scale-100 max-xl:scale-80 max-xxl:scale-90 relative grid grid-cols-12 items-center'>
+                        <div className='col-span-12 lg:col-span-3'>
+                            <div className="flex max-lg:flex-col items-center relative justify-center lg:justify-end lg:mr-[7px]">
+
+                                {/* LEFT CARD */}
+                                <div className="space-y-4 bg-gray800 rounded-3xl px-7 py-8 min-w-54 max-w-54 relative max-lg:top-1.5 lg:left-1.5">
+                                    <p className="font-semibold leading-6 text-white text-lg">Existing systems</p>
+                                    <p className="text-base leading-5.5 text-gray300 font-normal">ERP, Treasury Portfolio</p>
                                 </div>
 
-                                {/* ---------------- API LABEL ---------------- */}
-                                <div className="flex justify-center">
-                                    <div className="flex flex-col items-center gap-2">
-                                        <div className="px-3 py-1.5 bg-gray200 rounded-lg text-[10px] font-semibold uppercase tracking-widest border border-gray300 text-gray700">
-                                            API
-                                        </div>
-                                        <ArrowDown className="h-5 w-5 text-muted-foreground" />
+                                {/* CONNECTOR */}
+                                <div className="relative max-lg:flex-col flex items-center">
+
+                                    {/* HORIZONTAL LINE EXACT SAME */}
+                                    <div className="absolute max-lg:top-12 left-0 right-0 h-0.5 bg-gray700 max-lg:rotate-90"></div>
+
+                                    {/* LEFT SMALL GREY DOT */}
+                                    <div className="min-w-3 w-3 h-3 max-lg:relative max-lg:-left-[0.5px] rounded-full bg-gray700 z-10"></div>
+
+                                    {/* API TAG */}
+                                    <div className="z-20 max-lg:my-6 mx-6 px-3 py-2 bg-white text-gray800 font-medium leading-4.5 text-base rounded-md shadow">
+                                        API
                                     </div>
+
+                                    {/* GREEN DOT */}
+                                    <div className="min-w-3 w-3 h-3 max-lg:relative max-lg:-left-[0.5px] rounded-full bg-[#5FB98D] z-10"></div>
                                 </div>
+                            </div>
+                        </div>
+                        <div className='col-span-12 lg:col-span-6 max-sm:px-4'>
+                            <div className='p-4 rounded-3xl md:rounded-4xl shadow-[var(--shadowcard)] border-2 border-[#0D9488] -my-[7px] lg:-mx-3.5'>
+                                <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+                                    {toolboxcenter.map((item, index)  => (
+                                        <div key={index} className="block">
+                                            <div className="flex flex-col gap-12 max-xs:gap-6 bg-gray800 rounded-xl md:rounded-3xl py-8 px-4 max-xs:py-6 md:p-6 xxl:p-8 h-full">
+                                                
+                                                <div className="min-w-16 w-16 h-16 rounded-xl p-3 bg-[#323845] flex justify-center items-center">
+                                                    <Image
+                                                        src={item.icon}
+                                                        alt="icon"
+                                                        className="max-h-full"
+                                                    />
+                                                </div>
 
-                                {/* ---------------- STRATEGY TOOLBOX ---------------- */}
-                                <div className="relative bg-gradient-to-br from-[#FFF]/100 via-[#FFF]/50 to-[#E6E8EB] border border-gray400 rounded-3xl p-6 shadow-2xl backdrop-blur-sm">
-                                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-gray200 to-transparent rounded-tr-3xl" />
-
-                                    <div className="text-center mb-6">
-                                        <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-gradient-to-br from-[#001A4D]/20 via-[#001A4D]/10 to-transparent text-gray900 mb-4 shadow-lg border border-gray400">
-                                            <Box className="h-8 w-8" />
-                                        </div>
-                                        <h4 className="text-xl font-semibold mb-2 text-gray800">Tradoo Strategy Toolbox</h4>
-                                        <p className="text-sm text-gray700">Non custodial · BTC / ETH / USDC · Module based</p>
-                                    </div>
-
-                                    {/* ----- Dynamic Feature List ----- */}
-                                    <div className="grid grid-cols-1 gap-3">
-                                        {toolboxFeatures.map((item, i) => (
-                                            <div key={i} className="bg-gray100 hover:bg-white border border-gray300 rounded-xl p-4">
-                                                <div className="flex items-center gap-2 mb-2">
-                                                    <div className="min-w-7 h-7 w-7 rounded-lg bg-gray200 flex items-center justify-center shrink-0">
-                                                        <item.icon className="h-3.5 w-3.5 text-gray800" />
+                                               
+                                                <div className="block">
+                                                  
+                                                    <div className="block text-white text-lg leading-6 font-semibold capitalize mb-4">
+                                                        <span>{item.title}</span>
                                                     </div>
-                                                    <p className="text-xs font-semibold text-gray800 uppercase tracking-wider">
-                                                        {item.title}
-                                                    </p>
+
+                                                
+                                                    <div className="block font-normal text-gray300 text-lg leading-[144%]">
+                                                        <p>{item.detail}</p>
+                                                    </div>
                                                 </div>
-                                                <p className="text-xs text-gray700">{item.desc}</p>
                                             </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* ---------------- VAULTS LABEL ---------------- */}
-                                <div className="flex justify-center">
-                                    <div className="flex flex-col items-center gap-2">
-                                        <div className="px-3 py-1.5 bg-gray300 rounded-lg text-xs font-semibold uppercase tracking-widest text-gray700 border border-pgray400 backdrop-blur-sm">
-                                            Vaults
                                         </div>
-                                        <ArrowDown className="h-5 w-5 text-gray900" />
-                                    </div>
+                                    ))}
                                 </div>
-
-                                {/* ---------------- BOTTOM ICON BLOCK ---------------- */}
-                                <div className="bg-gradient-to-br from-gray100 to-gray700/20 border border-gray500 rounded-2xl p-6 shadow-lg">
-                                    <div className="flex justify-center gap-2 mb-4">
-                                        {bottomIcons.map(({ icon: Icon }, i) => (
-                                            <div
-                                                key={i}
-                                                className="h-10 w-10 rounded-xl bg-gray400/50 flex items-center justify-center border border-gray500"
-                                            >
-                                                <Icon className="h-5 w-5 text-gray900" />
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                    <p className="text-base font-semibold text-center text-gray800">On-chain infrastructure</p>
-                                    <p className="text-sm text-gray700 text-center">Smart vaults & whitelisted venues</p>
-                                </div>
-
                             </div>
                         </div>
-                    </div>
-                    <div className='mt-16'>
-                        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                            {highlights.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="flex items-start gap-4 p-5 rounded-xl bg-white hover:shadow-xl border border-gray100 transition-all"
-                                    data-testid={`highlight-${index + 1}`}
-                                >
-                                    <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-gradient-to-br from-[#001A4D]/20 via-[#001A4D]/10 to-transparent flex items-center justify-center shadow-sm">
-                                        <CircleCheck className="h-5 w-5 text-gray900" />
+                        <div className='col-span-12 lg:col-span-3'>
+                            <div className="flex max-lg:flex-col items-center max-lg:justify-center relative lg:ml-[7px]">
+
+                                {/* LEFT CONNECTOR */}
+                                <div className="relative max-lg:flex-col flex items-center">
+
+                                    {/* GREEN DOT */}
+                                    <div className="min-w-3 w-3 h-3 max-lg:relative max-lg:-left-[0px] rounded-full bg-[#5FB98D] z-10"></div>
+
+                                    {/* WHITE PILL - Vaults */}
+                                    <div className="z-20 max-lg:my-6 mx-6 px-3 py-2 bg-white text-gray800 font-medium leading-4.5 text-base rounded-md shadow">
+                                        Vaults
                                     </div>
 
-                                    <div>
-                                        <p className="font-semibold text-lg text-gray900 mb-1.5">{item.title}</p>
-                                        <p className="text-base text-gray700 leading-relaxed">
-                                            {item.description}
-                                        </p>
-                                    </div>
+                                    {/* GREY DOT */}
+                                    <div className="min-w-3 w-3 h-3 max-lg:relative max-lg:-left-[0px] rounded-full bg-gray700 z-10"></div>
+
+                                    {/* HORIZONTAL LINE */}
+                                    <div className="absolute max-lg:top-14 left-0 right-0 h-0.5 bg-gray700 max-lg:rotate-90"></div>
                                 </div>
-                            ))}
+
+                                {/* RIGHT CARD */}
+                                <div className="space-y-4 bg-gray800 rounded-3xl px-7 py-8 min-w-54 max-w-54 relative max-lg:-top-1.5 lg:right-1.5">
+                                    <p className="font-semibold leading-6 text-white text-lg">
+                                        On-chain<br />infrastructure
+                                    </p>
+
+                                    <p className="text-base leading-5.5 text-gray300 font-normal">
+                                        Smart vaults & white-<br />listed venues
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

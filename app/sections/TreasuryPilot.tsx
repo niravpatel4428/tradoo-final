@@ -5,7 +5,7 @@ const TreasuryPilot = () => {
     const steps = [
         {
         number: 1,
-        title: "Pick Your Risk Profile",
+        title: "Pick Your Risk Profile", 
         detail:
             "Choose a disciplined, risk-based framework — from ultra-stable to adaptive. Your profile defines how assets are allocated.",
         },

@@ -1,7 +1,7 @@
 import React from "react";
 import Badge from "../components/Badge";
 import Button from "../components/Button";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 
 export type StepType = {
   id: number;
@@ -11,10 +11,13 @@ export type StepType = {
   description: string;
   list?: string[];
   className?: string;     // custom wrapper class
+  titleclassName?: string;     // custom wrapper class
+  subtitleclassName?: string;     // custom wrapper class
   iconBg?: string;        // ⭐ custom icon background class
   badge?: {
     text: string;
     icon: string;
+    badgeVariant?: "lightgreen" | "darkgreen" | "gray"
   };
 };
 
@@ -26,16 +29,31 @@ type StepsSectionProps = {
   ctaHref?: string;
   steps: StepType[];
   className?: string;
+  titleclassName?: string;
+  subtitleclassName?: string;
+  badgeVariant?: "lightgreen" | "darkgreen" | "gray";
+  buttonVariant?: "primarydefault" | "secondarydefault" | "contrastdefault";
+  info?: {
+    icon?: StaticImageData;   // ⭐ imported image
+    text?: string;
+    className?: string;
+  };
+
 };
 
 const StepsSection: React.FC<StepsSectionProps> = ({
   badgeLabel,
+  info,
+  badgeVariant,
+  buttonVariant,
   title,
   subtitle,
   ctaLabel,
   ctaHref,
   steps,
   className = "",
+  titleclassName = "",
+  subtitleclassName = "",
 }) => {
   return (
     <div className={`block max-sm:pb-2 max-xs:py-10 py-42 ${className}`}>
@@ -44,11 +62,11 @@ const StepsSection: React.FC<StepsSectionProps> = ({
           {/* LEFT */}
           <div className="col-span-12 lg:col-span-6">
             <div className="max-sm:px-4 sm:text-left sticky top-42">
-              {badgeLabel && <Badge label={badgeLabel} />}
+              {badgeLabel && <Badge label={badgeLabel} variant={badgeVariant} />}
 
               {title && (
                 <div className="mt-6">
-                  <h2 className="max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xxl:text-56 font-semibold xxl:leading-16 tracking-[-1.68px] text-gray800">
+                  <h2 className={`max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xxl:text-56 font-semibold xxl:leading-16 tracking-[-1.68px] text-gray800 ${titleclassName}`}>
                     {title}
                   </h2>
                 </div>
@@ -56,7 +74,7 @@ const StepsSection: React.FC<StepsSectionProps> = ({
 
               {subtitle && (
                 <div className="mt-8">
-                  <p className="text-lg font-normal leading-[144%] color-gray700">
+                  <p className={`text-lg font-normal leading-[144%] color-gray700 ${subtitleclassName}`}>
                     {subtitle}
                   </p>
                 </div>
@@ -64,7 +82,7 @@ const StepsSection: React.FC<StepsSectionProps> = ({
 
               {ctaLabel && (
                 <div className="mt-8">
-                  <Button label={ctaLabel} href={ctaHref || "#"} trailingIcon />
+                  <Button label={ctaLabel} href={ctaHref || "#"} variant={buttonVariant} trailingIcon />
                 </div>
               )}
             </div>
@@ -102,11 +120,11 @@ const StepsSection: React.FC<StepsSectionProps> = ({
 
                   {/* TEXT PART */}
                   <div className="flex flex-col items-start gap-y-4">
-                    <h4 className="text-2xl font-semibold leading-8 tracking-[-0.24px] text-gray800">
+                    <h4 className={`text-2xl font-semibold leading-8 tracking-[-0.24px] text-gray800 ${item.titleclassName || ""}`}>
                       {item.title}
                     </h4>
 
-                    <p className="text-lg font-normal leading-[144%] text-gray700">
+                    <p className={`text-lg font-normal leading-[144%] text-gray700 ${item.subtitleclassName || ""}`}>
                       {item.description}
                     </p>
 
@@ -146,6 +164,27 @@ const StepsSection: React.FC<StepsSectionProps> = ({
               ))}
             </div>
           </div>
+        </div>
+        <div className="xl:text-center mt-12 md:mt-18 max-sm:px-4">
+          {info?.icon && info?.text && (
+            <div
+              className={`flex justify-center gap-4 ${info.className || ""
+                }`}
+            >
+              <div className="min-w-5">
+                <Image
+                  src={info.icon}
+                  alt="icon"
+                  className="object-contain"
+                />
+              </div>
+
+              <p className="text-lg font-normal leading-[144%] text-gray500">{info.text}</p>
+            </div>
+          )}
+
+
+
         </div>
       </div>
     </div>
