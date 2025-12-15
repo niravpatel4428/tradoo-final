@@ -11,6 +11,7 @@ import FAQ from '../components/Faq'
 import DigitalWealthSection from '../components/DigitalWealthSection'
 import JoinTradoo from '../sections/JoinTradoo'
 import RiskFirst from '../sections/RiskFirst'
+import DigitalAsset from '../sections/DigitalAsset'
 
 const steps = [
   {
@@ -70,6 +71,7 @@ const page = () => {
         }}
         steps={steps}
       />
+      <DigitalAsset/>
       <RiskFirst/>
       <JoinTradoo />
       <FAQ />

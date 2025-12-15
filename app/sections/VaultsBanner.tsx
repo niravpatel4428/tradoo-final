@@ -18,7 +18,7 @@ const VaultsBanner: React.FC = () => {
                 <div className="sm:text-center">
                     <div className="">
                         <Badge
-                            label="For Asset Managers, Family Offices & Crypto Funds"
+                            label="For Asset Managers, Family Offices & Crypto Funds" 
                             variant='darkgreen'
                             icon={
                                 <Image
