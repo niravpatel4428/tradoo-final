@@ -9,7 +9,7 @@ import icon5 from "@/public/image/svg/invest-logo-5.svg";
 const TechnologyPartners = () => {
     return (
         <>
-            <div className="py-42">
+            <div className="py-42 bg-white">
                 <div className="container">
 
                     <div className='space-y-5 md:space-y-8 mb-12 md:mb-16'>
