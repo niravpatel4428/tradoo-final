@@ -81,7 +81,7 @@ const Benefits: React.FC = () => {
               <div className="col-span-12 lg:col-span-4" key={index}>
                 {/* IMAGE CARD */}
                 {block.type === "image" && block.img && (
-                  <div className="h-full rounded-3xl bg-white overflow-hidden hover:bg-gray300 transition-all duration-300">
+                  <div className="h-full flex flex-col justify-between rounded-3xl bg-white overflow-hidden hover:bg-gray300 transition-all duration-300">
                     <div className="w-full h-117 xxl:h-123.5">
                       <Image
                         src={block.img}

@@ -70,6 +70,7 @@
 
   /*  Custom font size */
   --text-40: 40px;
+  --text-44: 44px;
   --text-56: 56px;
   --text-80: 80px;
 
@@ -78,6 +79,8 @@
    --shadowtab: 0px 8px 24px 0px rgba(30, 35, 48, 0.07);
    --shadowbox: 0px 8px 32px 0px rgba(84, 91, 106, 0.15);
    --shadowcard: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+   --shadowdropdown: 0px 16px 48px 0px rgba(39, 46, 63, 0.10), 0px 1px 4px 0px rgba(39, 46, 63, 0.05);
+   --shadowinput: 0px 0px 0px 3px rgba(201, 71, 71, 0.15);
 }
 
 @utility container {
@@ -152,6 +155,18 @@ body {
   right: 0;
   bottom: 0;
   height: 160px;
+}
+
+/* Chrome, Safari, Edge */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 @media(max-width: 767px){

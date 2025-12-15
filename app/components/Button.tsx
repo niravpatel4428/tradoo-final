@@ -14,6 +14,7 @@ export type ButtonSize = "M" | "L";
 interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   label: string;
   href: string;
+  disabled?: boolean;
   variant?: ButtonVariant;
   size?: ButtonSize;
   trailingIcon?: boolean;
@@ -24,6 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   label,
   href,
   variant = "primarydefault",
+  disabled = false,
   size = "L",
   trailingIcon = false,
   className = "",
@@ -55,6 +57,10 @@ const Button: React.FC<ButtonProps> = ({
     L: "pl-8 pr-8 py-4.5",
   };
 
+  const disabledClasses = disabled
+    ? "opacity-40 pointer-events-none cursor-not-allowed"
+    : "";
+
   /** dynamic spacing */
   const dynamicGap = trailingIcon ? "gap-7" : "gap-0";
 
@@ -63,13 +69,15 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <Link
-      href={href}
+      href={disabled ? "#" : href}
+      aria-disabled={disabled}
       className={`
         inline-flex items-center rounded-full transition-all duration-400
         ${variantClasses[variant]}
         ${sizeClasses[size]}
         ${dynamicGap}
         ${extraPadding}
+        ${disabledClasses}
         ${className}
       `}
       {...props}

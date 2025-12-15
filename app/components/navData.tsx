@@ -51,5 +51,5 @@ export const navData = [
     ],
   },
 
-  { label: "Investors", href: "/investors", submenu: false, },
+  { label: "Investors", href: "/invest", submenu: false, },
 ];
