@@ -37,7 +37,7 @@ const documents = [
 const Documents = () => {
     return (
         <>
-            <div className="py-42 bg-gray900">
+            <div className="max-xs:py-12 max-xs:pb-2 max-sm:pb-2 py-42 bg-gray900">
                 <div className="container max-sm:px-0">
                     <div className="grid xl:grid-cols-12 gap-6">
                         <div className="max-sm:px-4 xl:col-span-4">

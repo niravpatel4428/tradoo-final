@@ -99,7 +99,7 @@ const TeamInvestPage = () => {
             </div>
           </div>
 
-          <div className="mt-10 lg:mt-16 md:text-center">
+          <div className="max-sm:px-4 mt-10 lg:mt-16 md:text-center">
             <Button href="#" variant='secondarydefault' label='View full team' />
           </div>
         </div>
