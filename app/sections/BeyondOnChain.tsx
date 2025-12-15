@@ -11,13 +11,13 @@ import icon4 from "@/public/image/svg/beyond-icon-4.svg"
 const BeyondOnChain = () => {
     return (
         <>
-            <div className='max-xs:pb-15 pb-42'>
+            <div className='max-sm:pb-2 pb-42'>
                 <div className="mb-16">
                     <div className="container">
                         <div className="flex max-lg:flex-col items-center gap-6">
                             <div className="flex-1">
                                 <div className="py-5 lg:py-20 xxl:py-29">
-                                    <div className='max-sm:px-4 space-y-8 xxl:pr-31'>
+                                    <div className='space-y-8 xxl:pr-31'>
                                         <div>
                                             <Badge
                                                 label="Beyond On-Chain"
@@ -83,7 +83,7 @@ const BeyondOnChain = () => {
 
             <div className="bg-white py-10 md:py-14">
                 <div className="container">
-                    <div className="flex items-center gap-6">
+                    <div className="flex sm:items-center gap-6">
                         <div className="bg-gray200 size-5 rounded-full flex justify-center items-center flex-none">
                             <IconCenter />
                         </div>
