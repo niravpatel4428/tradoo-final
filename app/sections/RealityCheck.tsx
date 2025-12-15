@@ -105,7 +105,7 @@ const RealityCheck = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-white rounded-3xl p-6 md:p-10">
+                        <div className="bg-white rounded-3xl py-12 px-4 md:p-10">
                             <div>
                                 <p className='text-gray800 text-2xl leading-8 tracking-[-0.5px] font-semibold'>Return buckets across 184,203 tracked wallets over the 30-day period.</p>
                             </div>
@@ -113,7 +113,7 @@ const RealityCheck = () => {
                             {/* add data below */}
                             <div className="mt-16 space-y-6">
                                 <div className="overflow-auto">
-                                    <div className="flex items-end justify-between gap-3 xl:gap-6 min-w-228">
+                                    <div className="flex items-end justify-between gap-3 xl:gap-6 min-w-200 md:min-w-228">
                                         {strategies.map((item) => {
                                             const rawHeight =
                                                 (item.percent / maxPercent) * MAX_HEIGHT;

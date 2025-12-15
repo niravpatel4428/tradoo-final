@@ -44,7 +44,7 @@ const BuiltFor = () => {
                         <div className='max-xs:mt-14 mt-18 lg:mt-20'>
                             <div className='grid grid-cols-12 gap-2'>
                                 <div className='col-span-12 lg:col-span-6'>
-                                    <div className='w-full max-sm:h-75 sm:h-100 lg:h-107 min-h-full'>
+                                    <div className='w-full max-sm:h-60 sm:h-100 lg:h-107 min-h-full'>
                                         <Image
                                             src={built}
                                             alt="img"

@@ -138,11 +138,11 @@ const convictionColors: Record<Conviction, string> = {
 const PerformanceRanking = () => {
     return (
         <>
-            <div className="max-sm:py-16 py-42 bg-gray900">
+            <div className="max-xs:py-16 py-42 bg-gray900">
                 <div className="container">
                     <div className='grid grid-cols-12 gap-y-8 md:gap-5'>
                         <div className='col-span-12 lg:col-span-6'>
-                            <div className='max-sm:px-4 space-y-8'>
+                            <div className='space-y-8'>
                                 <div>
                                     <Badge
                                         label="Performance Ranking"
@@ -155,7 +155,7 @@ const PerformanceRanking = () => {
                             </div>
                         </div>
                         <div className='col-span-12 lg:col-span-6'>
-                            <div className='max-sm:px-4 flex h-full flex-col justify-end gap-y-6'>
+                            <div className='flex h-full flex-col justify-end gap-y-6'>
                                 <p className='text-lg font-normal leading-[144%] text-gray400'>On-chain performance of selected high-conviction wallets over the chosen timeframe. Purely analytical — no copy trading, no recommendations.</p>
                             </div>
                         </div>
@@ -163,20 +163,20 @@ const PerformanceRanking = () => {
                 </div>
 
                 <div className="mt-10 md:mt-16">
-                    <div className="container">
+                    <div className="container max-sm:px-0">
                         <div className="">
-                            <div className="bg-[#1A1F2B] p-4 rounded-3xl text-gray800 overflow-x-auto">
+                            <div className="bg-[#1A1F2B] py-4 lg:p-4 rounded-3xl text-gray800 overflow-x-auto">
 
                                 <table className="w-full min-w-3xl">
                                     <thead>
-                                        <tr className="text-white text-sm xl:text-base font-medium leading-6.5 whitespace-nowrap border-b border-[#383D49]">
-                                            <th className="text-left py-1.5 xl:py-3.75 px-3 xl:px-6">Rank</th>
-                                            <th className="text-left py-1.5 xl:py-3.75 px-3 xl:px-6">Wallet</th>
-                                            <th className="text-left py-1.5 xl:py-3.75 px-3 xl:px-6">ROI %</th>
-                                            <th className="text-left py-1.5 xl:py-3.75 px-3 xl:px-6">Hit Rate</th>
-                                            <th className="text-left py-1.5 xl:py-3.75 px-3 xl:px-6">Trades</th>
-                                            <th className="text-left py-1.5 xl:py-3.75 px-3 xl:px-6">Avg Position</th>
-                                            <th className="text-left py-1.5 xl:py-3.75 px-3 xl:px-6">Conviction</th>
+                                        <tr className="text-white text-sm xl:text-base font-medium leading-6.5 whitespace-nowrap border-b border-[#383D49] relative">
+                                            <th className="text-left py-1.5 xl:py-3.75 px-4 sm:px-3 xl:px-6 max-lg:sticky max-lg:top-0 max-lg:bottom-0 max-lg:left-0 max-lg:z-2 max-lg:bg-[#1A1F2B]">Rank</th>
+                                            <th className="text-left py-1.5 xl:py-3.75 px-4 sm:px-3 xl:px-6">Wallet</th>
+                                            <th className="text-left py-1.5 xl:py-3.75 px-4 sm:px-3 xl:px-6">ROI %</th>
+                                            <th className="text-left py-1.5 xl:py-3.75 px-4 sm:px-3 xl:px-6">Hit Rate</th>
+                                            <th className="text-left py-1.5 xl:py-3.75 px-4 sm:px-3 xl:px-6">Trades</th>
+                                            <th className="text-left py-1.5 xl:py-3.75 px-4 sm:px-3 xl:px-6">Avg Position</th>
+                                            <th className="text-left py-1.5 xl:py-3.75 px-4 sm:px-3 xl:px-6">Conviction</th>
                                         </tr>
                                     </thead>
 
@@ -184,20 +184,20 @@ const PerformanceRanking = () => {
                                         {rankingData.map((row, i) => (
                                             <tr
                                                 key={i}
-                                                className="overflow-hidden border-b border-[#383D49] last:border-transparent"
+                                                className="overflow-hidden border-b border-[#383D49] last:border-transparent relative"
                                             >
                                                 {/* Rank */}
-                                                <td className="py-2 xl:py-4 px-3 xl:px-6">
+                                                <td className="p-4 sm:py-2 xl:py-4 sm:px-3 xl:px-6 max-lg:sticky max-lg:top-0 max-lg:bottom-0 max-lg:left-0 max-lg:z-2 max-lg:bg-[#1A1F2B]">
                                                     <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray700 text-white text-sm xl:text-base font-semibold">
                                                         {row.rank}
                                                     </div>
                                                 </td>
 
                                                 {/* Wallet */}
-                                                <td className="py-2 xl:py-4 px-3 xl:px-6">
+                                                <td className="p-4 sm:py-2 xl:py-4 sm:px-3 xl:px-6">
                                                     <div className="flex flex-row items-center gap-2">
-                                                        <span className="text-white text-sm xl:text-base font-medium whitespace-nowrap">{row.name}</span>
-                                                        <span className="text-gray400 text-sm xl:text-base font-medium whitespace-nowrap">{row.address}</span>
+                                                        <span className="text-white text-sm xl:text-base font-medium whitespace-nowrap w-22 truncate">{row.name}</span>
+                                                        <span className="text-gray400 text-sm xl:text-base font-medium whitespace-nowrap w-22 truncate">{row.address}</span>
                                                         <span className="mt-1 bg-[#272E41] px-2 py-1 rounded-md w-fit text-gray400 text-sm xl:text-base whitespace-nowrap">
                                                             {row.category}
                                                         </span>
@@ -205,7 +205,7 @@ const PerformanceRanking = () => {
                                                 </td>
 
                                                 {/* ROI */}
-                                                <td className="py-2 xl:py-4 px-3 xl:px-6">
+                                                <td className="p-4 sm:py-2 xl:py-4 sm:px-3 xl:px-6">
                                                     <div className="flex items-center gap-2 text-white">
                                                         <ArrowGreen />
                                                         <span className="font-medium">{row.roi}</span>
@@ -213,28 +213,28 @@ const PerformanceRanking = () => {
                                                 </td>
 
                                                 {/* Hit Rate */}
-                                                <td className="py-2 xl:py-4 px-3 xl:px-6">
+                                                <td className="p-4 sm:py-2 xl:py-4 sm:px-3 xl:px-6">
                                                     <p className='font-normal text-sm xl:text-base leading-5.5 text-gray400'>
                                                         {row.hitRate}
                                                     </p>
                                                 </td>
 
                                                 {/* Trades */}
-                                                <td className="py-2 xl:py-4 px-3 xl:px-6">
+                                                <td className="p-4 sm:py-2 xl:py-4 sm:px-3 xl:px-6">
                                                     <p className='font-normal text-sm xl:text-base leading-5.5 text-gray400'>
                                                         {row.trades}
                                                     </p>
                                                 </td>
 
                                                 {/* Avg Position */}
-                                                <td className="py-2 xl:py-4 px-3 xl:px-6">
+                                                <td className="p-4 sm:py-2 xl:py-4 sm:px-3 xl:px-6">
                                                     <p className='font-normal text-sm xl:text-base leading-5.5 text-gray400'>
                                                         {row.avgPos}
                                                     </p>
                                                 </td>
 
                                                 {/* Conviction */}
-                                                <td className="py-2 xl:py-4 px-3 xl:px-6">
+                                                <td className="p-4 sm:py-2 xl:py-4 sm:px-3 xl:px-6">
                                                     <span className={`text-sm xl:text-base leading-5.5 px-3 py-2 rounded-md font-medium ${convictionColors[row.conviction]}`} >
                                                         {row.conviction}
                                                     </span>
@@ -246,8 +246,8 @@ const PerformanceRanking = () => {
 
                             </div>
                             {/* Footer Disclaimer */}
-                            <div className="px-10 py-8 rounded-3xl bg-[#1A1F2B] mt-2">
-                                <div className="flex items-center gap-6 text-gray400 text-lg font-medium leading-6.5">
+                            <div className="px-4 md:px-10 py-8 rounded-3xl bg-[#1A1F2B] mt-2">
+                                <div className="flex sm:items-center gap-6 text-gray400 text-lg font-medium leading-6.5">
                                     <span className="size-5 flex-none bg-gray700 rounded-full flex justify-center items-center"><Iicon /></span>
                                     <p>
                                         Data is aggregated from public on-chain activity and third-party

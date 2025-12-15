@@ -49,21 +49,21 @@ const page = () => {
 
 const BannerBottom = () => {
     // Active tab state
-    const [activeTab, setActiveTab] = useState<"30 Days" | "60 Days" | "90 Days" | "180 Days">("30 Days");
+    const [activeTab, setActiveTab] = useState<"30" | "60" | "90" | "180">("30");
 
     // Chart data per tab (example demo data)
     const chartData = {
-        "30 Days": [20, 22, 45, 52, 60, 68, 48, 55, 75, 80, 82, 90, 80, 75, 70],
-        "60 Days": [35, 40, 50, 65, 70, 85, 90, 95, 80, 70, 70, 85, 90, 95, 60],
-        "90 Days": [25, 35, 45, 40, 60, 75, 85, 95, 100, 90, 35, 45, 95, 91],
-        "180 Days": [10, 20, 35, 40, 50, 55, 65, 70, 75, 80, 40, 50, 55, 65, 90]
+        "30": [20, 22, 45, 52, 60, 68, 48, 55, 75, 80, 82, 90, 80, 75, 70],
+        "60": [35, 40, 50, 65, 70, 85, 90, 95, 80, 70, 70, 85, 90, 95, 60],
+        "90": [25, 35, 45, 40, 60, 75, 85, 95, 100, 90, 35, 45, 95, 91],
+        "180": [10, 20, 35, 40, 50, 55, 65, 70, 75, 80, 40, 50, 55, 65, 90]
     };
     return (
         <div className='max-xs:pb-12 pb-24'>
             <div className="container max-sm:px-0">
                 <div className="grid grid-cols-12 gap-2">
                     <div className="col-span-12 xxl:col-span-8">
-                        <div className="bg-white rounded-3xl p-6 md:p-10 h-full flex flex-col justify-between gap-4">
+                        <div className="bg-white rounded-3xl px-4 py-10 md:p-10 h-full flex flex-col justify-between gap-4">
 
                             <div className="flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-4">
                                 {/* Header */}
@@ -79,18 +79,18 @@ const BannerBottom = () => {
 
                                 {/* Time Buttons */}
                                 <div className="max-md:overflow-x-auto w-full">
-                                    <div className="flex gap-3 bg-gray100 rounded-xl p-1 overflow-x-auto ">
-                                        {["30 Days", "60 Days", "90 Days", "180 Days"].map((t: any) => (
+                                    <div className="flex gap-0.5 md:gap-3 bg-gray100 rounded-xl p-1 overflow-x-auto ">
+                                        {["30", "60", "90", "180"].map((t: any) => (
                                             <button
                                                 key={t}
                                                 onClick={() => setActiveTab(t)}
-                                                className={`px-3 py-2.5 cursor-pointer rounded-md whitespace-nowrap text-base leading-5 font-medium transition 
-                                ${activeTab === t
+                                                className={`px-3 py-2.5 flex cursor-pointer rounded-md whitespace-nowrap text-base leading-5 font-medium transition 
+                                                ${activeTab === t
                                                         ? "bg-white text-gray800 shadow-sm"
                                                         : "bg-gray100 text-gray700"
                                                     }`}
                                             >
-                                                {t}
+                                                {t}&nbsp;<span>D</span><span className='hidden md:block'>ays</span>
                                             </button>
                                         ))}
                                     </div>
@@ -98,15 +98,30 @@ const BannerBottom = () => {
                             </div>
 
                             {/* Chart Mockup */}
-                            <div className="h-51 overflow-x-auto w-full">
-                                <div className="flex items-end h-full gap-3 min-w-lg">
-                                    {chartData[activeTab].map((h, i) => (
-                                        <div
-                                            key={i}
-                                            className="flex-1 bg-[#C4DCDA] rounded-lg transition-all duration-300"
-                                            style={{ height: `${h * 2}px` }}
-                                        />
+                            <div className="h-51 relative overflow-x-auto w-full pr-12">
+                                {/* Horizontal Grid Lines */}
+                                <div className="absolute inset-0 right-12 flex flex-col justify-between pointer-events-none">
+                                    {[0, 10, 20, 30, 40].map((v) => (
+                                        <div key={v} className="border-t border-dashed border-gray200" />
                                     ))}
+                                </div>
+
+                                {/* Right-side Y Axis Labels */}
+                                <div className="absolute right-0 top-0 h-full flex flex-col justify-between text-sm text-gray500">
+                                    {[40, 30, 20, 10, 0].map((v) => (
+                                        <span key={v}>{v}%</span>
+                                    ))}
+                                </div>
+                                <div className="overflow-x-auto w-full h-51 relative z-2">
+                                    <div className="flex items-end h-full gap-2 md:gap-3 min-w-lg">
+                                        {chartData[activeTab].map((h, i) => (
+                                            <div
+                                                key={i}
+                                                className="flex-1 bg-[#C4DCDA] rounded-lg transition-all duration-300"
+                                                style={{ height: `${h * 2}px` }}
+                                            />
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>

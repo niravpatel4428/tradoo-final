@@ -27,11 +27,11 @@ const cards = [
 const PortfolioAllocation = () => {
     return (
         <>
-            <div className={`block max-xs:py-16 py-24 xxl:pt-42 relative bg-darkjunglegreen`}>
-                <div className="container">
+            <div className={`block pt-42 pb-24 relative bg-darkjunglegreen`}>
+                <div className="container max-sm:px-0">
                     <div className={`flex flex-wrap flex-col md:text-center relative z-10 $ mx-auto`}>
 
-                        <div className="max-xs:space-y-6 space-y-10">
+                        <div className="max-xs:space-y-6 space-y-10 max-sm:px-4">
                             {/* Title */}
                             <div className={`block font-semibold text-white text-40 leading-[46px] -tracking-[1.20px] max-xs:text-[32px] max-xs:leading-10 max-xs:-tracking-[0.7px] xl:text-56 xl:leading-16 xl:-tracking-[1.68px]`}>
                                 <h2>From Research to Portfolio Allocation</h2>
@@ -71,7 +71,7 @@ const PortfolioAllocation = () => {
                         </div>
 
                         {/* Buttons */}
-                        <div className="max-sm:justify-start flex flex-wrap justify-center gap-4">
+                        <div className="max-sm:justify-start flex flex-wrap justify-center gap-4 max-sm:px-4">
                             <Button
                                 label="Join Private Beta "
                                 href="/"
