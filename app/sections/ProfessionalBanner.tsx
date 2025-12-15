@@ -9,7 +9,7 @@ const ProfessionalBanner: React.FC = () => {
     const data = [
         { id: 1, text: "USDC-only, overcollateralized lending" },
         { id: 2, text: "Non custodial smart vault per treasury" },
-        { id: 3, text: "Built for treasury, audit & reporting" }, 
+        { id: 3, text: "Built for treasury, audit & reporting" },  
     ];
 
     return (

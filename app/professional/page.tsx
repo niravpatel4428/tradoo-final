@@ -92,9 +92,9 @@ const page = () => {
       <WhyItMatters />      
       <Infrastructure />  
       <StepsSection
-        className='bg-white'
+        className='bg-white' 
         badgeLabel="The Tradoo Framework"
-        title="Why Tradoo for On-Chain Treasury."
+        title="Why Tradoo for On-Chain Treasury." 
         steps={steps}
       />    
       <TransparencyDesign />      

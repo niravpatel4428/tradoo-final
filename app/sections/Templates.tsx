@@ -1,179 +1,283 @@
+"use client";
+import { Key, useEffect, useRef, useState } from "react";
 import React from 'react'
+import Badge from '../components/Badge';
+import Image, { StaticImageData } from "next/image";
+import i1 from "@/public/image/i5.jpg";
+import i2 from "@/public/image/strategy-roles-2.jpg";
+import i3 from "@/public/image/strategy-roles-3.jpg";
+import i4 from "@/public/image/strategy-roles-4.jpg";
+import Button from "../components/Button";
 
-export interface VaultItem {
+const tabs = [
+    "Core Allocation",
+    "Conservative",
+    "BTC Focus",
+    "ETH Focus",
+    "Stablecoin",
+    "Multi-asset",
+];
+
+type StrategyTab = {
     id: number;
-    numberColor: string;
-    gradient: string;
-    labelColor: string;
+    img: StaticImageData;
+    btnUrl: string;
+    btnLabel: string;
+    mainTItle: string;
     label: string;
-    title: string;
-    description: string;
-    tags: string[];
-    tagBg: string;
-    tagText: string;
-    tagBorder: string;
-}
+    desc: string;
+    labels: string[];
+};
 
-export const vaultItems: VaultItem[] = [
-    {
-        id: 1,
-        numberColor: "text-gray300",
-        gradient: "from-gray900 via-gray500 to-gray200",
-        labelColor: "text-gray900",
-        label: "Core Allocation",
-        title: "Digital Asset Core Allocation Vault",
-        description:
-            "For asset managers and family offices who want a strategic BTC, ETH and USDC sleeve as part of a diversified portfolio. Balanced core exposure with a stable USDC foundation and rules-based rebalancing.",
-        tags: ["Core", "Balanced", "BTC / ETH / USDC"],
-        tagBg: "bg-gray900/5",
-        tagText: "text-gray900/80",
-        tagBorder: "border-gray900/20",
-
-    },
-    {
-        id: 2,
-        numberColor: "text-blue-500/20",
-        gradient: "from-blue-500 via-blue-500/50 to-blue-500/20",
-        labelColor: "text-blue-500",
-        label: "Conservative",
-        title: "Capital Preservation Plus Vault",
-        description:
-            "For conservative mandates where capital preservation comes first. Most of the portfolio sits in USDC core and lending, with a controlled, rules-based build-up of BTC and ETH over time.",
-        tags: ["Capital preservation", "USDC heavy", "Gradual BTC / ETH"],
-        tagBg: "bg-blue-500/5",
-        tagText: "text-blue-500/80",
-        tagBorder: "border-blue-500/20",
-    },
-    {
-        id: 3,
-        numberColor: "text-orange-500/20",
-        gradient: "from-orange-500 via-orange-500/50 to-orange-500/20",
-        labelColor: "text-orange-500",
-        label: "BTC Focus",
-        title: "BTC Accumulation Vault",
-        description:
-            "For clients who want to build a long-term BTC position without timing every entry by hand. Systematic BTC DCA, dynamic spot allocation and clear rules for profit-taking and drawdown control.",
-        tags: ["BTC focus", "DCA", "Growth with risk control"],
-        tagBg: "bg-orange-500/5",
-        tagText: "text-orange-500/80",
-        tagBorder: "border-orange-500/20",
-    },
-    {
-        id: 4,
-        numberColor: "text-purple-500/20",
-        gradient: "from-purple-500 via-purple-500/50 to-purple-500/20",
-        labelColor: "text-purple-500",
-        label: "ETH Focus",
-        title: "ETH Growth & Volatility Managed Vault",
-        description:
-            "For mandates that see ETH as a strategic asset but want more structure than buy-and-hold. Combines ETH spot, DCA, trend modules and profit-taking with hedging to keep volatility within defined ranges.",
-        tags: ["ETH focus", "Growth", "Volatility managed"],
-        tagBg: "bg-purple-500/5",
-        tagText: "text-purple-500/80",
-        tagBorder: "border-purple-500/20",
-    },
-    {
-        id: 5,
-        numberColor: "text-green-500/20",
-        gradient: "from-green-500 via-green-500/60 to-green-500/20",
-        labelColor: "text-green-500",
-        label: "Stablecoin",
-        title: "Stablecoin Returns Vault",
-        description:
-            "For mandates that want on-chain returns on USD exposure without taking directional BTC or ETH risk. Concentrates on USDC core and overcollateralized lending, with risk controls and venue limits on top.",
-        tags: ["Returns", "USDC only", "Lending"],
-        tagBg: "bg-green-500/5",
-        tagText: "text-green-500/80",
-        tagBorder: "border-green-500/20",
-    },
-    {
-        id: 6,
-        numberColor: "text-slate-500/20",
-        gradient: "from-slate-500 via-slate-500/50 to-slate-500/20",
-        labelColor: "text-slate-500",
-        label: "Multi-Asset",
-        title: "Volatility Managed Multi-Asset Vault",
-        description:
-            "For multi-asset managers who want a defined volatility bucket in digital assets. BTC, ETH and USDC allocations shift dynamically based on market regimes and risk signals, keeping portfolio behavior within agreed bands.",
-        tags: ["Multi-asset", "Dynamic allocation", "Volatility target"],
-        tagBg: "bg-slate-500/5",
-        tagText: "text-slate-500/80",
-        tagBorder: "border-slate-500/20",
-    },
+const profiles: StrategyTab[] = [
+    { id: 0, img: i1, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Digital Asset Core Allocation Vault", label: "Digital Asset Core Allocation Vault", desc: "For asset managers and family offices who want a strategic BTC, ETH, and USDC sleeve as part of a diversified portfolio. Balanced core exposure with a stable USDC foundation and rules-based rebalancing", labels: ["Core", "Balanced", "BTC / ETH / USDC"], },
+    { id: 1, img: i2, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Growth & Building", label: "Growth & Building", desc: "These strategies use market phases to build BTC and ETH exposure systematically or to generate additional returns. The goal is controlled growth without unnecessary risks.", labels: ["DCA (BTC/ETH)", "Spot BTC/ETH (dynamic)", "Trend Control", "Range LP"], },
+    { id: 2, img: i3, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Risk Control & Hedging", label: "Risk Control & Hedging", desc: "These modules protect the portfolio from excess movements, unexpected shifts and technical risks. When markets turn or become volatile, these strategies activate first.", labels: ["Adaptive Risk Control", "Hedge/Protection", "Profit Taking", "Perpetual Overlay"], },
+    { id: 3, img: i2, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Meta Engine & Control Logic", label: "Meta Engine & Control Logic", desc: "These modules execute no trades. They control the overall process: identify regimes, analyze events, filter strategies and determine which modules are active or paused.", labels: ["Strategy Mix (AI Meta Engine)", "Regime Understanding", "Event & Sentiment Radar"], }, 
+    { id: 4, img: i1, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Stablecoin", label: "Stablecoin", desc: "These modules execute no trades. They control the overall process: identify regimes, analyze events, filter strategies and determine which modules are active or paused.", labels: ["Strategy Mix (AI Meta Engine)", "Regime Understanding", "Event & Sentiment Radar"], }, 
+    { id: 5, img: i4, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Multi-asset", label: "Multi-asset", desc: "These modules execute no trades. They control the overall process: identify regimes, analyze events, filter strategies and determine which modules are active or paused.", labels: ["Strategy Mix (AI Meta Engine)", "Regime Understanding", "Event & Sentiment Radar"], },
 ];
 
 
 const Templates: React.FC = () => {
+
+    const [active, setActive] = useState(0);
+    const [ready, setReady] = useState(false);
+    const [boot, setBoot] = useState(false);
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const timer = useRef<NodeJS.Timeout | null>(null);
+
+    useEffect(() => {
+        setTimeout(() => setBoot(true), 30);
+    }, []);
+
+    const startTimer = () => {
+        if (timer.current) clearTimeout(timer.current);
+        timer.current = setTimeout(() => {
+            setActive((prev) => (prev + 1) % tabs.length);
+        }, 6000);
+    };
+
+    useEffect(() => {
+        const target = sectionRef.current;
+        if (!target) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) setReady(true);
+                });
+            },
+            { threshold: 0.4 }
+        );
+
+        observer.observe(target);
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        if (ready) startTimer();
+    }, [ready, active]);
+
+    const handleClick = (i: number) => {
+        setActive(i);
+    };
+
     return (
-        <div className='max-xs:py-10 max-xs:pb-12 max-sm:pb-16 py-42 bg-white'>
-            <div className='container'>
+        <div className='max-xs:py-10 max-xs:pb-2 max-sm:pb-2 py-42'>
+            <div className='container max-sm:p-0'>
                 <div className='space-y-16'>
-                    <div className='max-sm:text-left text-center'>
-                        <div className=''>
-                            <h2 className="max-xs:tracking-[-1px] max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xl:text-56 font-semibold text-gray800 tracking-[-1.68px] xl:leading-16">
-                                Vault Templates Professionals Can Start From
-                            </h2>
+                    <div className='max-sm:px-4 grid grid-cols-12 gap-6'>
+                        <div className='col-span-12 md:col-span-6'>
+                            <div className='space-y-8'>
+                                <div>
+                                    <Badge
+                                        label="Our 15 Strategies"
+                                    />
+                                </div>
+                                <div>
+                                    <h3 className='max-xs:text-3xl max-xs:leading-9 text-40 leading-11.5 tracking-[-1.20px] xxl:text-56 font-semibold xxl:leading-16 xxl:tracking-[-1.68px] text-gray800'>Vault Templates Professionals Can Start From</h3>
+                                </div>
+                            </div>
                         </div>
-                        <div className="mt-4 w-full max-w-200 mx-auto">
-                            <p className="text-lg font-normal leading-[144%] text-gray700">
-                                These examples show how asset managers, family offices and funds can translate real mandates into strategy vaults. Each template can be adjusted, extended or combined in Pro mode.
-                            </p>
+                        <div className='col-span-12 md:col-span-6'>
+                            <div className='flex flex-col w-full max-w-170 ml-auto h-full justify-end gap-5'>
+                                <p className='text-lg font-normal leading-[144%] text-gray700'>These examples show how asset managers, family offices and funds can translate real mandates into strategy vaults. Each template can be adjusted, extended or combined in Pro mode.</p>
+                            </div>
                         </div>
                     </div>
-                    <div className='mx-auto max-w-7xl'>
-                        <div className="grid md:grid-cols-2 gap-6">
-                            {vaultItems.map((item) => (
-                                <div
-                                    key={item.id}
-                                    className="group relative bg-gray100/5 rounded-xl border border-gray200 overflow-hidden hover:bg-white hover:shadow-xl transition-all"
+                    <div ref={sectionRef} className="w-full flex flex-col gap-6">
+
+                        {/* --------------------------------------------- */}
+                        {/* DESKTOP TABS — unchanged (hidden on mobile)    */}
+                        {/* --------------------------------------------- */}
+                        <div className="hidden lg:flex bg-gray200 rounded-3xl p-1 overflow-x-auto gap-1 no-scrollbar">
+                            {tabs.map((t, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => handleClick(i)}
+                                    className={`cursor-pointer relative overflow-hidden flex-[1_0_0] p-5 rounded-20 md:text-sm lg:text-lg font-semibold
+              transition-all duration-300 xxl:whitespace-nowrap text-gray800 leading-6 text-center border-transparent border-0 
+              ${active === i
+                                            ? `bg-white shadow-[var(--shadowtab)] border-transparent border-0 after:content-['']
+                                            after:absolute after:inset-0 after:rounded-20
+                                            after:pointer-events-none
+                                            after:shadow-[var(--shadowtab)]`
+                                            : "text-gray800 md:text-sm lg:text-lg font-semibold leading-6 text-center border-transparent border-0"
+                                        }`}
+
                                 >
-                                    {/* Left Vertical Gradient Bar */}
-                                    <div
-                                        className={`absolute top-0 left-0 w-1 h-full bg-gradient-to-b ${item.gradient}`}
-                                    />
+                                    {t}
 
-                                    <div className="max-sm:p-6 p-8 pl-10">
-                                        {/* Header Row */}
-                                        <div className="flex items-start gap-4 mb-4">
-                                            <span className={`text-4xl font-light leading-none ${item.numberColor}`}>
-                                                {String(item.id).padStart(2, "0")}
-                                            </span>
+                                    {active === i && boot && ready && (
+                                        <div
+                                            key={active}
+                                            className="absolute inset-0 rounded-20 pointer-events-none"
+                                            style={{
+                                                background:
+                                                    "linear-gradient(to right, rgba(0,0,0,0.03), rgba(0,0,0,0.03))",
+                                                width: "0%",
+                                                animation: "fillTab 6s linear forwards",
+                                            }}
+                                        />
+                                    )}
+                                </button>
+                            ))}
+                        </div>
 
-                                            <div className="flex-1">
-                                                <p
-                                                    className={`text-[10px] font-medium uppercase tracking-[0.2em] mb-1 ${item.labelColor}`}
-                                                >
-                                                    {item.label}
-                                                </p>
-                                                <h4 className="text-lg text-gray900 font-semibold leading-tight">{item.title}</h4>
+                        {/* -------------------------------------------------- */}
+                        {/* DESKTOP CONTENT — only current tab (unchanged)     */}
+                        {/* -------------------------------------------------- */}
+                        <div className="hidden md:flex flex-col gap-4">
+                            <div className="flex flex-col gap-2">
+                                <div className="flex max-lg:flex-col items-stretch gap-2">
+
+                                    {/* LEFT – IMAGE + BUTTON */}
+                                    <div className="flex-1">
+                                        <div className="relative overflow-hidden h-full w-full min-h-67 lg:min-h-100 xxl:min-h-119">
+                                            <Image
+                                                src={profiles[active].img}
+                                                alt={profiles[active].mainTItle}
+                                                className="h-full w-full object-cover rounded-3xl"
+                                            />
+
+                                            {/* BUTTON  */}
+                                            <div className="absolute left-4 bottom-4 lg:left-8 xxl:left-14 lg:bottom-8 xxl:bottom-14 z-2">
+                                                <Button label={profiles[active].btnLabel} href={profiles[active].btnUrl} trailingIcon={true} variant='contrastdefault' size='L' />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* RIGHT – WHITE BOX WITH CONTENT */}
+                                    <div className="flex-1">
+                                        <div className="py-16 px-4 md:p-10 xxl:p-14 h-full bg-white rounded-3xl flex flex-col justify-between gap-10">
+                                            <div className="space-y-6">
+                                                {/* TITLE */}
+                                                <div>
+                                                    <h2 className="text-2xl font-semibold leading-8 tracking-[-0.24px] text-gray800 mb-4">
+                                                        {profiles[active].mainTItle}
+                                                    </h2>
+                                                </div>
+
+                                                {/* DESCRIPTION */}
+                                                <div className="text-lg font-normal leading-[144%] color-gray700">
+                                                    <p>
+                                                        {profiles[active].desc}
+                                                    </p>
+                                                </div>
+                                            </div>
+
+
+                                            <div className="flex flex-col gap-6">
+                                                <h2 className="text-lg font-semibold leading-[144%] text-gray800">Strategies in this template:</h2>
+                                                {/* LABEL TAGS */}
+                                                <div className="flex flex-wrap gap-3">
+                                                    {profiles[active].labels.map((label: string, i: Key | null | undefined) => (
+                                                        <Badge className="text-gray800" key={i} label={label} variant="gray" />
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* -------------------------------------------------- */}
+                        {/* MOBILE VERSION — card list (NO TABS)              */}
+                        {/* -------------------------------------------------- */}
+                        <div className="max-lg:flex flex-col gap-2 hidden">
+                            {profiles.map((tab, i) => (
+                                <div key={i} className="flex flex-col gap-2">
+                                    <div className="flex max-lg:flex-col items-stretch gap-2">
+
+                                        {/* LEFT – IMAGE + BUTTON */}
+                                        <div className="flex-1">
+                                            <div className="relative overflow-hidden h-full w-full min-h-67 lg:min-h-100 xxl:min-h-119">
+                                                <Image
+                                                    src={tab.img}
+                                                    alt={tab.mainTItle}
+                                                    className="max-sm:min-h-67 h-full w-full object-cover rounded-3xl"
+                                                />
+
+                                                {/* BUTTON  */}
+                                                <div className="absolute left-4 bottom-4 lg:left-8 xxl:left-14 lg:bottom-8 xxl:bottom-14 z-2">
+                                                    <Button label={tab.btnLabel} href={tab.btnUrl} trailingIcon={true} variant='contrastdefault' size='L' />
+                                                </div>
                                             </div>
                                         </div>
 
-                                        {/* Description */}
-                                        <p className="text-base text-gray700 leading-relaxed mb-5">
-                                            {item.description}
-                                        </p>
+                                        {/* RIGHT – WHITE BOX WITH CONTENT */}
+                                        <div className="flex-1">
+                                            <div className="py-16 px-4 md:p-10 xxl:p-14 h-full bg-white rounded-3xl shadow-sm flex flex-col justify-between gap-10">
+                                                <div className="space-y-6">
+                                                    {/* TITLE */}
+                                                    <div>
+                                                        <h2 className="text-2xl font-semibold leading-8 tracking-[-0.24px] text-gray800 mb-4">
+                                                            {tab.mainTItle}
+                                                        </h2>
+                                                    </div>
 
-                                        {/* Tags */}
-                                        <div className="flex flex-wrap gap-2">
-                                            {item.tags.map((tag, i) => (
-                                                <span
-                                                    key={i}
-                                                    className={`
-                                                        px-2.5 py-1 tracking-wide border text-xs font-medium rounded-full
-                                                        ${item.tagBg}
-                                                        ${item.tagText}
-                                                        ${item.tagBorder}
-                                                    `}
-                                                >
-                                                    {tag}
-                                                </span>
-                                            ))}
+                                                    {/* DESCRIPTION */}
+                                                    <div className="text-lg font-normal leading-[144%] color-gray700">
+                                                        <p>
+                                                            {tab.desc}
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+
+                                                <div className="flex flex-col gap-6">
+                                                    <h2 className="text-lg font-semibold leading-[144%] text-gray800">Strategies in this template:</h2>
+                                                    {/* LABEL TAGS */}
+                                                    <div className="flex flex-wrap gap-3">
+                                                        {tab.labels.map((label: string, i: Key | null | undefined) => (
+                                                            <Badge key={i} label={label} variant="gray" />
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
+
                                     </div>
+
+
+
                                 </div>
                             ))}
                         </div>
+
+                        <style jsx>{`
+        @keyframes fillTab {
+          from {
+            width: 0%;
+          }
+          to {
+            width: 100%;
+          }
+        }
+      `}</style>
                     </div>
                 </div>
             </div>
