@@ -80,9 +80,9 @@ const InvestorFAQ = () => {
     return (
         <>
             <div className="bg-gray900 py-10 lg:py-20 block">
-                <div className="container">
+                <div className="container max-sm:p-0">
                     <div className="flex flex-wrap flex-col lg:flex-row gap-10">
-                        <div className="flex-none w-full lg:w-[400px] xl:w-[450px]">
+                        <div className="max-sm:px-4 flex-none w-full lg:w-[400px] xl:w-[450px]">
                             {/* Page Title */}
                             <div className="block max-xs:space-y-4 space-y-7">
                                 <div className="max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xxl:text-56 font-semibold xxl:leading-16 tracking-[-1.68px] text-white">

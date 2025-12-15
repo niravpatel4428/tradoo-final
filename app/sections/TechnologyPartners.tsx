@@ -12,7 +12,7 @@ const TechnologyPartners = () => {
             <div className="py-42">
                 <div className="container">
 
-                    <div className='max-sm:px-4 space-y-5 md:space-y-8 mb-12 md:mb-16'>
+                    <div className='space-y-5 md:space-y-8 mb-12 md:mb-16'>
                         <div>
                             <Badge
                                 label="Technology & Partners"

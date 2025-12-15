@@ -98,7 +98,7 @@ const FundingPahsesInvestPage = () => {
                         {/* </div> */}
                     </div>
 
-                    <div className="text-center mt-10">
+                    <div className="md:text-center mt-10">
                         <p className='text-lg font-normal leading-[144%] text-gray700'>*Seed 3: No new equity – Share tokenization + Secondary market only (Growth Phase)</p>
                     </div>
                 </div>

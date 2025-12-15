@@ -49,10 +49,10 @@ const TeamInvestPage = () => {
     <>
       <div className="py-42 bg-white">
         <div className="container max-sm:px-0">
-          <div className="block w-full max-w-190 mx-auto text-center px-4 sm:px-0 max-xs:mb-14 mb-[72px] xl:mb-24 space-y-6">
+          <div className="block w-full max-w-190 mx-auto md:text-center px-4 sm:px-0 max-xs:mb-14 mb-[72px] xl:mb-24 space-y-6">
             <Badge label="Our Team" variant="lightgreen" />
 
-            <div className="block font-semibold text-gray800 text-56 leading-16 -tracking-[3px]">
+            <div className="block font-semibold text-gray800 max-xs:text-3xl max-xs:leading-9 max-xs:tracking-normal text-56 leading-16 -tracking-[3px]">
               <h2>Core Team & Board of Directors</h2>
             </div>
 
@@ -99,7 +99,7 @@ const TeamInvestPage = () => {
             </div>
           </div>
 
-          <div className="mt-10 lg:mt-16 text-center">
+          <div className="mt-10 lg:mt-16 md:text-center">
             <Button href="#" variant='secondarydefault' label='View full team' />
           </div>
         </div>

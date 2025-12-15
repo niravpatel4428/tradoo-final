@@ -45,7 +45,7 @@ const Documents = () => {
                                 <h2 className='max-xs:text-3xl max-xs:leading-9 text-40 leading-11.5 tracking-[-1.20px] xl:text-56 font-semibold xl:leading-16 xl:tracking-[-1.68px] text-white'>Documents</h2>
 
                                 <div>
-                                    <p className='text-lg font-normal leading-[144%] text-gray700'>Сontext, rationale and structure behind the company and its roadmap</p>
+                                    <p className='text-lg font-normal leading-[144%] text-gray400'>Сontext, rationale and structure behind the company and its roadmap</p>
                                 </div>
                             </div>
                         </div>
