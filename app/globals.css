@@ -25,6 +25,7 @@
   --darkGunmetal: #1C2233; 
   --gunmetal: #272E3F;
   --lightgunmetal: #313644;
+  --extralightgunmetal: #323845;
 }
 
 @theme inline {
@@ -52,6 +53,7 @@
   --color-darkGunmetal: var(--darkGunmetal);
   --color-gunmetal: var(--gunmetal);
   --color-lightgunmetal: var(--lightgunmetal);
+  --color-extralightgunmetal: var(--extralightgunmetal);
   /* Updated fonts */
   /* --font-sans: var(--font-inter); */
   --font-body: var(--font-inter-display);

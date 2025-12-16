@@ -12,51 +12,44 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     id: 1,
-    question: "Are you already live with real client treasures?",
+    question: "Can I onboard my clients onto Tradoo today?",
     answer: [
       "During the current pilot, all flows run in a demo environment with simulated balances. No client assets are deployed until the required licenses are in place.",
     ]
   },
   {
     id: 2,
-    question: "What kind of returns can we expect?",
+    question: "Which assets and strategies can I use?",
     answer: [
       "Returns depend on market conditions and the selected strategy parameters.",
     ]
   },
   {
     id: 3,
-    question: "How does non-custody work in practice?",
+    question: "Can I bring my own strategies?",
     answer: [
       "Your assets stay inside your dedicated smart-contract vault. You remain the owner at all times.",
     ]
   },
   {
     id: 4,
-    question: "Which blockchains and protocols do you support?",
+    question: "What is the minimum AUM for design partners?",
     answer: [
       "We currently support major L1 and L2 networks. More integrations are coming soon.",
     ]
   },
   {
     id: 5,
-    question: "What is the minimum treasury size for this pilot?",
+    question: "How will fees work once you are live?",
     answer: [
       "There is no minimum during the private pilot phase.",
     ]
   },
   {
     id: 6,
-    question: "How will risks work once you are live?",
-    answer: [
-      "All execution is fully transparent and traceable on-chain.",
-    ]
-  },
-  {
-    id: 7,
     question: "Where are you based and what is your regulatory roadmap?",
     answer: [
-      "We operate globally with regulatory alignment depending on the region.",
+      "All execution is fully transparent and traceable on-chain.",
     ]
   },
 ];
@@ -80,9 +73,9 @@ const FAQ = () => {
 
     return (
         <div className="bg-gray900 py-10 lg:py-20 block">
-            <div className="container">
+            <div className="container max-sm:p-0">
                 <div className="flex flex-wrap flex-col lg:flex-row gap-10">
-                    <div className="flex-none w-full lg:w-[400px] xl:w-[450px]">
+                    <div className="max-sm:px-4 flex-none w-full lg:w-[400px] xl:w-[450px]">
                         {/* Page Title */}
                         <div className="block max-xs:space-y-4 space-y-7">
                             <div className="max-xs:text-3xl max-xs:leading-10 text-40 leading-12 xxl:text-56 font-semibold xxl:leading-16 tracking-[-1.68px] text-white">

@@ -35,7 +35,7 @@ const Modules: React.FC = () => {
     ];
 
     return (
-        <div className='max-xs:py-10 max-xs:pb-12 max-sm:pb-12 py-42 bg-white'>
+        <div className='max-xs:py-10 max-xs:pb-12 max-sm:pb-42 py-42 bg-white'>
             <div className='container max-sm:p-0'>
                 <div className='space-y-16'>
                     <div className='max-sm:px-4 grid grid-cols-12 gap-6'>

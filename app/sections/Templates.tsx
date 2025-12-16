@@ -3,10 +3,12 @@ import { Key, useEffect, useRef, useState } from "react";
 import React from 'react'
 import Badge from '../components/Badge';
 import Image, { StaticImageData } from "next/image";
-import i1 from "@/public/image/i5.jpg";
-import i2 from "@/public/image/strategy-roles-2.jpg";
-import i3 from "@/public/image/strategy-roles-3.jpg";
-import i4 from "@/public/image/strategy-roles-4.jpg";
+import i1 from "@/public/image/tabbing-image.jpg";
+import i2 from "@/public/image/tabbing-image2.jpg";
+import i3 from "@/public/image/tabbing-image3.jpg";
+import i4 from "@/public/image/tabbing-image4.jpg";
+import i5 from "@/public/image/tabbing-image5.jpg";
+import i6 from "@/public/image/tabbing-image6.jpg";
 import Button from "../components/Button";
 
 const tabs = [
@@ -31,11 +33,11 @@ type StrategyTab = {
 
 const profiles: StrategyTab[] = [
     { id: 0, img: i1, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Digital Asset Core Allocation Vault", label: "Digital Asset Core Allocation Vault", desc: "For asset managers and family offices who want a strategic BTC, ETH, and USDC sleeve as part of a diversified portfolio. Balanced core exposure with a stable USDC foundation and rules-based rebalancing", labels: ["Core", "Balanced", "BTC / ETH / USDC"], },
-    { id: 1, img: i2, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Growth & Building", label: "Growth & Building", desc: "These strategies use market phases to build BTC and ETH exposure systematically or to generate additional returns. The goal is controlled growth without unnecessary risks.", labels: ["DCA (BTC/ETH)", "Spot BTC/ETH (dynamic)", "Trend Control", "Range LP"], },
-    { id: 2, img: i3, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Risk Control & Hedging", label: "Risk Control & Hedging", desc: "These modules protect the portfolio from excess movements, unexpected shifts and technical risks. When markets turn or become volatile, these strategies activate first.", labels: ["Adaptive Risk Control", "Hedge/Protection", "Profit Taking", "Perpetual Overlay"], },
-    { id: 3, img: i2, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Meta Engine & Control Logic", label: "Meta Engine & Control Logic", desc: "These modules execute no trades. They control the overall process: identify regimes, analyze events, filter strategies and determine which modules are active or paused.", labels: ["Strategy Mix (AI Meta Engine)", "Regime Understanding", "Event & Sentiment Radar"], }, 
-    { id: 4, img: i1, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Stablecoin", label: "Stablecoin", desc: "These modules execute no trades. They control the overall process: identify regimes, analyze events, filter strategies and determine which modules are active or paused.", labels: ["Strategy Mix (AI Meta Engine)", "Regime Understanding", "Event & Sentiment Radar"], }, 
-    { id: 5, img: i4, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Multi-asset", label: "Multi-asset", desc: "These modules execute no trades. They control the overall process: identify regimes, analyze events, filter strategies and determine which modules are active or paused.", labels: ["Strategy Mix (AI Meta Engine)", "Regime Understanding", "Event & Sentiment Radar"], },
+    { id: 1, img: i2, btnLabel: "Join Waitlist", btnUrl: "/", mainTItle: "Capital Preservation Plus Vault", label: "Capital Preservation Plus Vault", desc: "For conservative mandates where capital preservation comes first. Most of the portfolio sits in USDC core and lending, with a controlled, rules-based build-up of BTC and ETH over time", labels: ["Capital preservation", "USDC heavy", "Gradual BTC/ETH"], },
+    { id: 2, img: i3, btnLabel: "Join Waitlist", btnUrl: "/", mainTItle: "BTC Accumulation Vault", label: "BTC Accumulation Vault", desc: "For clients who want to build a long-term BTC position without manually timing every entry. Systematic BTC DCA, dynamic spot allocation, and clear rules for profit-taking and drawdown control.", labels: ["BTC Focus", "DCA", "Growth with Risk Control"], },
+    { id: 3, img: i4, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "ETH Growth & Volatility Managed Vault", label: "ETH Growth & Volatility Managed Vault", desc: "For mandates that see ETH as a strategic asset but want more structure than buy-and-hold. Combines ETH spot, DCA, trend modules and profit-taking with hedging to keep volatility within defined ranges.", labels: ["ETH Focus", "Growth", "Volatility managed"], }, 
+    { id: 4, img: i5, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Stablecoin Returns Vault", label: "Stablecoin Returns Vault", desc: "For mandates that want on-chain returns on USD exposure without taking directional BTC or ETH risk. Concentrates on USDC core and overcollateralized lending, with risk controls and venue limits on top.", labels: ["Returns", "USDC only", "Lending"], }, 
+    { id: 5, img: i6, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Volatility Managed Multi-Asset Vault", label: "Volatility Managed Multi-Asset Vault", desc: "For multi-asset managers who want a defined volatility bucket in digital assets. BTC, ETH and USDC allocations shift dynamically based on market regimes and risk signals, keeping portfolio behavior within agreed bands.", labels: ["Multi-asset", "Dynamic allocation", "Volatility target"], },
 ];
 
 

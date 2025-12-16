@@ -55,7 +55,7 @@ const Professional: React.FC = () => {
 
                         {items.map((item, index) => (
                             <div key={index} className="col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-3">
-                                <div className="h-full gap-y-12 flex flex-col rounded-3xl max-xs:p-5 max-sm:px-4 p-8 bg-gray100">
+                                <div className="h-full gap-y-12 flex flex-col rounded-3xl max-xs:p-5 max-sm:px-8 p-8 bg-gray100">
                                     <div className="w-16 h-16 rounded-xl p-3 bg-white flex justify-center items-center">
                                         <Image
                                             src={item.icon}

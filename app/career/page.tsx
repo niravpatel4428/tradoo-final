@@ -23,7 +23,7 @@ const page = () => {
           },
         ]}
       />
-      <WhyJoinTradoo />
+      <WhyJoinTradoo /> 
       <Positions />
       <HowWeWork />
       <ApplyNow />

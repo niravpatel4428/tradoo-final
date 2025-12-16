@@ -126,7 +126,7 @@ const DigitalAsset: React.FC = () => {
                         {featureData.map((item) => (
                             <div key={item.id} className={item.colSpan}>
                                 <div
-                                    className={`h-full rounded-3xl p-10 flex flex-col gap-y-14 ${item.bg}`}
+                                    className={`h-full rounded-3xl max-sm:py-10 max-sm:px-4 p-10 flex flex-col gap-y-14 ${item.bg}`}
                                 >
                                     <div className="flex gap-5 justify-between items-start">
                                         <span

@@ -56,7 +56,7 @@ const StepsSection: React.FC<StepsSectionProps> = ({
   subtitleclassName = "",
 }) => {
   return (
-    <div className={`block max-sm:pb-2 max-xs:py-10 py-42 ${className}`}>
+    <div className={`block max-xs:pb-10 max-sm:pb-24 max-xs:py-10 py-42 ${className}`}>
       <div className="container max-sm:p-0">
         <div className="grid grid-cols-12 max-sm:gap-y-10 sm:gap-7 xxl:gap-16">
           {/* LEFT */}

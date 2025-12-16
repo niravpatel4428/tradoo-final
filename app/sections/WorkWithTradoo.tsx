@@ -53,7 +53,7 @@ const WorkWithTradoo: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {featureBoxes.map((box, i) => (
-                            <div key={i} className="h-full bg-white rounded-3xl space-y-8 px-8 py-8 lg:px-12 lg:py-14">
+                            <div key={i} className="h-full bg-white rounded-3xl space-y-8 px-4 py-12 lg:px-12 lg:py-14">
                                 <div className="space-y-4">
                                     <h3 className="text-2xl font-semibold leading-8 tracking-[-0.24px] text-gray800">
                                         {box.title}

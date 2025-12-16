@@ -39,7 +39,7 @@ const RiskStructure: React.FC = () => {
 
     type CryptoItem = {
         id: number;
-        icon: StaticImageData; // imported image
+        icon: StaticImageData; // imported image 
         bg: string;            // background color
         alt: string;
         importance: number;

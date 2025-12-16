@@ -12,6 +12,7 @@ import DigitalWealthSection from '../components/DigitalWealthSection'
 import JoinTradoo from '../sections/JoinTradoo'
 import RiskFirst from '../sections/RiskFirst'
 import DigitalAsset from '../sections/DigitalAsset'
+import WhyStrategyToolbox from '../sections/WhyStrategyToolbox'
 
 const steps = [
   {
@@ -27,7 +28,7 @@ const steps = [
   {
     id: 2,
     number: 2,
-    title: "Configure the toolbox",
+    title: "Configure the toolbox", 
     description:
       "You choose whether to start from a guided profile or build from scratch. Select the modules you want to use, set BTC / ETH / USDC allocations and define key parameters such as DCA frequency, hedge logic and profit-taking rules.",
     className: "bg-gray800!",
@@ -53,6 +54,7 @@ const page = () => {
       <Professional />
       <WorkWithTradoo />
       <ToolBox />
+      <WhyStrategyToolbox />
       <Templates />
       <Modules />
       <StepsSection

@@ -81,7 +81,7 @@ const RiskFirst: React.FC = () => {
                             </div>
                         ))}
                     </div>
-                    <div className='max-sm:px-4 mt-16 md:mt-24'>
+                    <div className='max-sm:px-4 max-xs:mt-16 mt-24 md:mt-24'>
                         <p className='max-xs:text-3xl max-xs:leading-9 text-40 leading-11.5 tracking-[-1.20px] xl:text-56 font-semibold xl:leading-16 xl:tracking-[-1.68px] text-gray800'><span className='text-romansilver'>Tradoo focuses on a narrow, liquid universe of BTC, ETH and USDC and a defined set of strategy modules.</span> This keeps portfolios explainable, risk controls enforceable and operational complexity low while remaining fully non-custodial.</p>
                     </div>
                 </div>
