@@ -28,7 +28,7 @@ const steps = [
   {
     id: 2,
     number: 2,
-    title: "Configure the toolbox", 
+    title: "Configure the toolbox",
     description:
       "You choose whether to start from a guided profile or build from scratch. Select the modules you want to use, set BTC / ETH / USDC allocations and define key parameters such as DCA frequency, hedge logic and profit-taking rules.",
     className: "bg-gray800!",
@@ -43,7 +43,7 @@ const steps = [
       "We run simulations, stress scenarios, and regime checks. You review the behavior, refine the configuration, and document it as a vault policy ready to be activated once licensing is live.",
     className: "bg-gray800!",
     titleclassName: "text-white",
-    subtitleclassName: "text-gray300!",
+    subtitleclassName: "text-gray300!", 
   },
 ];
 
@@ -73,8 +73,8 @@ const page = () => {
         }}
         steps={steps}
       />
-      <DigitalAsset/>
-      <RiskFirst/>
+      <DigitalAsset />
+      <RiskFirst />
       <JoinTradoo />
       <FAQ />
       <DigitalWealthSection

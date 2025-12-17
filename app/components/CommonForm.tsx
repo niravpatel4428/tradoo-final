@@ -8,16 +8,16 @@ import DSLink from "./DSLink"
 
 
 export type CommonFormConfig = {
-  title: string
-  description: string
-  positionOptions: string[]
-  showLinkedIn?: boolean
-  textareaLabel: string
-  textareaPlaceholder: string
-  buttonLabel: string
-  buttonHref: string
-  footerText?: string
-  footerEmail?: string
+    title: string
+    description: string
+    positionOptions: string[]
+    showLinkedIn?: boolean
+    textareaLabel: string
+    textareaPlaceholder: string
+    buttonLabel: string
+    buttonHref: string
+    footerText?: string
+    footerEmail?: string
 }
 
 
@@ -25,7 +25,7 @@ type CommonFormProps = {
     config: CommonFormConfig
 }
 
-const CommonForm: React.FC<CommonFormProps> = ({ config }) => {
+const CommonForm: React.FC<CommonFormProps> = ({ config }) => { 
     return (
         <div className="bg-gray900 pt-2 md:pt-42">
             <div className="container max-sm:px-0">
@@ -44,12 +44,16 @@ const CommonForm: React.FC<CommonFormProps> = ({ config }) => {
                     </div>
 
                     {/* RIGHT FORM */}
+
                     <div className="lg:col-span-8">
                         <div className="space-y-6">
-                            <SelectField
-                                label="Position"
-                                options={config.positionOptions}
-                            />
+                            {config.positionOptions && config.positionOptions.length > 0 && (
+                                <SelectField
+                                    label="Position"
+                                    options={config.positionOptions}
+                                />
+                            )}
+
 
                             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
                                 <InputField type="text" label="First name" placeholder="First name" />
@@ -82,6 +86,7 @@ const CommonForm: React.FC<CommonFormProps> = ({ config }) => {
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 {/* FOOTER */}
@@ -104,4 +109,4 @@ const CommonForm: React.FC<CommonFormProps> = ({ config }) => {
     )
 }
 
-export default CommonForm
+export default CommonForm 
