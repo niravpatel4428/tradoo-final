@@ -97,7 +97,7 @@ const allocations: AllocationItem[] = [
 ];
 
 
-/* ================= MAIN COMPONENT ================= */
+/* ================= MAIN COMPONENT ================= */ 
 
 const Riskprofilestep = () => {
 
@@ -307,9 +307,9 @@ const Riskprofilestep = () => {
                 </div>
 
                 <div className="max-sm:px-4">
-                  <h1 className="max-xs:text-3xl max-xs:leading-9 max-xs:tracking-normal text-40 leading-11.5 tracking-[-1.20px] xxl:text-56 font-semibold xxl:leading-16 xxl:tracking-[-1.68px] text-lightgray900 mt-6 mb-6">
+                  <h2 className="max-xs:text-3xl max-xs:leading-9 max-xs:tracking-normal text-40 leading-11.5 tracking-[-1.20px] xxl:text-56 font-semibold xxl:leading-16 xxl:tracking-[-1.68px] text-lightgray900 mt-6 mb-6">
                     Your risk profile: Moderate
-                  </h1>
+                  </h2>
                 </div>
 
                 <p className="max-sm:px-4 text-gray700 text-xl leading-[144%] mb-14">
@@ -333,7 +333,7 @@ const Riskprofilestep = () => {
                 </div>
 
                 <div className="space-y-8 max-sm:mt-20 mt-14">
-                  <h1 className="max-sm:px-4 text-4xl leading-11 tracking-[-0.72px] xxl:text-44 font-semibold xxl:leading-13 xxl:tracking-[-0.88px] text-lightgray900">Explore your profile</h1>
+                  <h3 className="max-sm:px-4 text-4xl leading-11 tracking-[-0.72px] xxl:text-44 font-semibold xxl:leading-13 xxl:tracking-[-0.88px] text-lightgray900">Explore your profile</h3>
                   <div className="rounded-3xl max-sm:px-4 p-8 bg-gray100">
                     <ul className="space-y-4">
                       <li className="flex items-start gap-4">
