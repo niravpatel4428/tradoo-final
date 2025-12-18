@@ -152,7 +152,7 @@ const Riskprofilestep = () => {
     <div className="h-screen w-screen bg-white overflow-hidden relative z-50 md:p-3">
       <div className="flex h-full">
         {/* ================= SIDEBAR ================= */}
-        <aside className="max-lg:hidden lg:w-78 xl:w-90 xxl:w-117 bg-gray100 rounded-3xl lg:p-6 xl:p-8 xxl:p-12 stepsidebar">
+        <aside className="max-lg:hidden lg:w-78 xl:w-90 xxl:w-[24.7%] bg-gray100 rounded-3xl lg:p-6 xl:p-8 xxl:p-12 stepsidebar">
           <div className="flex flex-col gap-10">
             <div className=""><Link href="/" className="inline-block"><Image src={logo} alt="iconlogo" className="" /></Link></div>
 
