@@ -280,7 +280,7 @@ const Header = () => {
   /** ---------------------------------
    *   🔥 DEFINE PAGES THAT USE DARK HEADER
    * ----------------------------------*/
-  const darkPages = ["/professional", "/vaults", "/invest"];
+  const darkPages = ["/professional", "/vaults", "/invest", "/waitlist"];
 
   const isDark = darkPages.includes(pathname);
 

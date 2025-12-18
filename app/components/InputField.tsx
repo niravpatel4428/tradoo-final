@@ -22,7 +22,7 @@ export default function InputField({ type = "text" , label, placeholder, error }
                 onChange={(e) => setValue(e.target.value)}
                 placeholder={placeholder}
                 className={`
-          w-full rounded-2xl px-5 py-4 text-gray800 text-base font-medium leading-5.5 transition-all outline-none placeholder:text-gray500 placeholder:capitalize
+          w-full rounded-2xl px-5 py-4 text-gray800 text-base font-medium leading-5.5 transition-all outline-none placeholder:text-gray500
 
           bg-gray100 border-[1.5px] border-transparent 
 

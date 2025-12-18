@@ -23,7 +23,7 @@ const ApplyNow = () => {
                 <div>
                   <SelectField
                     label="Position"
-                    options={["Select position", "Option 1", "Option 2", "Option 3"]}
+                    options={["Select position", "Option 1", "Option 2", "Option 3"]} 
                   />
                 </div>
                 <div className='grid grid-cols-1 xl:grid-cols-2 gap-6'>
