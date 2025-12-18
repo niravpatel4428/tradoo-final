@@ -188,6 +188,10 @@ input[type=number] {
   display: none;
 }
 
+[data-hide-layout-footer] ~ footer {
+  display: none;
+}
+
 
 .loader-material {
   position: relative;

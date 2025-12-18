@@ -6,7 +6,7 @@ import FooterLinks from '../sections/FooterLinks'
 
 const page = () => {
   return (
-    <main>
+    <main data-hide-layout-footer>
       <WaitListBanner/>
       <Features/>
       <TrustedByInvestors/>
