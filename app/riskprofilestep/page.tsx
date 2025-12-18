@@ -4,7 +4,7 @@ import Riskprofilestep from '../sections/RiskProfileStep'
 
 const page = () => {
   return (
-    <main>
+    <main data-hide-layout>
         <Riskprofilestep/>
     </main>
   )

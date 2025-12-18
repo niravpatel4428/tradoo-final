@@ -100,7 +100,7 @@ const InvestorFAQ = () => {
                             <div className="block space-y-4">
                                 {faqData.map((item) => (
                                     <div key={item.id} className="bg-gray800 rounded-2xl lg:rounded-3xl py-4 md:py-6 xl:py-9">
-                                        <button onClick={() => toggle(item.id)} className="w-full flex justify-between items-center px-4 md:px-6 xl:px-10 text-left text-white text-lg font-semibold outline-0">
+                                        <button onClick={() => toggle(item.id)} className="w-full cursor-pointer flex justify-between items-center px-4 md:px-6 xl:px-10 text-left text-white text-lg font-semibold outline-0">
                                             {item.question}
                                             <FiChevronDown
                                                 size={22}

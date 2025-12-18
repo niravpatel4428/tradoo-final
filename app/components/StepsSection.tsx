@@ -32,7 +32,7 @@ type StepsSectionProps = {
   titleclassName?: string;
   subtitleclassName?: string;
   badgeVariant?: "lightgreen" | "darkgreen" | "gray";
-  buttonVariant?: "primarydefault" | "secondarydefault" | "contrastdefault";
+  buttonVariant?: "primarydefault" | "secondarydefault" | "contrastdefault"; 
   info?: {
     icon?: StaticImageData;   // ⭐ imported image
     text?: string;

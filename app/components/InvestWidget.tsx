@@ -155,7 +155,7 @@ const InvestWidget: React.FC = () => {
                                 <button
                                     type="button"
                                     onClick={() => setCurrencyOpen((prev) => !prev)}
-                                    className="flex items-center gap-2 px-3 text-base leading-5.5 text-lightgray900 outline-none"
+                                    className="flex cursor-pointer items-center gap-2 px-3 text-base leading-5.5 text-lightgray900 outline-none"
                                 >
                                     {currency}
 
@@ -178,7 +178,7 @@ const InvestWidget: React.FC = () => {
                                                     setCurrency(cur);
                                                     setCurrencyOpen(false);
                                                 }}
-                                                className="w-full px-5 py-4 text-left text-base leading-5.5 text-lightgray900 hover:bg-gray100"
+                                                className="w-full cursor-pointer px-5 py-4 text-left text-base leading-5.5 text-lightgray900 hover:bg-gray100"
                                             >
                                                 {cur}
                                             </button>
@@ -204,7 +204,7 @@ const InvestWidget: React.FC = () => {
                             <button
                                 key={value}
                                 onClick={() => handlePresetClick(value)}
-                                className={`rounded-20 px-5 py-2 text-base leading-5.5 border ${!customActive && amount === value
+                                className={`rounded-20 cursor-pointer px-5 py-2 text-base leading-5.5 border ${!customActive && amount === value
                                     ? "bg-[#1D2333] text-white"
                                     : "border-gray200 text-lightgray900"
                                     }`}
@@ -216,7 +216,7 @@ const InvestWidget: React.FC = () => {
 
                         <button
                             onClick={() => setCustomActive(true)}
-                            className={`rounded-20 px-5 py-2 text-base leading-5.5 border ${customActive
+                            className={`cursor-pointer rounded-20 px-5 py-2 text-base leading-5.5 border ${customActive
                                 ? "bg-[#1D2333] text-white"
                                 : "border-gray200 text-lightgray900"
                                 }`}

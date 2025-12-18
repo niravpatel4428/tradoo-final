@@ -37,14 +37,14 @@ const BuiltFor = () => {
                             </div>
                             <div className='col-span-12 lg:col-span-6'>
                                 <div className='max-sm:px-4 flex h-full flex-col justify-end gap-y-6'>
-                                    <p className='text-lg font-normal leading-[144%] text-gray700'>Stablecoins have become the settlement layer of We show both tails: the few wallets that truly compound — and the broad base quietly losing money. That's the reality our risk-first strategy framework is built around.</p>
+                                    <p className='text-lg font-normal leading-[144%] text-gray700'>We show both tails: the few wallets that truly compound — and the broad base quietly losing money. That&apos;s the reality our risk-first strategy framework is built around.</p>
                                 </div>
                             </div>
                         </div>
                         <div className='max-xs:mt-14 mt-18 lg:mt-20'>
                             <div className='grid grid-cols-12 gap-2'>
                                 <div className='col-span-12 lg:col-span-6'>
-                                    <div className='w-full max-sm:h-60 sm:h-100 lg:h-107 min-h-full'>
+                                    <div className='w-full max-sm:h-60 sm:h-100 lg:h-83 xl:h-107 min-h-full'>
                                         <Image
                                             src={built}
                                             alt="img"

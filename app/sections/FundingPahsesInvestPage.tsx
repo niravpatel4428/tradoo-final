@@ -203,7 +203,7 @@ const fundingPhases = [
         bullets: [
             "Series A optional (global expansion)",
             "EU-wide scaling completed",
-            "Strategic M&A exit",
+            "Or: Strategic M&A exit",
             "5-year horizon achieved",
         ],
         tag: "Optional",

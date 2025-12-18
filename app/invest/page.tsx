@@ -12,7 +12,7 @@ import TechnologyPartners from '../sections/TechnologyPartners'
 const page = () => {
   return (
     <main>
-      <InvestBanner/>
+      <InvestBanner/> 
       <Performance/>
       <ProfitSection/>
       <TechnologyPartners />

@@ -13,12 +13,17 @@ interface RankingRow {
     trades: number;
     avgPos: string;
     conviction: Conviction;
-}
+    rankClassName?: string;
+    nameClassName?: string;
+};
+
 
 const rankingData: RankingRow[] = [
     {
         rank: 1,
+        rankClassName: "bg-white text-lightgray900!",
         name: "Alpha Trader",
+        nameClassName: "text-white",
         address: "0x7a16...9F2E",
         category: "Prediction",
         roi: "287.4%",
@@ -29,7 +34,9 @@ const rankingData: RankingRow[] = [
     },
     {
         rank: 2,
+        rankClassName: "bg-white text-lightgray900!",
         name: "Sigma Capital",
+        nameClassName: "text-white",
         address: "0x7a16...9F2E",
         category: "On-Chain Protocols",
         roi: "194.6%",
@@ -40,6 +47,7 @@ const rankingData: RankingRow[] = [
     },
     {
         rank: 3,
+        rankClassName: "bg-white text-lightgray900!",
         name: "0x7a16...9F2E",
         address: "0x7a16...9F2E",
         category: "Mixed",
@@ -136,6 +144,14 @@ const convictionColors: Record<Conviction, string> = {
 
 
 const PerformanceRanking = () => {
+
+    const DEFAULT_RANK_CLASSES =
+        "w-10 h-10 flex items-center justify-center rounded-xl bg-gray700 text-white text-sm xl:text-base font-semibold";
+
+    const DEFAULT_NAME_CLASSES =
+        "text-gray400 text-sm xl:text-base font-medium whitespace-nowrap w-22 truncate";
+
+
     return (
         <>
             <div className="max-xs:py-16 py-42 bg-gray900">
@@ -188,7 +204,7 @@ const PerformanceRanking = () => {
                                             >
                                                 {/* Rank */}
                                                 <td className="p-4 sm:py-2 xl:py-4 sm:px-3 xl:px-6 max-lg:sticky max-lg:top-0 max-lg:bottom-0 max-lg:left-0 max-lg:z-2 max-lg:bg-[#1A1F2B]">
-                                                    <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray700 text-white text-sm xl:text-base font-semibold">
+                                                    <div className={`${DEFAULT_RANK_CLASSES} ${row.rankClassName ?? ""}`}>
                                                         {row.rank}
                                                     </div>
                                                 </td>
@@ -196,7 +212,7 @@ const PerformanceRanking = () => {
                                                 {/* Wallet */}
                                                 <td className="p-4 sm:py-2 xl:py-4 sm:px-3 xl:px-6">
                                                     <div className="flex flex-row items-center gap-2">
-                                                        <span className="text-white text-sm xl:text-base font-medium whitespace-nowrap w-22 truncate">{row.name}</span>
+                                                        <span className={`${DEFAULT_NAME_CLASSES} ${row.nameClassName ?? ""}`}>{row.name}</span>
                                                         <span className="text-gray400 text-sm xl:text-base font-medium whitespace-nowrap w-22 truncate">{row.address}</span>
                                                         <span className="mt-1 bg-[#272E41] px-2 py-1 rounded-md w-fit text-gray400 text-sm xl:text-base whitespace-nowrap">
                                                             {row.category}

@@ -43,7 +43,7 @@ const steps = [
       "We run simulations, stress scenarios, and regime checks. You review the behavior, refine the configuration, and document it as a vault policy ready to be activated once licensing is live.",
     className: "bg-gray800!",
     titleclassName: "text-white",
-    subtitleclassName: "text-gray300!", 
+    subtitleclassName: "text-gray300!",  
   },
 ];
 

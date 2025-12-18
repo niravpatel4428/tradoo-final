@@ -1,10 +1,10 @@
 import React from 'react'
-import AboutTreasury from '../components/AboutTreasury'
 import Badge from '../components/Badge';
 import Image from "next/image";
 import bolt from "@/public/image/svg/white-bolt.svg";
 import handshake from "@/public/image/svg/hand-shake.svg";
 import rocket from "@/public/image/svg/rocket.svg";
+import VaultsForm from '../components/VaultsForm';
 
 const JoinTradoo = () => {
     const steps = [
@@ -87,7 +87,7 @@ const JoinTradoo = () => {
                     </div>
                     {/* Section Main Content */}
 
-                    <AboutTreasury className='!pt-0' />
+                    <VaultsForm className='!pt-0' />
                 </div>
             </div>
         </>

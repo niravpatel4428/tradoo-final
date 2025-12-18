@@ -94,7 +94,7 @@ const Templates: React.FC = () => {
                             <div className='space-y-8'>
                                 <div>
                                     <Badge
-                                        label="Our 15 Strategies"
+                                        label="Our Investment Framework"
                                     />
                                 </div>
                                 <div>

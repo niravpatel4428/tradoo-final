@@ -148,9 +148,9 @@ const RealityCheck = () => {
                                                     <div className="mt-6 min-h-26 xxl:min-h-20.5 flex flex-col items-start gap-2">
                                                         <div className="flex items-center gap-2">
                                                             {/* DOT ONLY FOR DARK ITEM */}
-                                                            {item.dark && (
+                                                            {/* {item.dark && (
                                                                 <span className="w-2 h-2 rounded-full bg-[#0D9488]"></span>
-                                                            )}
+                                                            )} */}
 
                                                             {/* NAME */}
                                                             <p className="text-sm xl:text-lg font-medium leading-[144%] text-gunmetal">

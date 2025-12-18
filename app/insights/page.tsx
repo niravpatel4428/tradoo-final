@@ -17,7 +17,7 @@ const page = () => {
             <CommonBannerSection
                 badge={{
                     label: "Public Analytics",
-                    icon: "/image/svg/zap.svg",
+                    icon: "/image/svg/chart-up.svg",
                 }}
                 title="Smart wallet performance data. On-chain"
                 titleContainer='xxl:mx-auto max-w-280'
@@ -72,25 +72,25 @@ const BannerBottom = () => {
                                         <span className='rounded-full size-2 bg-[#0D9488]'>&nbsp;</span>
                                         <h2 className="text-gray800 text-2xl font-semibold leading-8 tracking-[-0.24px]">Live Performance</h2>
                                     </div>
-                                    <p className="text-gray700 text-lg leading-6.5 capitalize">
+                                    <p className="text-gray700 text-base leading-6.5 capitalize">
                                         Verified On-Chain Data. Updated Every 24h. Risk Framework Validated.
                                     </p>
                                 </div>
 
                                 {/* Time Buttons */}
-                                <div className="max-md:overflow-x-auto w-full">
-                                    <div className="flex gap-0.5 md:gap-3 bg-gray100 rounded-xl p-1 overflow-x-auto ">
+                                <div className="max-md:overflow-x-auto w-full max-w-68 lg:ml-auto">
+                                    <div className="flex gap-0.5 bg-gray100 rounded-xl p-1 overflow-x-auto ">
                                         {["30", "60", "90", "180"].map((t: any) => (
                                             <button
                                                 key={t}
                                                 onClick={() => setActiveTab(t)}
-                                                className={`px-3 py-2.5 flex cursor-pointer rounded-md whitespace-nowrap text-base leading-5 font-medium transition 
+                                                className={`px-3 min-w-16 max-w-16 py-2.5 flex cursor-pointer rounded-md whitespace-nowrap text-base leading-5 font-medium transition 
                                                 ${activeTab === t
                                                         ? "bg-white text-gray800 shadow-sm"
                                                         : "bg-gray100 text-gray700"
                                                     }`}
                                             >
-                                                {t}&nbsp;<span>D</span><span className='hidden md:block'>ays</span>
+                                                {t}&nbsp;<span>D</span><span className='hidden'>ays</span>
                                             </button>
                                         ))}
                                     </div>

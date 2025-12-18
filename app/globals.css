@@ -182,6 +182,13 @@ input[type=number] {
   }
 }
 
+
+[data-hide-layout] ~ header,
+[data-hide-layout] ~ footer {
+  display: none;
+}
+
+
 .loader-material {
   position: relative;
   width: 24px;
