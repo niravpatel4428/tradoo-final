@@ -14,9 +14,9 @@ const scrollToSection = (id: string) => {
   const el = document.getElementById(id);
   if (!el) return;
 
-  const headerOffset = 80; // adjust to your header height
+  const headerOffset = 100; // adjust to your header height
   const elementPosition = el.getBoundingClientRect().top;
-  const offsetPosition = elementPosition + window.scrollY - headerOffset;
+  const offsetPosition = elementPosition + window.scrollY - headerOffset; 
 
   window.scrollTo({
     top: offsetPosition,
@@ -101,7 +101,7 @@ const page = () => {
         steps={steps}
       />
       <DisciplinedStructure />
-      <div className="py-42 space-y-42" id="strategy-modules">
+      <div className="py-42 space-y-42">
         <Strategies />
         <div id="safety-mechanisms">
           <WhyStrategyFrameworkMechanisms  />

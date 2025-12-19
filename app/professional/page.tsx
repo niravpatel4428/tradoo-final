@@ -119,7 +119,7 @@ const page = () => {
         subtitle="Every treasury vault is a separate smart contract in your name. Tradoo defines and operates the risk framework around it, but does not take custody of your assets. Instead of chasing APYs, we focus on counterparty quality, overcollateralization, diversification and clear governance."
         steps={steps2}
       />
-      <div id="treasury-demo">
+      <div>
         <TreasuryPilot />
       </div>
       <FAQ />

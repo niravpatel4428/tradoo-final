@@ -78,7 +78,7 @@ const Strategies = () => {
     };
 
     return (
-        <div className="">
+        <div className="" id="strategy-modules">
             <div className="container max-md:p-0">
                 <div>
                     <div className="grid grid-cols-12 gap-5">
