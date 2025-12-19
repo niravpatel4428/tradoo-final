@@ -323,7 +323,7 @@ const Riskprofilestep = () => {
                       <p className="text-white text-lg leading-[144%]">Your Private Beta request has been received. We&apos;ll send your NDA and access instructions shortly. All early access benefits will be available to you. </p>
                     </div>
                     <div className="flex-custom flex flex-col gap-4 justify-end">
-                      <Button label="Explore Dashboard" href="#" trailingIcon variant="contrastdefault" />
+                      <Button label="Explore Dashboard" href="/" trailingIcon variant="contrastdefault" />
                     </div>
                   </div>
                   <div className="rounded-3xl p-6 bg-gray100 flex gap-3">
@@ -465,7 +465,7 @@ const Riskprofilestep = () => {
                       Execution features will be enabled once your Private Beta access is approved.</p>
                   </div>
                   <div className="flex-custom">
-                    <Button label="Join Waitlist" href="#" trailingIcon />
+                    <Button label="Join Waitlist" href="/waitlist" trailingIcon />
                   </div>
                 </div>
 

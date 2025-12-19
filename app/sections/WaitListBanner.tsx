@@ -77,7 +77,7 @@ const WaitListBanner: React.FC = () => {
                                 </div>
                                 <div className='col-span-12'>
                                     <div className='max-sm:flex-col max-sm:items-start flex gap-6 mt-2'>
-                                        <Button label="Join Waitlist" href="#" trailingIcon />
+                                        <Button label="Join Waitlist" href="/waitlist" trailingIcon />
                                         <div className="flex items-center gap-2.5">
                                             <span className="min-w-1.5 w-1.5 h-1.5 rounded-full bg-[#0E9F8C]" />
                                             <p className="text-base leading-5.5 font-normal text-gray700">

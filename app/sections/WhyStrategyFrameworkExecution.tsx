@@ -58,7 +58,7 @@ const WhyStrategyFrameworkExecution = () => {
               </div>
 
               <div className="flex-none">
-                <Button label="Join Private Beta" href="#" trailingIcon variant='contrastdefault' />
+                <Button label="Join Private Beta" href="/waitlist" trailingIcon variant='contrastdefault' />
               </div>
             </div>
             <div>

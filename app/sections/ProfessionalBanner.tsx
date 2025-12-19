@@ -1,8 +1,23 @@
+"use client";
 import React from 'react'
 import Badge from "../components/Badge"; 
 import Image from "next/image";
 import Button from '../components/Button';
 import FooterGradient from "@/public/image/footer-top-gradient.png";
+
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const headerOffset = 80; // adjust to your header height
+  const elementPosition = el.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
+  });
+};
 
 const ProfessionalBanner: React.FC = () => {
 
@@ -53,8 +68,8 @@ const ProfessionalBanner: React.FC = () => {
                         </div>
                     </div>
                     <div className='relative z-10 mt-12 md:mt-18 max-sm:flex-col max-sm:items-start flex gap-4 justify-center'>
-                        <Button label="Request Treasury Demo" href="#" trailingIcon variant='contrastdefault' />
-                        <Button label="Become a Design Partner " href="#" />
+                        <Button label="Request Treasury Demo" onClick={() => scrollToSection("treasury-demo")} trailingIcon variant='contrastdefault' />
+                        <Button label="Become a Design Partner" onClick={() => scrollToSection("treasury-demo")} />
                     </div>
                 </div>
             </div>

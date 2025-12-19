@@ -26,12 +26,12 @@ const page = () => {
                 buttons={[
                     {
                         label: "Explore Tradoo AI",
-                        href: "#",
+                        href: "/strategy-framework",
                         trailingIcon: true,
                     },
                     {
                         label: "Join the Private Beta",
-                        href: "#",
+                        href: "/waitlist",
                         variant: "secondarydefault",
                     },
                 ]}

@@ -41,7 +41,7 @@ const tableOfContents = {
         { id: "private-beta-access", label: "5. Private Beta Access", icon: Users },
 
         { id: "equity-participations", label: "6. Equity Participations", icon: Coins },
-        { id: "third-party-protocols", label: "7. Third-Party Protocols", icon: Link2 },
+        { id: "third-party-protocols", label: "7. Third-Party Protocols", icon: Link2 }, 
 
         { id: "risk-notice", label: "8. Risk Notice", icon: AlertTriangle },
         { id: "liability", label: "9. Liability", icon: Gavel },

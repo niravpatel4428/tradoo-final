@@ -35,8 +35,8 @@ const Banner: React.FC = () => {
               </p>
             </div>
             <div className="max-sm:flex-col max-sm:items-start flex gap-4 justify-center mt-12">
-              <Button label="Join Waitlist" href="#" trailingIcon />
-              <Button label="Learn More" href="#" variant="secondarydefault" />
+              <Button label="Join Waitlist" href="/waitlist" trailingIcon />
+              <Button label="Learn More" href="/approach" variant="secondarydefault" />
             </div>
           </div>
         </div>

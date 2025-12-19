@@ -83,7 +83,7 @@ const Modules: React.FC = () => {
                         ))}
                     </div>
                     <div className='max-sm:px-4'>
-                        <Button label="Explore Strategy Framework" href="#" trailingIcon  />
+                        <Button label="Explore Strategy Framework" href="/strategy-framework" trailingIcon  />
                     </div>
                 </div>
             </div>

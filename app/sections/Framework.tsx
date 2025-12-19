@@ -62,7 +62,7 @@ const Framework: React.FC = () => {
                 <div className="mt-4">
                   <Button
                     label="Explore the Tradoo Aproach"
-                    href="#"
+                    href="/approach"
                     trailingIcon
                     className="max-xs:text-sm max-xs:gap-5"
                   />

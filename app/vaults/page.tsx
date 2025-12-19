@@ -83,7 +83,7 @@ const page = () => {
         buttons={[
           {
             label: "Join Waitlist",
-            href: "#",
+            href: "/waitlist",
             variant: "contrastdefault",
             size: "L",
             trailingIcon: true,

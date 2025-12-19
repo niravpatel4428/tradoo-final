@@ -292,7 +292,7 @@ const RiskTabs = () => {
       `}</style>
                     </div>
                     <div className="mt-10 max-md:px-4">
-                        <Button label="Get Early Access" href="#" trailingIcon />
+                        <Button label="Get Early Access" href="/waitlist" trailingIcon />
                     </div>
                 </div>
             </div>

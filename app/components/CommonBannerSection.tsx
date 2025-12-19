@@ -3,12 +3,16 @@ import Badge from "../components/Badge";
 import Image from "next/image";
 import Button, { ButtonVariant } from "../components/Button";
 
+
+
 type ButtonType = {
   label: string;
-  href: string;
+  href?: string;          // ✅ OPTIONAL
+  onClick?: () => void;   // ✅ ALLOWED
   variant?: ButtonVariant;
   trailingIcon?: boolean;
 };
+
 
 type BadgeType = {
   label: string;
@@ -75,6 +79,7 @@ const CommonBannerSection: React.FC<BannerSectionProps> = ({
                 key={i}
                 label={btn.label}
                 href={btn.href}
+                onClick={btn.onClick}
                 variant={btn.variant}
                 trailingIcon={btn.trailingIcon}
               />

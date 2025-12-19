@@ -28,10 +28,10 @@ type StrategyTab = {
 };
 
 const profiles: StrategyTab[] = [
-    { id: 0, img: i1, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Core & Stability", label: "Core & Stability", desc: "These modules form the foundation of your portfolio. They provide liquidity, calm and discipline, even in turbulent market phases. The core aligns directly with your target allocation for BTC, ETH and USDC.", labels: ["USDC Core", "Lending (USDC)", "Rebalancing", "BTC/ETH Spot Base Component"], },
-    { id: 1, img: i2, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Growth & Building", label: "Growth & Building", desc: "These strategies use market phases to build BTC and ETH exposure systematically or to generate additional returns. The goal is controlled growth without unnecessary risks.", labels: ["DCA (BTC/ETH)", "Spot BTC/ETH (dynamic)", "Trend Control", "Range LP"], },
-    { id: 2, img: i3, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Risk Control & Hedging", label: "Risk Control & Hedging", desc: "These modules protect the portfolio from excess movements, unexpected shifts and technical risks. When markets turn or become volatile, these strategies activate first.", labels: ["Adaptive Risk Control", "Hedge/Protection", "Profit Taking", "Perpetual Overlay"], },
-    { id: 3, img: i4, btnLabel: "Get Early Access", btnUrl: "/", mainTItle: "Meta Engine & Control Logic", label: "Meta Engine & Control Logic", desc: "These modules execute no trades. They control the overall process: identify regimes, analyze events, filter strategies and determine which modules are active or paused.", labels: ["Strategy Mix (AI Meta Engine)", "Regime Understanding", "Event & Sentiment Radar"], },
+    { id: 0, img: i1, btnLabel: "Get Early Access", btnUrl: "/waitlist", mainTItle: "Core & Stability", label: "Core & Stability", desc: "These modules form the foundation of your portfolio. They provide liquidity, calm and discipline, even in turbulent market phases. The core aligns directly with your target allocation for BTC, ETH and USDC.", labels: ["USDC Core", "Lending (USDC)", "Rebalancing", "BTC/ETH Spot Base Component"], },
+    { id: 1, img: i2, btnLabel: "Get Early Access", btnUrl: "/waitlist", mainTItle: "Growth & Building", label: "Growth & Building", desc: "These strategies use market phases to build BTC and ETH exposure systematically or to generate additional returns. The goal is controlled growth without unnecessary risks.", labels: ["DCA (BTC/ETH)", "Spot BTC/ETH (dynamic)", "Trend Control", "Range LP"], },
+    { id: 2, img: i3, btnLabel: "Get Early Access", btnUrl: "/waitlist", mainTItle: "Risk Control & Hedging", label: "Risk Control & Hedging", desc: "These modules protect the portfolio from excess movements, unexpected shifts and technical risks. When markets turn or become volatile, these strategies activate first.", labels: ["Adaptive Risk Control", "Hedge/Protection", "Profit Taking", "Perpetual Overlay"], },
+    { id: 3, img: i4, btnLabel: "Get Early Access", btnUrl: "/waitlist", mainTItle: "Meta Engine & Control Logic", label: "Meta Engine & Control Logic", desc: "These modules execute no trades. They control the overall process: identify regimes, analyze events, filter strategies and determine which modules are active or paused.", labels: ["Strategy Mix (AI Meta Engine)", "Regime Understanding", "Event & Sentiment Radar"], },
 ];
 
 const Strategies = () => {
@@ -314,7 +314,7 @@ const Strategies = () => {
                         </div>
 
                         <div className="flex-none">
-                            <Button label="Join Private Beta" href="#" variant="secondarydefault" />
+                            <Button label="Join Private Beta" href="/waitlist" variant="secondarydefault" />
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,8 @@ export type ButtonSize = "M" | "L";
 
 interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   label: string;
-  href: string;
+  href?: string;
+  onClick?: () => void;
   disabled?: boolean;
   variant?: ButtonVariant;
   size?: ButtonSize;
@@ -24,6 +25,7 @@ interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 const Button: React.FC<ButtonProps> = ({
   label,
   href,
+  onClick,
   variant = "primarydefault",
   disabled = false,
   size = "L",
@@ -67,21 +69,18 @@ const Button: React.FC<ButtonProps> = ({
   /** apply no-icon padding */
   const extraPadding = trailingIcon ? "" : noIconPaddingClasses[size];
 
-  return (
-    <Link
-      href={disabled ? "#" : href}
-      aria-disabled={disabled}
-      className={`
-        inline-flex items-center rounded-full transition-all duration-400
-        ${variantClasses[variant]}
-        ${sizeClasses[size]}
-        ${dynamicGap}
-        ${extraPadding}
-        ${disabledClasses}
-        ${className}
-      `}
-      {...props}
-    >
+  const classes = `
+    inline-flex items-center rounded-full transition-all duration-400 cursor-pointer
+    ${variantClasses[variant]}
+    ${sizeClasses[size]}
+    ${dynamicGap}
+    ${extraPadding}
+    ${disabledClasses}
+    ${className}
+  `;
+
+  const content = (
+    <>
       <span>{label}</span>
 
       {trailingIcon && (
@@ -95,8 +94,61 @@ const Button: React.FC<ButtonProps> = ({
           <IoArrowForward size={22} />
         </span>
       )}
-    </Link>
+    </>
+  );
+
+  // ✅ LINK BUTTON (navigation)
+  if (href) {
+    return (
+      <Link href={disabled ? "#" : href} aria-disabled={disabled} className={classes}>
+        {content}
+      </Link>
+    );
+  }
+
+  // ✅ ACTION BUTTON (scroll, click, etc.)
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      aria-disabled={disabled}
+      className={classes}
+    >
+      {content}
+    </button>
   );
 };
 
 export default Button;
+
+  // return (
+  //   <Link
+  //     href={disabled ? "#" : href}
+  //     aria-disabled={disabled}
+  //     className={`
+  //       inline-flex items-center rounded-full transition-all duration-400
+  //       ${variantClasses[variant]}
+  //       ${sizeClasses[size]}
+  //       ${dynamicGap}
+  //       ${extraPadding}
+  //       ${disabledClasses}
+  //       ${className}
+  //     `}
+  //     {...props}
+  //   >
+  //     <span>{label}</span>
+
+  //     {trailingIcon && (
+  //       <span
+  //         className={`
+  //           flex items-center justify-center min-w-12 w-12 h-12 rounded-full
+  //           transition-all duration-200
+  //           ${iconVariantClasses[variant]}
+  //         `}
+  //       >
+  //         <IoArrowForward size={22} />
+  //       </span>
+  //     )}
+  //   </Link>
+  // );

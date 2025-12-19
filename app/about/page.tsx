@@ -19,12 +19,12 @@ const page = () => {
         buttons={[
           {
             label: "Join Waitlist",
-            href: "#",
+            href: "/waitlist",
             trailingIcon: true,
           },
           {
             label: "View careers",
-            href: "#",
+            href: "/career",
             variant: "secondarydefault",
           },
         ]}
@@ -39,7 +39,7 @@ const page = () => {
         buttons={[
           {
             label: "Join Waitlist",
-            href: "#",
+            href: "/waitlist",
             variant: "contrastdefault",
             size: "L",
             trailingIcon: true,

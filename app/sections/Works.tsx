@@ -89,7 +89,7 @@ const Works = () => {
                   <div className="absolute left-4 bottom-4 md:left-10 md:bottom-10 xl:left-14 xl:bottom-14 z-2">
                     <Button
                       label="Explore Risk Profiles"
-                      href="#"
+                      href="/riskprofiles"
                       trailingIcon={true}
                       variant="contrastdefault"
                       size="L"

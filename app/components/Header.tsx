@@ -282,7 +282,7 @@ const Header = () => {
    * ----------------------------------*/
   const darkPages = ["/professional", "/vaults", "/invest", "/waitlist"];
 
-  const isDark = darkPages.includes(pathname);
+  const isDark = darkPages.includes(pathname); 
 
   /** ---------------------------------
    *   Mobile + scroll logic (unchanged)
@@ -411,8 +411,8 @@ const Header = () => {
             {/* CTA */}
             <Button
               variant={isDark ? "contrastdefault" : "primarydefault"}
-              label="Get Early Access"
-              href="/"
+              label="Invest in Tradoo"
+              href="/invest"
             />
           </div>
         </div>

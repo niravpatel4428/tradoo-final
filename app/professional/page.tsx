@@ -15,6 +15,20 @@ import riskIcon5 from "@/public/image/svg/risk-icon5.svg";
 import riskIcon6 from "@/public/image/svg/risk-icon6.svg";
 import UsdcFlows from '../sections/UsdcFlows'
 
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const headerOffset = 80; // adjust to your header height
+  const elementPosition = el.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
+  });
+};
+
 const steps = [
   {
     id: 1,
@@ -22,7 +36,7 @@ const steps = [
     iconBg: "bg-white",
     title: "Conservative by design",
     description:
-    "Lending-only, overcollateralized markets. No leverage, no complex farming strategies, no exposure to untested protocol experiments.",
+      "Lending-only, overcollateralized markets. No leverage, no complex farming strategies, no exposure to untested protocol experiments.",
     className: "!bg-[#F3F4F6]",
   },
   {
@@ -88,32 +102,34 @@ const steps2 = [
 const page = () => {
   return (
     <main>
-      <ProfessionalBanner />      
-      <WhyItMatters />      
-      <Infrastructure />  
+      <ProfessionalBanner />
+      <WhyItMatters />
+      <Infrastructure />
       <StepsSection
-        className='bg-white' 
+        className='bg-white'
         badgeLabel="The Tradoo Framework"
-        title="Why Tradoo for On-Chain Treasury." 
+        title="Why Tradoo for On-Chain Treasury."
         steps={steps}
-      />    
-      <TransparencyDesign />      
-      <UsdcFlows/>
+      />
+      <TransparencyDesign />
+      <UsdcFlows />
       <StepsSection
         badgeLabel="The Tradoo Framework"
         title="Non Custodial by Design. Risk-First in Execution."
         subtitle="Every treasury vault is a separate smart contract in your name. Tradoo defines and operates the risk framework around it, but does not take custody of your assets. Instead of chasing APYs, we focus on counterparty quality, overcollateralization, diversification and clear governance."
         steps={steps2}
       />
-      <TreasuryPilot/>
-      <FAQ/>
+      <div id="treasury-demo">
+        <TreasuryPilot />
+      </div>
+      <FAQ />
       <DigitalWealthSection
         title="A Modern, Disciplined Approach to Digital Wealth"
         description="Tradoo combines institutional principles with user controlled infrastructure to provide a stable foundation for long-term wealth."
         buttons={[
           {
             label: "Join Waitlist",
-            href: "#",
+            href: "/waitlist",
             variant: "contrastdefault",
             size: "L",
             trailingIcon: true,

@@ -27,13 +27,13 @@ const footerColumns = [
     groups: [
       {
         title: "For Individuals",
-        links: [{ label: "Personal Wealth", href: "/personal-wealth" }],
+        links: [{ label: "Personal Wealth", href: "/" }],
       },
       {
         title: "For Professionals",
         links: [
-          { label: "Stablecoin Treasury", href: "/stablecoin-treasury" },
-          { label: "Institutional Vaults", href: "/institutional-vaults" },
+          { label: "Stablecoin Treasury", href: "/professional" },
+          { label: "Institutional Vaults", href: "/vaults" },
         ],
       },
     ],
@@ -63,8 +63,8 @@ const footerColumns = [
           { label: "Careers", href: "/career" },
           { label: "Contacts", href: "/contact" },
           { label: "Support", href: "/support" },
-          { label: "Become and Investor", href: "/investor" },
-          { label: "Join the Waitlist", href: "/join-the-waitlist" },
+          { label: "Become and Investor", href: "/invest" },
+          { label: "Join the Waitlist", href: "/waitlist" },
         ],
       },
     ],
@@ -121,7 +121,7 @@ const Footer = () => {
           <Image
             src={FooterGradient}
             alt="Footer Gradient"
-            className="w-auto h-full object-cover object-center"
+            className="w-auto h-full object-cover object-center" 
           />
         </div>
       )}
@@ -221,7 +221,7 @@ const Footer = () => {
                 Tradoo is currently offered through a closed private beta under
                 NDA, with access limited to selected users from the{" "}
                 <Link
-                  href="/"
+                  href="/waitlist"
                   className="underline duration-200 hover:no-underline"
                 >
                   waitlist
@@ -244,14 +244,14 @@ const Footer = () => {
                 informational purposes only. By using this website, you agree to
                 our{" "}
                 <Link
-                  href="/"
+                  href="/terms-of-use"
                   className="underline duration-200 hover:no-underline"
                 >
                   Terms of Service
                 </Link>{" "}
                 and{" "}
                 <Link
-                  href="/"
+                  href="/privacy-policy"
                   className="underline duration-200 hover:no-underline"
                 >
                   Privacy Policy

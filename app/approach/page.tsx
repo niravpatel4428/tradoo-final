@@ -70,7 +70,7 @@ const page = () => {
         title="A five-layer framework for smarter wealth decisions."
         subtitle="Tradoo processes information through 5 structured steps."
         ctaLabel="Explore in Private Beta"
-        ctaHref="#"
+        ctaHref="/waitlist"
         steps={steps}
       />
       <Design />
@@ -83,14 +83,14 @@ const page = () => {
         buttons={[
           {
             label: "Join Waitlist",
-            href: "#",
+            href: "/waitlist",
             variant: "contrastdefault",
             size: "L",
             trailingIcon: true,
           },
           {
             label: "Start With Your Risk Profile",
-            href: "#",
+            href: "/riskprofiles",
             variant: "primarydefault",
             size: "L",
           },

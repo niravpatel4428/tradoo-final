@@ -87,7 +87,7 @@ const TrustedByInvestors: React.FC = () => {
                         ))}
                     </div>
                     <div className='sm:text-center'>
-                        <Button label="Get Early Access" href="#" trailingIcon />
+                        <Button label="Get Early Access" href="/waitlist" trailingIcon />
                     </div>
                 </div>
             </div>

@@ -53,7 +53,7 @@ const Infrastructure: React.FC = () => {
                                         Tradoo abstracts this complexity. You deposit USDC into a dedicated smart vault, we route it across whitelisted, overcollateralized lending venues under predefined risk limits, and you keep full on-chain ownership and transparency.</p>
                                 </div>
                                 <div className='mt-8'>
-                                    <Button label="Explore in Private Beta" href="#" trailingIcon />
+                                    <Button label="Explore in Private Beta" href="/waitlist" trailingIcon />
                                 </div>
                             </div>
                         </div>

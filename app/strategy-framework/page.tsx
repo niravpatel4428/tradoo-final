@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import WhyStrategyFramework from '../sections/WhyStrategyFramework'
 import DisciplinedStructure from '../sections/DisciplinedStructure'
@@ -8,6 +9,21 @@ import infocircul from "@/public/image/svg/Info-circle.svg";
 import StepsSection from '../components/StepsSection'
 import DigitalWealthSection from '../components/DigitalWealthSection'
 import CommonBannerSection from '../components/CommonBannerSection'
+
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const headerOffset = 80; // adjust to your header height
+  const elementPosition = el.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
+  });
+};
+
 
 
 const steps = [
@@ -65,12 +81,12 @@ const page = () => {
         buttons={[
           {
             label: "View Strategy Modules",
-            href: "#",
+            onClick: () => scrollToSection("strategy-modules"),
             trailingIcon: true,
           },
           {
             label: "Safety Mechanisms",
-            href: "#",
+            onClick: () => scrollToSection("safety-mechanisms"),
             variant: "secondarydefault",
           },
         ]}
@@ -81,13 +97,15 @@ const page = () => {
         title="How the Engine selects the right strategies for your profile"
         subtitle="The Engine follows a defined process that ensures each strategy is activated only when your risk profile, market phase and all safety boundaries align."
         ctaLabel="Explore in Private Beta"
-        ctaHref="#"
+        ctaHref="/waitlist"
         steps={steps}
       />
       <DisciplinedStructure />
-      <div className="py-42 space-y-42">
+      <div className="py-42 space-y-42" id="strategy-modules">
         <Strategies />
-        <WhyStrategyFrameworkMechanisms />
+        <div id="safety-mechanisms">
+          <WhyStrategyFrameworkMechanisms  />
+        </div>
       </div>
       <WhyStrategyFrameworkExecution />
 
@@ -97,14 +115,14 @@ const page = () => {
         buttons={[
           {
             label: "Get Early Access",
-            href: "#",
+            href: "/waitlist",
             variant: "contrastdefault",
             size: "L",
             trailingIcon: true,
           },
           {
             label: "Explore Risk Profiles",
-            href: "#",
+            href: "/riskprofiles",
             variant: "primarydefault",
             size: "L",
           },

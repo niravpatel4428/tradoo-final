@@ -73,7 +73,7 @@ const ProblemSolved = () => {
             </div>
 
             <div className="max-sm:px-4">
-              <Button label="Join Waitlist" href="#" trailingIcon />
+              <Button label="Join Waitlist" href="/waitlist" trailingIcon />
             </div>
           </div>
         </div>

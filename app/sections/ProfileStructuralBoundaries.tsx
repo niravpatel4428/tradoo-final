@@ -129,7 +129,7 @@ const ProfileStructuralBoundaries: React.FC = () => {
                                     <div className="absolute max-sm:p-4 max-sm:left-0 p-14 bottom-0 right-0">
                                         <Button
                                             label="Explore the Tradoo Aproach"
-                                            href="#"
+                                            href="/approach"
                                             variant="contrastdefault"
                                             trailingIcon
                                         />

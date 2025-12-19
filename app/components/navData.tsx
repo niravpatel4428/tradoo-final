@@ -2,7 +2,7 @@ import risk from "@/public/image/svg/risk.svg";
 import strategy from "@/public/image/svg/strategy.svg";
 
 export const navData = [
-  { label: "Product", href: "/product", submenu: false, },
+  { label: "Product", href: "/", submenu: false, },
   { label: "About", href: "/about", submenu: false, },
   { label: "Approach", href: "/approach", submenu: false, },
 
@@ -35,21 +35,21 @@ export const navData = [
     items: [
       {
         href: "/professional",
-        title: "Professionals1",
-        description: "Choose the profile that matches your risk tolerance",
+        title: "Stablecoin Treasury Infrastructure",
+        description: "USDC lending via on-chain credit markets for CFOs and treasuries.",
         iconSrc: risk,
 
       },
       {
-        href: "/professional",
-        title: "Professionals2",
+        href: "/vaults",
+        title: "Institutional Strategy Vaults",
         description:
-          "See how Tradoo integrates proven principles behind the scenes",
+          "Digital asset portfolios for asset managers and family offices.",
         iconSrc: strategy,
 
       },
     ],
   },
 
-  { label: "Investors", href: "/invest", submenu: false, },
+  { label: "Insignts", href: "/insights", submenu: false, },
 ];

@@ -19,12 +19,12 @@ const page = () => {
                 buttons={[
                     {
                         label: "Join Private Beta",
-                        href: "#",
+                        href: "/waitlist",
                         trailingIcon: true,
                     },
                     {
                         label: "Strategy Framework",
-                        href: "#",
+                        href: "/strategy-framework",
                         variant: "secondarydefault",
                     },
                 ]}
@@ -41,14 +41,14 @@ adjusts within your profile?"
                 buttons={[
                     {
                         label: "Join Waitlist",
-                        href: "#",
+                        href: "/waitlist",
                         variant: "contrastdefault",
                         size: "L",
                         trailingIcon: true,
                     },
                     {
                         label: "Explore the Tradoo Approach",
-                        href: "#",
+                        href: "/approach",
                         variant: "primarydefault",
                         size: "L",
                     },

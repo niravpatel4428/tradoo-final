@@ -74,14 +74,14 @@ const PortfolioAllocation = () => {
                         <div className="max-sm:justify-start flex flex-wrap justify-center gap-4 max-sm:px-4">
                             <Button
                                 label="Join Private Beta "
-                                href="/"
+                                href="/waitlist"
                                 trailingIcon={true}
                                 variant="contrastdefault"
                                 size="L"
                             />
                             <Button
                                 label="Full Strategy Framework"
-                                href="/"
+                                href="/strategy-framework"
                                 variant="primarydefault"
                                 size="L"
                             />

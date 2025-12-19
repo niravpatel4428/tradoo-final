@@ -26,7 +26,7 @@ export default function Home() {
         buttons={[
           {
             label: "Join Waitlist",
-            href: "#",
+            href: "/waitlist",
             variant: "contrastdefault",
             size: "L",
             trailingIcon: true,
